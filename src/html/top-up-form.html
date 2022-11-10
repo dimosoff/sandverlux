@@ -1,0 +1,44 @@
+<form class="form" name="top-up" novalidate>
+  <div class="form__row row not-default-row">
+    <div class="form__item form__item_half not-default-column">
+      <label for="top-up-name" class="form__label" aria-hidden="true">Имя<span class="required-star">*</span></label>
+      <input class="form__input" type="text" name="top-up-name" id="top-up-name" value="" data-required="" placeholder="Имя*">
+      <p class="form__error-message"></p>
+    </div>
+    <div class="form__item form__item_half not-default-column">
+      <label for="top-up-phone" class="form__label" aria-hidden="true">Телефон<span class="required-star">*</span></label>
+      <input class="form__input" type="tel" name="top-up-phone" id="top-up-phone" value="" data-required="" placeholder="Телефон*">
+      <p class="form__error-message"></p>
+    </div>
+    <div class="form__item form__item_half not-default-column">
+      <label for="top-up-website" class="form__label" aria-hidden="true">Ссылка на сайт<span class="required-star">*</span></label>
+      <input class="form__input" type="text" name="top-up-website" id="top-up-website" value="" data-required="" placeholder="Ссылка на сайт*">
+      <p class="form__error-message"></p>
+    </div>
+    <div class="form__item form__item_half not-default-column">
+      <label for="top-up-email" class="form__label" aria-hidden="true">E-mail<span class="required-star">*</span></label>
+      <input class="form__input" type="text" name="top-up-email" id="top-up-email" value="" data-required="" placeholder="E-mail*">
+      <p class="form__error-message"></p>
+    </div>
+    <div class="form__item not-default-column">
+      <input class="form__input sr-only" type="file" name="top-up-file" id="top-up-file">
+      <label for="top-up-file" class="form__label">Прикрепить реквизиты</label>
+    </div>
+    <div class="form__item not-default-column">
+      <label for="top-up-description" class="form__label" aria-hidden="true">Комментарий</label>
+      <textarea class="form__input" name="top-up-description" id="top-up-description" placeholder="Комментарий"></textarea>
+    </div>
+    @@if (false) {
+    <div class="form__item not-default-column">
+      <input class="form__checkbox sr-only" type="checkbox" name="top-up-access" id="top-up-access">
+      <label for="top-up-access" class="form__label">Готовы предоставить доступ для более детальной
+        оценки</label>
+    </div>
+    }
+    <div class="form__item not-default-column">
+      <div class="form__button-wrapper">
+        <button class="form__button _btn" type="submit" name="top-up-submit" id="top-up-submit">Отправить заявку</button>
+      </div>
+    </div>
+  </div>
+</form>

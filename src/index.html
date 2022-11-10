@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@@include('./src/html/head.html', {
+"title": "CPRO - Зачисления на рекламные кабинеты Google и Яндекс"
+})
+
+<body>
+  <div class="wrapper">
+    @@include('./src/html/header.html')
+    @@include('./src/html/main-banner.html')
+    @@include('./src/html/footer.html', {})
+  </div>
+  <div class="popup-overlay"></div>
+  @@include("./src/html/top-up-popup.html")
+  @@include("./src/html/thank-you-popup.html")
+  @@include("./src/html/scroll-top.html")
+  <script src="scripts/main.js"></script>
+</body>
+
+</html>
