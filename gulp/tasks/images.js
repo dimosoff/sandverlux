@@ -37,8 +37,6 @@ export const images = () => {
             }),
             svgo({
               plugins: [
-                { name: "removeViewBox", active: false },
-                { name: "cleanupIDs", active: false },
                 { name: "removeDoctype", active: true },
                 { name: "removeXMLProcInst", active: true },
                 { name: "removeComments", active: true },
@@ -50,7 +48,7 @@ export const images = () => {
                 { name: "inlineStyles", active: true },
                 { name: "minifyStyles", active: true },
                 { name: "convertStyleToAttrs", active: true },
-                { name: "cleanupIDs", active: true },
+                { name: "cleanupIDs", active: false },
                 { name: "removeRasterImages", active: true },
                 { name: "removeUselessDefs", active: true },
                 { name: "cleanupNumericValues", active: true },

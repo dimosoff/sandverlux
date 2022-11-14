@@ -6,23 +6,20 @@
           <div class="footer__inner">
             <a class="footer__logo logo" href="/">
               <span class="sr-only">На главную</span>
-              @@include('./src/images/cpro-logo.svg', {
-              "aria-label" : "cpro.by logo"
+              @@include('./src/images/logo.svg', {
+              "aria-label" : "sandverlux.by logo"
               })
             </a>
             <p class="footer__company footer__company_name">000 "Кристаллпровайдер"</p>
             <p class="footer__company footer__company_unp">УНП 193380595</p>
           </div>
         </div>
-        <nav class="footer__column">
+        <div class="footer__column">
           @@include("./src/html/main-links.html", {
             "class": "footer__menu"
           })
-        </nav>
+        </div>
         <div class="footer__column">
-          @@include("./src/html/contact-links.html", {
-            "class": "footer__contacts"
-          })
         </div>
       </div>
     </div>

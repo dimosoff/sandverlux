@@ -1,6 +1,5 @@
-$button-background: $white;
-$button-background-hover: #9157ec;
-$button-color: #9258ed;
+$button-background: $yellow;
+$button-background-hover: #E3B100;
 
 ._bkgr-image {
   position: absolute;
@@ -37,7 +36,7 @@ h3,
 h4 {
   letter-spacing: -0.01em;
 }
-@mixin focus-styles($width: 2px, $color: $focus-color) {
+@mixin focus-styles($width: 2px, $color: $yellow) {
   box-shadow: 0 0 0 $width $color !important;
 }
 %focus-styles-disable {
@@ -56,25 +55,23 @@ h4 {
   @include focus-styles;
 }
 ._btn {
-  color: $button-color;
+  color: $white;
   border: none;
-  padding: 18px 30px;
+  padding: 17px 30px;
+  display: inline-block;
   position: relative;
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
-  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
-  background: $button-background;
   line-height: 1;
-  font-weight: 700;
-  font-family: $Manrope;
-  border-radius: 5px;
+  font-weight: 600;
+  font-family: inherit;
   text-decoration: none;
+  background-color: $button-background;
 
   @media ($desktop-min) {
     transition: color $transition3, background-color $transition3;
 
     &:hover {
-      color: $white;
       background-color: $button-background-hover;
     }
   }

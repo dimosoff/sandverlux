@@ -196,7 +196,7 @@
 
   // src/scripts/main.js
   document.addEventListener("DOMContentLoaded", function() {
-    addClassOnScroll(".header", 35, "_scrolled");
+    addClassOnScroll(".header", 170, "_scrolled");
     addClassOnClick(".burger", ".header", "_menu-opened");
     myLazyLoad();
     scrollToTop();

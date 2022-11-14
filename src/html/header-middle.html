@@ -1,0 +1,21 @@
+<div class="header-middle container">
+  <div class="header-middle__item header-middle__item_mobile-only">
+    <button class="burger">
+      <span></span><span></span><span></span><span class="sr-only">Меню</span>
+    </button>
+  </div>
+  <div class="header-middle__item">
+    <a class="logo" href="/">
+      <span class="sr-only">На главную</span>
+      <svg class="logo__icon" aria-label="sandverlux.by logo" width="144" height="99">
+        <use href="/images/icons.svg#logo" />
+      </svg>
+    </a>
+  </div>
+  <div class="header-middle__item header-middle__item_grow">
+    @@include('./src/html/contacts.html')
+  </div>
+  <div class="header-middle__item">
+    <button class="header-middle__call-request _btn" type="button" name="call-request">Заказать звонок</button>
+  </div>
+</div>

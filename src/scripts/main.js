@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  myFunctions.addClassOnScroll(".header", 35, "_scrolled");
+  myFunctions.addClassOnScroll(".header", 170, "_scrolled");
   myFunctions.addClassOnClick(".burger", ".header", "_menu-opened");
   myFunctions.myLazyLoad();
   myFunctions.scrollToTop();
