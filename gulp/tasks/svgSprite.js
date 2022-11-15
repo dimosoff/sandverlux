@@ -70,6 +70,11 @@ export const svgSprite = () => {
             example: true,
           },
         },
+        shape: {
+          spacing: {
+            padding: 0,
+          },
+        },
       })
     )
     .pipe(app.gulp.dest(app.path.build.images));

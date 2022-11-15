@@ -37,6 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
     "button[name=top-up-account]"
   );
 
+  const doorPriceSlider = document.getElementById('door-price-slider');
+
   //faq list collapse
   const allFaqItems = document.querySelectorAll(".faq-item");
 
@@ -90,6 +92,15 @@ document.addEventListener("DOMContentLoaded", function () {
       );
     });
   }
+
+  noUiSlider.create(doorPriceSlider, {
+    start: [0, 100],
+    connect: true,
+    range: {
+      min: 0,
+      max: 100,
+    },
+  });
 
   // swiper //
 
@@ -385,3 +396,4 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 import * as myFunctions from "./functions.js";
+import noUiSlider from "nouislider/dist/nouislider.mjs";

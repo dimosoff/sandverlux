@@ -3,6 +3,7 @@ $black: #000;
 $yellow: #f9c201;
 $text-color: #585858;
 $primary-color: #84a878;
+$heading-color: #2d2d2d;
 $secondary-color: #9ab98f;
 $main-banner-accent: #efd167;
 $marker-green-color: #50b22f;
@@ -128,7 +129,7 @@ body {
   }
 }
 .heading {
-  color: $text-color;
+  color: $heading-color;
   font-size: 30px;
   font-weight: 500;
   line-height: 1.25;
@@ -524,10 +525,8 @@ body {
     color: $white;
     width: 40px;
     height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     text-decoration: none;
+    @extend %flex-center;
   }
   &__number {
     position: absolute;
@@ -663,6 +662,15 @@ body {
     & + & {
       margin-left: 30px;
     }
+    &:nth-child(1) {
+      @extend %first-progress-item;
+    }
+    &:nth-child(2) {
+      @extend %second-progress-item;
+    }
+    &:nth-child(3) {
+      @extend %third-progress-item;
+    }
   }
   &__progress-content {
     font-size: 22px;
@@ -674,39 +682,120 @@ body {
     display: block;
     position: relative;
     font-size: 50px;
+    transform: translateX(0);
     font-weight: 700;
+    animation: 9s ease-out 0s forwards infinite running main-banner-value;
 
+    %first-progress-item & {
+      animation-delay: 0s;
+    }
+    %second-progress-item & {
+      animation-delay: 3s;
+    }
+    %third-progress-item & {
+      animation-delay: 6s;
+    }
     &:before {
       content: "";
       display: block;
       position: absolute;
       top: 0;
-      left: 0;
-      width: 20px;
+      left: -35px;
+      width: 35px;
       height: 100%;
+      opacity: 0;
+      transform: translateX(0);
+      animation: 9s ease-out 0s forwards infinite running main-banner-chevron;
       background: url("../images/icons.svg#chevron-right") left center/100% auto
         no-repeat transparent;
+
+      %first-progress-item & {
+        animation-delay: 0s;
+      }
+      %second-progress-item & {
+        animation-delay: 3s;
+      }
+      %third-progress-item & {
+        animation-delay: 6s;
+      }
     }
+  }
+}
+.main-filter {
+  margin-top: 50px;
+
+  &__container {
+  }
+  &__items {
+    @extend %row-wrapper;
+  }
+  &__item {
+    &:nth-child(odd) {
+      @include column-size(40%, 0px);
+    }
+    &:nth-child(even) {
+      @include column-size(60%, 0px);
+    }
+  }
+  &__door {
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.05);
+    background: url("../images/icons.svg#wave") 16px 60% / 196px auto no-repeat
+      $white;
+    padding: 16px;
+  }
+  &__door-image-wrapper {
+    height: 146px;
+    margin: 0 23px;
+    flex-basis: 146px;
+  }
+  &__door-image {
+  }
+  &__door-content {
+    margin-left: 12px;
+    margin-right: 15px;
+  }
+  &__door-heading {
+    font-weight: 600;
+  }
+  &__description {
+    font-size: 18px;
+    margin-top: 20px;
+    line-height: 1.2;
+  }
+  &__doors-wrapper {
+  }
+  &__doors-image {
+  }
+}
+.mft {
+  color: $white;
+  display: flex;
+  background-color: $primary-color;
+
+  &__item-wrapper {
+    margin: 0;
+    border: none;
+    padding: 0;
+  }
+  &__item {
+    flex: 1;
+  }
+  &__heading {
+    font-weight: 500;
+    line-height: 1.25;
   }
 }
 
 .form {
-  color: $white;
-
   &__row {
     @include margin-x(-7.5px);
   }
 
   &__item {
     position: relative;
-    @include margin-x(7.5px);
 
-    @media ($tablet-min) {
-      margin-bottom: 16px;
-    }
-    @media ($mobile-max) {
-      margin-bottom: 7px;
-    }
     %f-item-element {
       //border: 2px solid $f-item;
       border: none;
@@ -721,15 +810,6 @@ body {
       width: 22px;
       height: 22px;
       display: block;
-    }
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-    // &_half {
-    // }
-    &_more-gap {
-      margin-bottom: 27px;
     }
   }
   &__label {
@@ -1007,10 +1087,8 @@ body {
     height: 30px;
     border: none;
     padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: transparent;
+    @extend %flex-center;
     // filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
 
     &%my-gallery-close-pseudo {

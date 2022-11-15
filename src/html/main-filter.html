@@ -1,0 +1,30 @@
+<form class="main-filter form" id="filter-homepage" novalidate>
+  <div class="main-filter__container container">
+    <div class="main-filter__items">
+      <div class="main-filter__item">
+        <div class="main-filter__door">
+          <div class="main-filter__door-image-wrapper _image-wrapper">
+            <img class="main-filter__door-image _bkgr-image _bkgr-image--contain" src="images/homepage-door-01.jpg"
+              alt="хотите купить дверь?" width="59" height="146" loading="lazy">
+          </div>
+          <div class="main-filter__door-content">
+            <h2 class="main-filter__door-heading heading">хотите купить дверь?</h2>
+            <p class="main-filter__description">Быстрый подбор дверей</p>
+          </div>
+        </div>
+      </div>
+      <div class="main-filter__item">
+        @@include('./src/html/main-filter-top.html')
+      </div>
+      <div class="main-filter__item">
+        <div class="main-filter__doors-wrapper _image-wrapper">
+          <img class="main-filter__doors-image _bkgr-image" src="images/homepage-doors-02.png" alt="пример дверей для покупки"
+            width="650" height="565" loading="lazy">
+        </div>
+      </div>
+      <div class="main-filter__item">
+        @@include('./src/html/main-filter-bottom.html')
+      </div>
+    </div>
+  </div>
+</form>
