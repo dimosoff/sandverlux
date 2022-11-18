@@ -2,18 +2,18 @@
   <div class="mft__item">
     <span class="mft__heading">Я ищу двери</span>
     <div class="form__item">
+      <input class="form__input sr-only" type="radio" name="door-type" id="door-type01" value="interior" aria-hidden="true" checked>
       <label for="door-type01" class="form__label">Межкомнатные</label>
-      <input class="form__input" type="radio" name="door-type" id="door-type01" value="interior" checked>
+      <input class="form__input sr-only" type="radio" name="door-type" id="door-type02" value="entrance" aria-hidden="true">
       <label for="door-type02" class="form__label">Входные</label>
-      <input class="form__input" type="radio" name="door-type" id="door-type02" value="entrance">
     </div>
   </div>
   <div class="mft__item">
     <span class="mft__heading">Производитель</span>
     <div class="form__item">
-      <label for="door-type01" class="form__label">Межкомнатные</label>
-      <select class="form__input" type="radio" name="door-type" id="door-type01" value="interior">
-        <option disabled>Все производители</option>
+      <label for="door-manufacturer" class="form__label sr-only">Производитель</label>
+      <select class="form__select" name="door-manufacturer" id="door-manufacturer">
+        <option value="">Все производители</option>
         <option value="opt001">Динмар</option>
         <option value="opt002">Albero</option>
         <option value="opt003">МДФ Техно профиль</option>
@@ -25,12 +25,16 @@
     <fieldset class="mft__item-wrapper">
       <legend class="mft__heading">Цена</legend>
       <div class="form__item">
+        <span class="form__input-placeholder">от</span>
         <label for="door-price-min" class="form__label sr-only" aria-hidden="true">минимальная цена</label>
         <input class="form__input" type="number" name="door-price" id="door-price-min">
+      </div>
+      <div class="form__item">
+        <span class="form__input-placeholder">до</span>
         <label for="door-price-max" class="form__label sr-only" aria-hidden="true">максимальная цена</label>
         <input class="form__input" type="number" name="door-price" id="door-price-max">
-        <div class="form__slider" id="door-price-slider"></div>
       </div>
+      <div class="form__slider" id="door-price-slider"></div>
     </fieldset>
   </div>
 </div>

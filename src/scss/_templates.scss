@@ -33,19 +33,12 @@ button,
 @mixin focus-styles($width: 2px, $color: $yellow) {
   box-shadow: 0 0 0 $width $color !important;
 }
-%focus-styles-disable {
-  box-shadow: 0 0 0 1px transparent !important;
-}
 *:focus {
   outline: none;
-  border-radius: 3px;
-  @include focus-styles;
-}
-*:focus:not(:focus-visible) {
-  @extend %focus-styles-disable;
 }
 *:focus-visible {
   outline: none;
+  border-radius: 3px;
   @include focus-styles;
 }
 ._btn {
@@ -79,12 +72,8 @@ button,
     line-height: 1.3;
   }
 
-  &:focus,
   &:focus-visible {
-    @include focus-styles(3px);
-  }
-  &:focus:not(:focus-visible) {
-    @extend %focus-styles-disable;
+    @include focus-styles($color: $white);
   }
 }
 .scroll-top {

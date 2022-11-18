@@ -1,18 +1,18 @@
 $white: #fff;
 $black: #000;
 $yellow: #f9c201;
+$yellow-accent: #efd167;
 $text-color: #585858;
 $primary-color: #84a878;
 $heading-color: #2d2d2d;
 $secondary-color: #9ab98f;
-$main-banner-accent: #efd167;
 $marker-green-color: #50b22f;
 $form-grey-color: #f4f4f4;
 $body-background: $white;
 $required-and-error: #b65c5c;
 
-$main-gradient: linear-gradient(89.97deg, #9056ec 0.58%, #bb8fff 79.26%);
-$faq-gradient: linear-gradient(89.97deg, #fdd65b 0.58%, #f28a0c 99.97%);
+// $main-gradient: linear-gradient(89.97deg, #9056ec 0.58%, #bb8fff 79.26%);
+// $faq-gradient: linear-gradient(89.97deg, #fdd65b 0.58%, #f28a0c 99.97%);
 
 $desktop-min-xl: "min-width: 1200px";
 $desktop-max: "max-width: 1199.98px";
@@ -651,6 +651,9 @@ body {
     &:hover {
       background-color: rgba(255, 255, 255, 0.2);
     }
+    &:focus-visible {
+      @include focus-styles;
+    }
   }
   &__progress {
     display: flex;
@@ -678,7 +681,7 @@ body {
     line-height: 1.36;
   }
   &__progress-value {
-    color: $main-banner-accent;
+    color: $yellow-accent;
     display: block;
     position: relative;
     font-size: 50px;
@@ -731,19 +734,20 @@ body {
   }
   &__item {
     &:nth-child(odd) {
-      @include column-size(40%, 0px);
+      @include column-size(39.1%, 0px);
     }
     &:nth-child(even) {
-      @include column-size(60%, 0px);
+      @include column-size(60.9%, 0px);
     }
   }
   &__door {
+    height: 100%;
+    padding: 16px;
     display: flex;
     align-items: center;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.05);
     background: url("../images/icons.svg#wave") 16px 60% / 196px auto no-repeat
       $white;
-    padding: 16px;
   }
   &__door-image-wrapper {
     height: 146px;
@@ -770,22 +774,66 @@ body {
   }
 }
 .mft {
-  color: $white;
+  height: 100%;
   display: flex;
+  padding: 40px 84px 22px;
   background-color: $primary-color;
 
   &__item-wrapper {
     margin: 0;
     border: none;
     padding: 0;
+
+    & %form-input {
+      width: auto;
+      max-width: 112px;
+      flex-basis: 112px;
+    }
+    & %form-item {
+      flex-wrap: wrap;
+    }
   }
   &__item {
-    flex: 1;
+    flex: 1 0 auto;
+
+    & + & {
+      margin-left: 50px;
+    }
+    & %form-item {
+      display: flex;
+    }
+    & %form-input {
+      &[type="radio"] + label {
+        flex: 1 0 50%;
+        cursor: pointer;
+        padding: 0 17px;
+        font-size: 16px;
+        @extend %flex-center;
+        @extend %f-item-element;
+      }
+      &[type="radio"]:checked {
+        & + label {
+          background-color: $yellow;
+        }
+      }
+    }
+    & %form-select {
+      font-size: 14px;
+      padding: 0 24px;
+    }
   }
   &__heading {
+    color: $white;
+    display: block;
     font-weight: 500;
     line-height: 1.25;
+    margin-bottom: 13px;
   }
+}
+
+%f-item-element {
+  border: none;
+  background-color: $white;
 }
 
 .form {
@@ -795,13 +843,12 @@ body {
 
   &__item {
     position: relative;
+    @extend %form-item;
 
-    %f-item-element {
-      //border: 2px solid $f-item;
-      border: none;
-      border-radius: 5px;
-      background-color: $white;
+    & > * {
+      min-height: 45px;
     }
+
     %f-checkbox-pseudo {
       content: "";
       position: absolute;
@@ -813,6 +860,7 @@ body {
     }
   }
   &__label {
+    height: 45px;
     font-size: 14px;
     line-height: 1.375;
 
@@ -842,17 +890,19 @@ body {
     width: 100%;
     color: $text-color;
     @extend %f-item-element;
-    @extend %f-item-input;
+    @extend %form-input;
 
     @media ($tablet-max) {
       font-size: 15px;
     }
     @media ($tablet-min) {
-      padding: 15px 15px 15px 25px;
+      padding: 0 17px;
     }
     @media ($mobile-max) {
-      padding: 13px 29px;
       font-size: 14px;
+    }
+    &[aria-hidden="true"] {
+      width: 1px;
     }
 
     &[type="file"] {
@@ -878,13 +928,20 @@ body {
         }
       }
     }
-    &_error%f-item-input {
+    &[type="radio"] {
+      &:focus-visible {
+        & + label {
+          @include focus-styles($color: $white);
+        }
+      }
+    }
+    &_error%form-input {
       box-shadow: 0 0 10px $required-and-error;
     }
     &:-webkit-autofill,
     &:-webkit-autofill:hover,
     &:-webkit-autofill:focus,
-    &_valid%f-item-input {
+    &_valid%form-input {
       background: url("../images/valid-icon.svg") 98% 17px/17px auto no-repeat
         $white;
       background-position: right 15px top 18px;
@@ -906,12 +963,32 @@ body {
       color: $text-color;
       opacity: 1;
     }
+  }
+  &__select {
+    @extend %f-item-element;
+    width: 100%;
+    color: inherit;
+    padding: 0 17px;
+    appearance: none;
+    background: url("../images/icons.svg#chevron-down") right 15px center/16px
+    auto no-repeat $white;
 
-    &:focus-visible {
-      box-shadow: 0 0 10px $white !important;
+    @extend %form-select;
+
+    &::-ms-expand {
+      display: none;
+    }
+    & * {
+      width: 100%;
+      border: none;
+      padding: 3px 17px;
+
+      &:hover {
+        background-color: $yellow;
+      }
     }
   }
-  & textarea%f-item-input {
+  & textarea%form-input {
     margin: 0;
     resize: none;
 
@@ -921,6 +998,9 @@ body {
     @media ($mobile-max) {
       min-height: 93px;
     }
+  }
+  &__slider {
+    width: 100%;
   }
   // &__checkbox {
   //   & ~ label {
@@ -1171,7 +1251,7 @@ body {
         box-shadow: 0 0 10px $secondary-color !important;
       }
     }
-    & textarea%f-item-input {
+    & textarea%form-input {
       min-height: 95px;
     }
     &__button {
