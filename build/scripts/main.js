@@ -11,15 +11,23 @@
     });
   }
   function addClassOnScroll(item, topOffset, nameOfClass) {
+    let scrollState = null;
     window.addEventListener("scroll", function() {
-      if (scrollY > topOffset) {
+      if (scrollY > topOffset && scrollState !== "scrolled") {
         document.querySelector(item).classList.add(nameOfClass);
-      } else {
+        scrollState = "scrolled";
+        return;
+      }
+      if (scrollY <= topOffset && scrollState !== "not-scrolled") {
         document.querySelector(item).classList.remove(nameOfClass);
+        scrollState = "not-scrolled";
+        return;
       }
     });
-    if (scrollY > topOffset) {
+    if (scrollY > topOffset && scrollState !== "scrolled") {
       document.querySelector(item).classList.add(nameOfClass);
+      scrollState = "scrolled";
+      return;
     }
   }
   function setAnchorsEvents() {
