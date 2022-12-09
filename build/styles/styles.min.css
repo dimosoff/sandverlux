@@ -291,7 +291,7 @@ b:not(._fw600) {
   flex-wrap: wrap;
 }
 
-.popup__close, .mft__item [type=radio].form__input + label, .header-bottom__feature-link {
+.popup__close, .mft__item [type=radio].form__input + .form__label, .header-bottom__feature-link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -463,15 +463,15 @@ body {
   transition-delay: 0.1s;
 }
 .header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 10;
   transform: translateY(0);
-  transition: transform 0.3s ease-out;
 }
 .header._scrolled {
+  position: fixed;
   transform: translateY(-170px);
 }
 
@@ -938,9 +938,6 @@ body {
   max-width: 112px;
   flex-basis: 112px;
 }
-.mft__item-wrapper .form__item {
-  flex-wrap: wrap;
-}
 .mft__item {
   flex: 1 0 auto;
 }
@@ -950,13 +947,25 @@ body {
 .mft__item .form__item {
   display: flex;
 }
-.mft__item [type=radio].form__input + label {
+.mft__item .form__item label {
+  flex: 1 1 0%;
+  display: flex;
+}
+.mft__item .form__input-placeholder {
+  top: 14px;
+  left: 12px;
+  color: #8F8F8F;
+  position: absolute;
+  font-size: 14px;
+  line-height: 1.2;
+}
+.mft__item [type=radio].form__input + .form__label {
   flex: 1 0 50%;
   cursor: pointer;
   padding: 0 17px;
   font-size: 16px;
 }
-.mft__item [type=radio].form__input:checked + label {
+.mft__item [type=radio].form__input:checked + .form__label {
   background-color: #f9c201;
 }
 .mft__item .form__select {
@@ -965,13 +974,14 @@ body {
 }
 .mft__heading {
   color: #fff;
+  padding: 0;
   display: block;
   font-weight: 500;
   line-height: 1.25;
   margin-bottom: 13px;
 }
 
-.form__select, .form__input[type=file] ~ label, .form__input, .mft__item [type=radio].form__input + label {
+.form__select, .form__input[type=file] ~ label, .form__input, .mft__item [type=radio].form__input + .form__label {
   border: none;
   background-color: #fff;
 }
@@ -983,7 +993,7 @@ body {
 .form__item {
   position: relative;
 }
-.form__item > * {
+.form__item .form__label, .form__item .form__input, .form__item .form__select {
   min-height: 45px;
 }
 .form__label {
@@ -1033,6 +1043,13 @@ body {
 .form__input[aria-hidden=true] {
   width: 1px;
 }
+.form__input::-webkit-outer-spin-button, .form__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.form__input[type=number] {
+  -moz-appearance: textfield;
+}
 .form__input[type=file] ~ label {
   width: 100%;
   color: #585858;
@@ -1057,7 +1074,7 @@ body {
     font-size: 14px;
   }
 }
-.form__input[type=radio]:focus-visible + label {
+.form__input[type=radio]:focus-visible + .form__label {
   box-shadow: 0 0 0 2px #fff !important;
 }
 .form__input_error.form__input {

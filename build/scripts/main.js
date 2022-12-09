@@ -34,8 +34,9 @@
     let scrollElements = document.querySelectorAll("a[href^='#']");
     scrollElements.forEach((elem) => {
       elem.addEventListener("click", (event) => {
+        var _a, _b;
         event.preventDefault();
-        const link = event.target.getAttribute("href") || event.target.parentElement.getAttribute("href") || event.target.firstElementChild.getAttribute("href");
+        const link = event.target.getAttribute("href") || ((_a = event.target.parentElement) == null ? void 0 : _a.getAttribute("href")) || ((_b = event.target.firstElementChild) == null ? void 0 : _b.getAttribute("href"));
         if (link === "#")
           return;
         const linkTarget = document.getElementById(link.substring(1));

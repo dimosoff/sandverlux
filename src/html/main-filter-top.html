@@ -1,24 +1,32 @@
 <div class="mft">
   <div class="mft__item">
-    <span class="mft__heading">Я ищу двери</span>
-    <div class="form__item">
-      <input class="form__input sr-only" type="radio" name="door-type" id="door-type01" value="interior" aria-hidden="true" checked>
-      <label for="door-type01" class="form__label">Межкомнатные</label>
-      <input class="form__input sr-only" type="radio" name="door-type" id="door-type02" value="entrance" aria-hidden="true">
-      <label for="door-type02" class="form__label">Входные</label>
-    </div>
+    <fieldset class="mft__item-wrapper">
+      <legend class="mft__heading">Я ищу двери</legend>
+      <div class="form__item">
+        <label>
+          <input class="form__input" type="radio" name="door-type" value="interior" aria-hidden="true" checked hidden>
+          <span class="form__label">Межкомнатные</span>
+        </label>
+        <label>
+          <input class="form__input" type="radio" name="door-type" value="entrance" aria-hidden="true" hidden>
+          <span class="form__label">Входные</span>
+        </label>
+      </div>
+    </fieldset>
   </div>
   <div class="mft__item">
     <span class="mft__heading">Производитель</span>
     <div class="form__item">
-      <label for="door-manufacturer" class="form__label sr-only">Производитель</label>
-      <select class="form__select" name="door-manufacturer" id="door-manufacturer">
-        <option value="">Все производители</option>
-        <option value="opt001">Динмар</option>
-        <option value="opt002">Albero</option>
-        <option value="opt003">МДФ Техно профиль</option>
-        <option value="opt004">Profildoors</option>
-      </select>
+      <label>
+        <span class="form__label" hidden>Производитель</span>
+        <select class="form__select" name="door-manufacturer">
+          <option value="" disabled>Все производители</option>
+          <option value="opt001">Динмар</option>
+          <option value="opt002">Albero</option>
+          <option value="opt003">МДФ Техно профиль</option>
+          <option value="opt004">Profildoors</option>
+        </select>
+      </label>
     </div>
   </div>
   <div class="mft__item">
@@ -26,15 +34,19 @@
       <legend class="mft__heading">Цена</legend>
       <div class="form__item">
         <span class="form__input-placeholder">от</span>
-        <label for="door-price-min" class="form__label sr-only" aria-hidden="true">минимальная цена</label>
-        <input class="form__input" type="number" name="door-price" id="door-price-min">
+        <label>
+          <span class="form__label" aria-hidden="true" hidden>минимальная цена</span>
+          <input class="form__input" type="number" name="door-price-min">
+        </label>
       </div>
       <div class="form__item">
         <span class="form__input-placeholder">до</span>
-        <label for="door-price-max" class="form__label sr-only" aria-hidden="true">максимальная цена</label>
-        <input class="form__input" type="number" name="door-price" id="door-price-max">
+        <label>
+          <span class="form__label sr-only" aria-hidden="true" hidden>максимальная цена</span>
+          <input class="form__input" type="number" name="door-price-max">
+        </label>
       </div>
-      <div class="form__slider" id="door-price-slider"></div>
+      <div class="form__slider"></div>
     </fieldset>
   </div>
 </div>

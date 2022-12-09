@@ -40,8 +40,8 @@ function setAnchorsEvents() {
 
       const link =
         event.target.getAttribute("href") ||
-        event.target.parentElement.getAttribute("href") ||
-        event.target.firstElementChild.getAttribute("href");
+        event.target.parentElement?.getAttribute("href") ||
+        event.target.firstElementChild?.getAttribute("href");
       if (link === "#") return;
 
       const linkTarget = document.getElementById(link.substring(1));
