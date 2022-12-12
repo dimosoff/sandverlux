@@ -1,0 +1,58 @@
+<div class="og-slide">
+  <div class="og-slide__inner">
+    <a href="#" class="og-slide__image-wrapper _image-wrapper">
+      <img src="@@image-src" alt="@@title" class="og-slide__image _bkgr_img bkgr_img--contain">
+    </a>
+    <div class="og-slide__content">
+      <a href="#" class="og-slide__heading">@@title</a>
+      <div class="og-slide__price-wrapper">
+        @@if (discount === true) {
+          <span class="og-slide__price_old">601.00 р.</span>
+        }
+        <span class="og-slide__price">601.00 р.</span>
+      </div>
+    </div>
+    <form method="post" class="og-slide__form">
+      <input type="hidden" name="id" value="@@id">
+      <input type="hidden" name="count" value="1">
+      <input type="hidden" name="options" value="[]">
+
+      <button class="og-slide__btn _btn" onclick="alert('товар : @@id')" aria-label="В корзину" type="submit"
+        name="ms2_action" value="cart/add">В корзину</button>
+
+      <div class="og-slide__colors">
+        <label class="og-slide__color-label">
+          <input type="radio" name="og-slide-color@@id" value="color001" aria-hidden="true" checked hidden>
+          <span class="og-slide__color">цвет номер 1</span>
+        </label>
+        <label class="og-slide__color-label">
+          <input type="radio" name="og-slide-color@@id" value="color002" aria-hidden="true" hidden>
+          <span class="og-slide__color">цвет номер 2</span>
+        </label>
+        <label class="og-slide__color-label">
+          <input type="radio" name="og-slide-color@@id" value="color003" aria-hidden="true" hidden>
+          <span class="og-slide__color">цвет номер 3</span>
+        </label>
+        <label class="og-slide__color-label">
+          <input type="radio" name="og-slide-color@@id" value="color004" aria-hidden="true" hidden>
+          <span class="og-slide__color">цвет номер 4</span>
+        </label>
+        <label  class="og-slide__color-label">
+          <input type="radio" name="og-slide-color@@id" value="color005" aria-hidden="true" hidden>
+          <span class="og-slide__color">цвет номер 5</span>
+        </label>
+        <label class="og-slide__color-label">
+          <input type="radio" name="og-slide-color@@id" value="color006" aria-hidden="true" hidden>
+          <span class="og-slide__color">цвет номер 6</span>
+        </label>
+      </div>
+    </form>
+    <div class="og-slide__badges">
+      <div class="og-slide__badge og-slide__badge_discount">Скидка</div>
+      <div class="og-slide__badge og-slide__badge_novelty">Новинка</div>
+      <div class="og-slide__badge og-slide__badge_bestseller">
+        
+      </div>
+    </div>
+  </div>
+</div>

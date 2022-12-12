@@ -49,7 +49,7 @@ $header-height-mobile: 75px;
   padding-left: $padding;
   padding-right: $padding;
 }
-@mixin column-size($size, $margin) {
+@mixin column-size($size, $margin: 15px) {
   flex: 0 1 calc($size - $margin * 2);
   max-width: calc($size - $margin * 2);
 }
@@ -63,9 +63,12 @@ $header-height-mobile: 75px;
   padding: 5px;
 }
 
+html {
+  font-size: 16px;
+}
 body {
   color: $text-color;
-  font-size: 16px;
+  font-size: inherit;
   line-height: 1.5;
   font-weight: 400;
   font-family: $font-family;
@@ -135,6 +138,10 @@ body {
   line-height: 1.25;
   font-family: $font-family;
   text-transform: uppercase;
+
+  & + * {
+    margin-top: 40px;
+  }
 
   @media ($tablet-max) and ($tablet-mid) {
     font-size: 30px;
@@ -641,8 +648,11 @@ body {
     font-size: 40px;
     font-weight: 700;
     line-height: 1.225;
-    margin-bottom: 62px;
     text-transform: none;
+
+    & + * {
+      margin-top: 62px;
+    }
   }
   &__button {
     padding: 15px 37px;
@@ -726,10 +736,10 @@ body {
   }
 }
 .main-filter {
-  margin-top: 50px;
+  padding: 50px 0 75px;
 
-  &__container {
-  }
+  // &__container {
+  // }
   &__items {
     @extend %row-wrapper;
   }
@@ -755,8 +765,8 @@ body {
     margin: 0 23px;
     flex-basis: 146px;
   }
-  &__door-image {
-  }
+  // &__door-image {
+  // }
   &__door-content {
     margin-left: 12px;
     margin-right: 15px;
@@ -770,8 +780,10 @@ body {
     line-height: 1.2;
   }
   &__doors-wrapper {
+    height: 100%;
   }
   &__doors-image {
+    padding: 35px;
   }
 }
 .mft {
@@ -811,7 +823,7 @@ body {
     & %form-input-placeholder {
       top: 14px;
       left: 12px;
-      color: #8F8F8F;
+      color: #8f8f8f;
       position: absolute;
       font-size: 14px;
       line-height: 1.2;
@@ -843,6 +855,76 @@ body {
     font-weight: 500;
     line-height: 1.25;
     margin-bottom: 13px;
+  }
+}
+.popular-categories {
+  padding: 75px 0;
+
+  // &__container {
+  // }
+  &__heading {
+  }
+  &__items {
+  }
+  &__item {
+    flex: 1 1 0%;
+  }
+  &__inner {
+    // height: 100%;
+    padding: 15px 15px 20px;
+    text-align: center;
+    background-color: #fff;
+    transition: box-shadow 0.3s;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0);
+
+    &:hover {
+      color: $primary-color;
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08);
+    }
+  }
+  &__image-wrapper {
+  }
+  &__image {
+    transition: color 0.3s;
+  }
+  &__title {
+    display: block;
+    font-size: 14px;
+    margin-top: 15px;
+    transition: color 0.3s;
+    font-weight: 500;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+}
+.our-goods {
+  &__container {
+  }
+  &__heading {
+  }
+  &__filter {
+  }
+  &__button {
+  }
+  &__slider-wrapper {
+  }
+  &__swiper {
+  }
+  &__slide {
+  }
+}
+.swiper {
+  &-wrapper {
+
+  }
+  &-slide {
+
+  }
+  &-button-prev {
+
+  }
+  &-button-next {
+
   }
 }
 

@@ -1,0 +1,53 @@
+<section class="our-goods">
+  <div class="our-goods__container container">
+    <h2 class="our-goods__heading heading"></h2>
+    <div class="our-goods__filter row">
+      <button class="our-goods__button _btn" type="button" value="bestsellers">Хиты продаж</button>
+      <button class="our-goods__button _btn" type="button" value="novelties">Новинки</button>
+      <button class="our-goods__button _btn" type="button" value="discounts">Скидки</button>
+    </div>
+    <div class="our-goods__slider-wrapper">
+      <div class="our-goods__swiper swiper">
+        <div class="swiper-wrapper">
+          <div class="our-goods__slide swiper-slide" data-slide-category="bestseller">
+            @@include('./src/html/our-goods-slide.html', {
+              'id': '001',
+              'image-src': 'images/products/our-goods-example.png',
+              'title': 'F24 - Динмар',
+              'bestseller': true,
+              'novelty': false,
+              'discount': false,
+            })
+          </div>
+          <div class="our-goods__slide swiper-slide" data-slide-category="novelty, discount">
+            @@include('./src/html/our-goods-slide.html', {
+              'id': '002',
+              'image-src': 'images/products/our-goods-example.png',
+              'title': 'F24 - Динмар',
+              'bestseller': false,
+              'novelty': true,
+              'discount': true,
+            })
+          </div>
+          <div class="our-goods__slide swiper-slide" data-slide-category="bestseller, discount">
+            @@include('./src/html/our-goods-slide.html', {
+              'id': '003',
+              'image-src': 'images/products/our-goods-example.png',
+              'title': 'F24 - Динмар',
+              'bestseller': true,
+              'novelty': false,
+              'discount': true,
+            })
+          </div>
+        </div>
+
+        <!-- <div class="swiper-pagination"></div> -->
+      
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      
+        <!-- <div class="swiper-scrollbar"></div> -->
+      </div>
+    </div>
+  </div>
+</section>

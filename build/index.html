@@ -286,7 +286,7 @@
       </div>
       <div class="main-filter__item">
         <div class="main-filter__doors-wrapper _image-wrapper">
-          <img class="main-filter__doors-image _bkgr-image" src="images/homepage-doors-02.png" alt="пример дверей для покупки"
+          <img class="main-filter__doors-image _bkgr-image _bkgr-image--contain" src="images/homepage-doors-02.png" alt="пример дверей для покупки"
             width="650" height="565" loading="lazy">
         </div>
       </div>
@@ -310,43 +310,389 @@
         </label>
       </div>
     </fieldset>
-    <div class="mfb__item">
-      <span class="mfb__heading">Размер полотна</span>
-      <div class="form__item">
-        <label>
-          <span class="form__label" hidden>Размер полотна</span>
-          <select class="form__select" name="door-size">
-            <option value="" disabled>Выберите размер</option>
-            <option value="opt001">высотой 200 см</option>
-            <option value="opt002">высотой 210 см</option>
-            <option value="opt003">высотой 220 см</option>
-            <option value="opt004">высотой 230 см</option>
-            <option value="opt005">шириной 90 см</option>
-            <option value="opt006">шириной 80 см</option>
-          </select>
-        </label>
-      </div>
+  </div>
+  <div class="mfb__item">
+    <span class="mfb__heading">Размер полотна</span>
+    <div class="form__item">
+      <label>
+        <span class="form__label" hidden>Размер полотна</span>
+        <select class="form__select" name="door-size">
+          <option value="" disabled>Выберите размер</option>
+          <option value="opt001">высотой 200 см</option>
+          <option value="opt002">высотой 210 см</option>
+          <option value="opt003">высотой 220 см</option>
+          <option value="opt004">высотой 230 см</option>
+          <option value="opt005">шириной 90 см</option>
+          <option value="opt006">шириной 80 см</option>
+        </select>
+      </label>
     </div>
-    <div class="mfb__item">
-      <span class="mfb__heading">Материал</span>
-      <div class="form__item">
-        <label>
-          <span class="form__label" hidden>Материал</span>
-          <select class="form__select" name="door-material">
-            <option value="" disabled>Выберите материал</option>
-            <option value="opt001">деревянные</option>
-            <option value="opt002">Металлические</option>
-          </select>
-        </label>
-      </div>
+  </div>
+  <div class="mfb__item">
+    <span class="mfb__heading">Материал</span>
+    <div class="form__item">
+      <label>
+        <span class="form__label" hidden>Материал</span>
+        <select class="form__select" name="door-material">
+          <option value="" disabled>Выберите материал</option>
+          <option value="opt001">Деревянные</option>
+          <option value="opt002">Металлические</option>
+        </select>
+      </label>
     </div>
+  </div>
+  <div class="mft__item">
+    <div class="mft__heading">Система открытия</div>
+    <div class="form__item">
+      <label>
+        <input class="form__checkbox" type="checkbox" name="door-opening-system">
+        <span class="form__label">Классическая</span>
+      </label>
+      <label>
+        <input class="form__checkbox" type="checkbox" name="door-opening-system">
+        <span class="form__label">Раздвижная</span>
+      </label>
+      <label>
+        <input class="form__checkbox" type="checkbox" name="door-opening-system">
+        <span class="form__label">Складная</span>
+      </label>
+    </div>
+  </div>
+  <div class="mft__item">
+    <div class="mft__heading">Стиль двери</div>
+    <div class="form__item">
+      <label>
+        <input class="form__checkbox form__checkbox--img" type="checkbox" name="door-style">
+        <span class="form__label" hidden>Складная</span>
+      </label>
+    </div>
+  </div>
+  <div class="mft__item">
+    <button id="door-submit" class="_btn" type="submit" name="door-submit">Подобрать дверь</button>
   </div>
 </div>
       </div>
     </div>
   </div>
 </form>
-    
+    <section class="popular-categories">
+  <div class="popular-categories__container container">
+    <h2 class="popular-categories__heading heading">Популярные категории</h2>
+    <div class="popular-categories__items row">
+      <div class="popular-categories__item">
+  <div class="popular-categories__inner">
+    <div class="popular-categories__image-wrapper _image-wrapper">
+      <svg class="popular-categories__image" width="60" height="60">
+        <use href="images/icons.svg#doors-interior">
+      </svg>
+    </div>
+    <span class="popular-categories__title">Межкомнатные двери</span>
+  </div>
+</div>
+      <div class="popular-categories__item">
+  <div class="popular-categories__inner">
+    <div class="popular-categories__image-wrapper _image-wrapper">
+      <svg class="popular-categories__image" width="60" height="60">
+        <use href="images/icons.svg#doors-entrance">
+      </svg>
+    </div>
+    <span class="popular-categories__title">Входные двери</span>
+  </div>
+</div>
+      <div class="popular-categories__item">
+  <div class="popular-categories__inner">
+    <div class="popular-categories__image-wrapper _image-wrapper">
+      <svg class="popular-categories__image" width="60" height="60">
+        <use href="images/icons.svg#doors-hidden">
+      </svg>
+    </div>
+    <span class="popular-categories__title">Скрытые двери</span>
+  </div>
+</div>
+      <div class="popular-categories__item">
+  <div class="popular-categories__inner">
+    <div class="popular-categories__image-wrapper _image-wrapper">
+      <svg class="popular-categories__image" width="60" height="60">
+        <use href="images/icons.svg#doors-enamel">
+      </svg>
+    </div>
+    <span class="popular-categories__title">Двери эмаль</span>
+  </div>
+</div>
+      <div class="popular-categories__item">
+  <div class="popular-categories__inner">
+    <div class="popular-categories__image-wrapper _image-wrapper">
+      <svg class="popular-categories__image" width="60" height="60">
+        <use href="images/icons.svg#doors-sliding">
+      </svg>
+    </div>
+    <span class="popular-categories__title">Раздвижные двери</span>
+  </div>
+</div>
+      <div class="popular-categories__item">
+  <div class="popular-categories__inner">
+    <div class="popular-categories__image-wrapper _image-wrapper">
+      <svg class="popular-categories__image" width="60" height="60">
+        <use href="images/icons.svg#doors-double">
+      </svg>
+    </div>
+    <span class="popular-categories__title">Двойные двери</span>
+  </div>
+</div>
+      <div class="popular-categories__item">
+  <div class="popular-categories__inner">
+    <div class="popular-categories__image-wrapper _image-wrapper">
+      <svg class="popular-categories__image" width="60" height="60">
+        <use href="images/icons.svg#doors-solid-wood">
+      </svg>
+    </div>
+    <span class="popular-categories__title">Двери из массива</span>
+  </div>
+</div>
+      <div class="popular-categories__item">
+  <div class="popular-categories__inner">
+    <div class="popular-categories__image-wrapper _image-wrapper">
+      <svg class="popular-categories__image" width="60" height="60">
+        <use href="images/icons.svg#doors-fittings">
+      </svg>
+    </div>
+    <span class="popular-categories__title">Фурнитура</span>
+  </div>
+</div>
+      <div class="popular-categories__item">
+  <div class="popular-categories__inner">
+    <div class="popular-categories__image-wrapper _image-wrapper">
+      <svg class="popular-categories__image" width="60" height="60">
+        <use href="images/icons.svg#doors-ecoveneer">
+      </svg>
+    </div>
+    <span class="popular-categories__title">Экошпон</span>
+  </div>
+</div>
+      <div class="popular-categories__item">
+  <div class="popular-categories__inner">
+    <div class="popular-categories__image-wrapper _image-wrapper">
+      <svg class="popular-categories__image" width="60" height="60">
+        <use href="images/icons.svg#doors-glass">
+      </svg>
+    </div>
+    <span class="popular-categories__title">Стеклянные двери</span>
+  </div>
+</div>
+      <div class="popular-categories__item">
+  <div class="popular-categories__inner">
+    <div class="popular-categories__image-wrapper _image-wrapper">
+      <svg class="popular-categories__image" width="60" height="60">
+        <use href="images/icons.svg#dooors-bath-and-sauna">
+      </svg>
+    </div>
+    <span class="popular-categories__title">Двери для бани и сауны</span>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+    <section class="our-goods">
+  <div class="our-goods__container container">
+    <h2 class="our-goods__heading heading"></h2>
+    <div class="our-goods__filter row">
+      <button class="our-goods__button _btn" type="button" value="bestsellers">Хиты продаж</button>
+      <button class="our-goods__button _btn" type="button" value="novelties">Новинки</button>
+      <button class="our-goods__button _btn" type="button" value="discounts">Скидки</button>
+    </div>
+    <div class="our-goods__slider-wrapper">
+      <div class="our-goods__swiper swiper">
+        <div class="swiper-wrapper">
+          <div class="our-goods__slide swiper-slide" data-slide-category="bestseller">
+            <div class="og-slide">
+  <div class="og-slide__inner">
+    <a href="#" class="og-slide__image-wrapper _image-wrapper">
+      <img src="images/products/our-goods-example.png" alt="F24 - Динмар" class="og-slide__image _bkgr_img bkgr_img--contain">
+    </a>
+    <div class="og-slide__content">
+      <a href="#" class="og-slide__heading">F24 - Динмар</a>
+      <div class="og-slide__price-wrapper">
+        
+        <span class="og-slide__price">601.00 р.</span>
+      </div>
+    </div>
+    <form method="post" class="og-slide__form">
+      <input type="hidden" name="id" value="001">
+      <input type="hidden" name="count" value="1">
+      <input type="hidden" name="options" value="[]">
+
+      <button class="og-slide__btn _btn" onclick="alert('товар : 001')" aria-label="В корзину" type="submit"
+        name="ms2_action" value="cart/add">В корзину</button>
+
+      <div class="og-slide__colors">
+        <label class="og-slide__color-label">
+          <input type="radio" name="og-slide-color001" value="color001" aria-hidden="true" checked hidden>
+          <span class="og-slide__color">цвет номер 1</span>
+        </label>
+        <label class="og-slide__color-label">
+          <input type="radio" name="og-slide-color001" value="color002" aria-hidden="true" hidden>
+          <span class="og-slide__color">цвет номер 2</span>
+        </label>
+        <label class="og-slide__color-label">
+          <input type="radio" name="og-slide-color001" value="color003" aria-hidden="true" hidden>
+          <span class="og-slide__color">цвет номер 3</span>
+        </label>
+        <label class="og-slide__color-label">
+          <input type="radio" name="og-slide-color001" value="color004" aria-hidden="true" hidden>
+          <span class="og-slide__color">цвет номер 4</span>
+        </label>
+        <label  class="og-slide__color-label">
+          <input type="radio" name="og-slide-color001" value="color005" aria-hidden="true" hidden>
+          <span class="og-slide__color">цвет номер 5</span>
+        </label>
+        <label class="og-slide__color-label">
+          <input type="radio" name="og-slide-color001" value="color006" aria-hidden="true" hidden>
+          <span class="og-slide__color">цвет номер 6</span>
+        </label>
+      </div>
+    </form>
+    <div class="og-slide__badges">
+      <div class="og-slide__badge og-slide__badge_discount">Скидка</div>
+      <div class="og-slide__badge og-slide__badge_novelty">Новинка</div>
+      <div class="og-slide__badge og-slide__badge_bestseller">
+        
+      </div>
+    </div>
+  </div>
+</div>
+          </div>
+          <div class="our-goods__slide swiper-slide" data-slide-category="novelty, discount">
+            <div class="og-slide">
+  <div class="og-slide__inner">
+    <a href="#" class="og-slide__image-wrapper _image-wrapper">
+      <img src="images/products/our-goods-example.png" alt="F24 - Динмар" class="og-slide__image _bkgr_img bkgr_img--contain">
+    </a>
+    <div class="og-slide__content">
+      <a href="#" class="og-slide__heading">F24 - Динмар</a>
+      <div class="og-slide__price-wrapper">
+        
+          <span class="og-slide__price_old">601.00 р.</span>
+        
+        <span class="og-slide__price">601.00 р.</span>
+      </div>
+    </div>
+    <form method="post" class="og-slide__form">
+      <input type="hidden" name="id" value="002">
+      <input type="hidden" name="count" value="1">
+      <input type="hidden" name="options" value="[]">
+
+      <button class="og-slide__btn _btn" onclick="alert('товар : 002')" aria-label="В корзину" type="submit"
+        name="ms2_action" value="cart/add">В корзину</button>
+
+      <div class="og-slide__colors">
+        <label class="og-slide__color-label">
+          <input type="radio" name="og-slide-color002" value="color001" aria-hidden="true" checked hidden>
+          <span class="og-slide__color">цвет номер 1</span>
+        </label>
+        <label class="og-slide__color-label">
+          <input type="radio" name="og-slide-color002" value="color002" aria-hidden="true" hidden>
+          <span class="og-slide__color">цвет номер 2</span>
+        </label>
+        <label class="og-slide__color-label">
+          <input type="radio" name="og-slide-color002" value="color003" aria-hidden="true" hidden>
+          <span class="og-slide__color">цвет номер 3</span>
+        </label>
+        <label class="og-slide__color-label">
+          <input type="radio" name="og-slide-color002" value="color004" aria-hidden="true" hidden>
+          <span class="og-slide__color">цвет номер 4</span>
+        </label>
+        <label  class="og-slide__color-label">
+          <input type="radio" name="og-slide-color002" value="color005" aria-hidden="true" hidden>
+          <span class="og-slide__color">цвет номер 5</span>
+        </label>
+        <label class="og-slide__color-label">
+          <input type="radio" name="og-slide-color002" value="color006" aria-hidden="true" hidden>
+          <span class="og-slide__color">цвет номер 6</span>
+        </label>
+      </div>
+    </form>
+    <div class="og-slide__badges">
+      <div class="og-slide__badge og-slide__badge_discount">Скидка</div>
+      <div class="og-slide__badge og-slide__badge_novelty">Новинка</div>
+      <div class="og-slide__badge og-slide__badge_bestseller">
+        
+      </div>
+    </div>
+  </div>
+</div>
+          </div>
+          <div class="our-goods__slide swiper-slide" data-slide-category="bestseller, discount">
+            <div class="og-slide">
+  <div class="og-slide__inner">
+    <a href="#" class="og-slide__image-wrapper _image-wrapper">
+      <img src="images/products/our-goods-example.png" alt="F24 - Динмар" class="og-slide__image _bkgr_img bkgr_img--contain">
+    </a>
+    <div class="og-slide__content">
+      <a href="#" class="og-slide__heading">F24 - Динмар</a>
+      <div class="og-slide__price-wrapper">
+        
+          <span class="og-slide__price_old">601.00 р.</span>
+        
+        <span class="og-slide__price">601.00 р.</span>
+      </div>
+    </div>
+    <form method="post" class="og-slide__form">
+      <input type="hidden" name="id" value="003">
+      <input type="hidden" name="count" value="1">
+      <input type="hidden" name="options" value="[]">
+
+      <button class="og-slide__btn _btn" onclick="alert('товар : 003')" aria-label="В корзину" type="submit"
+        name="ms2_action" value="cart/add">В корзину</button>
+
+      <div class="og-slide__colors">
+        <label class="og-slide__color-label">
+          <input type="radio" name="og-slide-color003" value="color001" aria-hidden="true" checked hidden>
+          <span class="og-slide__color">цвет номер 1</span>
+        </label>
+        <label class="og-slide__color-label">
+          <input type="radio" name="og-slide-color003" value="color002" aria-hidden="true" hidden>
+          <span class="og-slide__color">цвет номер 2</span>
+        </label>
+        <label class="og-slide__color-label">
+          <input type="radio" name="og-slide-color003" value="color003" aria-hidden="true" hidden>
+          <span class="og-slide__color">цвет номер 3</span>
+        </label>
+        <label class="og-slide__color-label">
+          <input type="radio" name="og-slide-color003" value="color004" aria-hidden="true" hidden>
+          <span class="og-slide__color">цвет номер 4</span>
+        </label>
+        <label  class="og-slide__color-label">
+          <input type="radio" name="og-slide-color003" value="color005" aria-hidden="true" hidden>
+          <span class="og-slide__color">цвет номер 5</span>
+        </label>
+        <label class="og-slide__color-label">
+          <input type="radio" name="og-slide-color003" value="color006" aria-hidden="true" hidden>
+          <span class="og-slide__color">цвет номер 6</span>
+        </label>
+      </div>
+    </form>
+    <div class="og-slide__badges">
+      <div class="og-slide__badge og-slide__badge_discount">Скидка</div>
+      <div class="og-slide__badge og-slide__badge_novelty">Новинка</div>
+      <div class="og-slide__badge og-slide__badge_bestseller">
+        
+      </div>
+    </div>
+  </div>
+</div>
+          </div>
+        </div>
+
+        <!-- <div class="swiper-pagination"></div> -->
+      
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      
+        <!-- <div class="swiper-scrollbar"></div> -->
+      </div>
+    </div>
+  </div>
+</section>
     <footer class="footer" id="footer">
   <div class="footer__main">
     <div class="footer__container container">

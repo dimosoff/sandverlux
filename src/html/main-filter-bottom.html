@@ -17,35 +17,64 @@
         </label>
       </div>
     </fieldset>
-    <div class="mfb__item">
-      <span class="mfb__heading">Размер полотна</span>
-      <div class="form__item">
-        <label>
-          <span class="form__label" hidden>Размер полотна</span>
-          <select class="form__select" name="door-size">
-            <option value="" disabled>Выберите размер</option>
-            <option value="opt001">высотой 200 см</option>
-            <option value="opt002">высотой 210 см</option>
-            <option value="opt003">высотой 220 см</option>
-            <option value="opt004">высотой 230 см</option>
-            <option value="opt005">шириной 90 см</option>
-            <option value="opt006">шириной 80 см</option>
-          </select>
-        </label>
-      </div>
+  </div>
+  <div class="mfb__item">
+    <span class="mfb__heading">Размер полотна</span>
+    <div class="form__item">
+      <label>
+        <span class="form__label" hidden>Размер полотна</span>
+        <select class="form__select" name="door-size">
+          <option value="" disabled>Выберите размер</option>
+          <option value="opt001">высотой 200 см</option>
+          <option value="opt002">высотой 210 см</option>
+          <option value="opt003">высотой 220 см</option>
+          <option value="opt004">высотой 230 см</option>
+          <option value="opt005">шириной 90 см</option>
+          <option value="opt006">шириной 80 см</option>
+        </select>
+      </label>
     </div>
-    <div class="mfb__item">
-      <span class="mfb__heading">Материал</span>
-      <div class="form__item">
-        <label>
-          <span class="form__label" hidden>Материал</span>
-          <select class="form__select" name="door-material">
-            <option value="" disabled>Выберите материал</option>
-            <option value="opt001">деревянные</option>
-            <option value="opt002">Металлические</option>
-          </select>
-        </label>
-      </div>
+  </div>
+  <div class="mfb__item">
+    <span class="mfb__heading">Материал</span>
+    <div class="form__item">
+      <label>
+        <span class="form__label" hidden>Материал</span>
+        <select class="form__select" name="door-material">
+          <option value="" disabled>Выберите материал</option>
+          <option value="opt001">Деревянные</option>
+          <option value="opt002">Металлические</option>
+        </select>
+      </label>
     </div>
+  </div>
+  <div class="mft__item">
+    <div class="mft__heading">Система открытия</div>
+    <div class="form__item">
+      <label>
+        <input class="form__checkbox" type="checkbox" name="door-opening-system">
+        <span class="form__label">Классическая</span>
+      </label>
+      <label>
+        <input class="form__checkbox" type="checkbox" name="door-opening-system">
+        <span class="form__label">Раздвижная</span>
+      </label>
+      <label>
+        <input class="form__checkbox" type="checkbox" name="door-opening-system">
+        <span class="form__label">Складная</span>
+      </label>
+    </div>
+  </div>
+  <div class="mft__item">
+    <div class="mft__heading">Стиль двери</div>
+    <div class="form__item">
+      <label>
+        <input class="form__checkbox form__checkbox--img" type="checkbox" name="door-style">
+        <span class="form__label" hidden>Складная</span>
+      </label>
+    </div>
+  </div>
+  <div class="mft__item">
+    <button id="door-submit" class="_btn" type="submit" name="door-submit">Подобрать дверь</button>
   </div>
 </div>
