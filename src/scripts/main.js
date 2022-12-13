@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "button[name=top-up-account]"
   );
 
-  const doorPriceSlider = document.getElementById('door-price-slider');
+  const doorPriceSlider = document.getElementById("door-price-slider");
 
   //faq list collapse
   const allFaqItems = document.querySelectorAll(".faq-item");
@@ -93,6 +93,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // slider //
+  /*
   noUiSlider.create(doorPriceSlider, {
     start: [0, 100],
     connect: true,
@@ -101,28 +103,43 @@ document.addEventListener("DOMContentLoaded", function () {
       max: 100,
     },
   });
+*/
+  // our-goods swiper //
 
-  // swiper //
+  const ogButtons = document.querySelectorAll(".our-goods__button");
+  let ogSlides = null;
+  ogButtons.forEach((button) =>
+    button.addEventListener("click", () => {
+
+    })
+  );
+
+  function showCorrectCategory (category) {
+    if (ogSlides === null) return;
+    ogSlides.forEach(slide.dataset.);
+  }
 
   // eslint-disable-next-line no-unused-vars, no-undef
-  /*const swiper = new Swiper(".swiper", {
-    // Optional parameters
-    loop: true,
+  const swiper = new Swiper(".our-goods__swiper", {
+    modules: [Navigation],
+    loop: false,
+    loopAdditionalSlides: 2,
     rewind: false,
     grabCursor: true,
-    slidesPerView: 3,
+    slidesPerView: 5,
+    spaceBetween: 60,
     //autoHeight: true,
-    //setWrapperSize: true,
+    setWrapperSize: true,
+    wrapperClass: "our-goods__swiper-wrapper",
 
-    // If we need pagination
     //pagination: {
     //  el: '.swiper-pagination',
     //},
 
-    // Navigation arrows
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".our-goods__nav-btn_next",
+      prevEl: ".our-goods__nav-btn_prev",
+      lockClass: "our-goods__nav-btn_lock",
     },
     breakpoints: {
       320: {
@@ -134,13 +151,23 @@ document.addEventListener("DOMContentLoaded", function () {
       768: {
         slidesPerView: 3,
       },
-    },
-    on: {
-      update: function () {
-        myFunctions.myLazyLoad();
+      992: {
+        slidesPerView: 4,
+      },
+      1200: {
+        slidesPerView: 5,
       },
     },
-  });*/
+    on: {
+      init: function () {
+        this.isLocked ? this.el.classList.add("locked") : null;
+        ogSlides = this.slides;
+      },
+      // update: function () {
+      //   myFunctions.myLazyLoad();
+      // },
+    },
+  });
 
   // form validation //
 
@@ -396,4 +423,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 import * as myFunctions from "./functions.js";
-import noUiSlider from "nouislider/dist/nouislider.mjs";
+// import noUiSlider from "nouislider/dist/nouislider.mjs";
+// eslint-disable-next-line no-unused-vars
+import Swiper, { Navigation, Pagination } from "swiper";

@@ -1,5 +1,5 @@
 $button-background: $yellow;
-$button-background-hover: #E3B100;
+$button-background-hover: #e3b100;
 
 ._bkgr-image {
   position: absolute;
@@ -19,6 +19,7 @@ $button-background-hover: #E3B100;
   }
 }
 ._image-wrapper {
+  display: inline-block;
   position: relative;
   overflow: hidden;
   max-width: 100%;
@@ -58,7 +59,7 @@ button,
   @media ($desktop-min) {
     transition: color $transition3, background-color $transition3;
 
-    &:hover {
+    &:hover:not(:disabled) {
       background-color: $button-background-hover;
     }
   }
@@ -74,6 +75,30 @@ button,
 
   &:focus-visible {
     @include focus-styles($color: $white);
+  }
+  &:disabled {
+    background-color: $form-grey-color;
+  }
+
+  &--green {
+    background-color: $primary-color;
+
+    @media ($desktop-min) {
+      &:hover:not(:disabled) {
+        background-color: $primary-hover;
+      }
+    }
+  }
+  &--white {
+    color: $text-color;
+    background-color: $white;
+
+    @media ($desktop-min) {
+      &:hover:not(:disabled) {
+        color: $white;
+        background-color: $text-color;
+      }
+    }
   }
 }
 .scroll-top {

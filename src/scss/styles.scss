@@ -3,13 +3,17 @@ $black: #000;
 $yellow: #f9c201;
 $yellow-accent: #efd167;
 $text-color: #585858;
+$text-color-lighter: #898989;
 $primary-color: #84a878;
+$primary-hover: #6e8d64;
 $heading-color: #2d2d2d;
 $secondary-color: #9ab98f;
 $marker-green-color: #50b22f;
 $form-grey-color: #f4f4f4;
 $body-background: $white;
 $required-and-error: #b65c5c;
+$bestseller-color: #e85020;
+$novelty-color: #4bb748;
 
 // $main-gradient: linear-gradient(89.97deg, #9056ec 0.58%, #bb8fff 79.26%);
 // $faq-gradient: linear-gradient(89.97deg, #fdd65b 0.58%, #f28a0c 99.97%);
@@ -660,7 +664,8 @@ body {
     background-color: transparent;
 
     &:hover {
-      background-color: rgba(255, 255, 255, 0.2);
+      color: $text-color;
+      background-color: $white;
     }
     &:focus-visible {
       @include focus-styles;
@@ -898,33 +903,233 @@ body {
   }
 }
 .our-goods {
+  padding: 75px 0;
+  overflow: hidden;
+
   &__container {
   }
   &__heading {
   }
   &__filter {
+    @extend %row-wrapper;
   }
   &__button {
+    padding: 15px 30px;
+    min-width: 221px;
+    font-weight: 500;
+    margin-right: 15px;
+
+    &:not(.active) {
+      opacity: 0.44;
+    }
+    &:hover {
+      opacity: 0.6;
+    }
   }
   &__slider-wrapper {
+    margin-top: 40px;
   }
   &__swiper {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+
+    &:not(.locked) {
+      margin-left: 70px;
+      margin-right: 70px;
+    }
+  }
+  &__swiper-wrapper {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    position: relative;
+    box-sizing: content-box;
   }
   &__slide {
+    width: 100%;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+
+    %swiper-not-initialized & {
+      width: 20%;
+    }
+  }
+  &__nav-btn {
+    top: 0;
+    width: 140px;
+    bottom: 0;
+    cursor: pointer;
+    z-index: 10;
+    @extend %flex-center;
+    position: absolute;
+    min-width: 70px;
+    background-color: transparent;
+
+    &_prev {
+      left: 0;
+      transform: translateX(-100%);
+    }
+    &_next {
+      right: 0;
+      transform: translateX(100%);
+    }
+    &_lock {
+      display: none;
+    }
+  }
+  &__prev-icon {
+    transform: rotate(90deg);
+  }
+  &__next-icon {
+    transform: rotate(-90deg);
   }
 }
 .swiper {
-  &-wrapper {
-
+  &:not(&-initialized) {
+    @extend %swiper-not-initialized;
   }
-  &-slide {
+}
+.og-slide {
+  @include margin-x(-15px);
 
+  &:hover {
+    @extend %og-slide-hover;
   }
-  &-button-prev {
 
+  &__inner {
+    padding: 15px;
+    transform: translateY(0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    %og-slide-hover & {
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+    }
   }
-  &-button-next {
+  &__image-wrapper {
+    width: 100%;
+    padding-bottom: 98.5%;
+    border-bottom: 2px solid $primary-color;
+  }
+  &__image {
+    // transition: transform 0.3s;
+    // &:hover {
+    //   transform: translate(-50%, -50%) scale(0.95);
+    // }
+  }
+  &__content {
+    margin-top: 5px;
+    line-height: 1.2;
+  }
+  &__heading {
+    color: $heading-color;
+    // font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  &__price-wrapper {
+    margin-top: 6px;
+  }
+  &__price {
+    color: $primary-color;
+    font-weight: 700;
 
+    &_old {
+      color: $text-color-lighter;
+      margin-right: 5px;
+      text-decoration: line-through;
+    }
+  }
+  &__installment {
+    color: $yellow;
+    font-size: 14px;
+    margin-top: 9px;
+    font-weight: 700;
+  }
+  &__form {
+  }
+  &__btn {
+    width: 100%;
+    padding: 12px 30px;
+    margin-top: 14px;
+  }
+  &__colors {
+    margin-top: 15px;
+    @extend %row-wrapper;
+    justify-content: center;
+  }
+  &__color-label {
+    cursor: pointer;
+    overflow: hidden;
+    @extend %row-wrapper;
+    margin-left: 7px;
+    margin-right: 7px;
+    border-radius: 50%;
+    justify-content: center;
+    background-color: #D9D9D9;
+    transition: transform 0.3s;
+    transform: scale(1);
+
+    &.active {
+      @extend %og-slide-active-label;
+    }
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  &__color {
+    width: 30px;
+    margin: 1px;
+    height: 30px;
+    display: block;
+    position: relative;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: transform 0.3s;
+
+    %og-slide-active-label & {
+      transform: scale(0.85);
+    }
+  }
+  &__badges {
+    top: 15px;
+    left: 0;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  &__badge {
+    color: $white;
+    padding: 5px;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    & + & {
+      margin-top: 5px;
+    }
+    &_discount {
+      background-color: $yellow;
+    }
+    &_novelty {
+      background-color: $novelty-color;
+    }
+    &_bestseller {
+      background-color: $bestseller-color;
+    }
+  }
+  &__badge-icon {
   }
 }
 
