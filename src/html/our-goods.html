@@ -2,73 +2,77 @@
   <div class="our-goods__container container">
     <h2 class="our-goods__heading heading">Наши товары</h2>
     <div class="our-goods__filter">
-      <button class="our-goods__button _btn _btn--green active" type="button" value="bestsellers">Хиты продаж</button>
-      <button class="our-goods__button _btn _btn--green" type="button" value="novelties">Новинки</button>
-      <button class="our-goods__button _btn _btn--green" type="button" value="discounts">Скидки</button>
+      <button class="our-goods__button _btn _btn--green active" type="button" value="bestseller">Хиты продаж</button>
+      <button class="our-goods__button _btn _btn--green" type="button" value="novelty">Новинки</button>
+      <button class="our-goods__button _btn _btn--green" type="button" value="discount">Скидки</button>
     </div>
     <div class="our-goods__slider-wrapper">
       <div class="our-goods__swiper swiper">
         <div class="our-goods__swiper-wrapper">
-          <div class="our-goods__slide swiper-slide" data-slide-category="bestseller">
-            @@include('./src/html/our-goods-slide.html', {
-              'id': '001',
-              'image-src': 'images/products/our-goods-example.png',
-              'title': 'F24 - Динмар',
-              'bestseller': true,
-              'novelty': false,
-              'discount': false,
-            })
-          </div>
-          <div class="our-goods__slide swiper-slide" data-slide-category="novelty, discount">
-            @@include('./src/html/our-goods-slide.html', {
-              'id': '002',
-              'image-src': 'images/products/our-goods-example.png',
-              'title': 'F24 - Динмар',
-              'bestseller': false,
-              'novelty': true,
-              'discount': true,
-            })
-          </div>
-          <div class="our-goods__slide swiper-slide" data-slide-category="bestseller, discount">
-            @@include('./src/html/our-goods-slide.html', {
-              'id': '003',
-              'image-src': 'images/products/our-goods-example.png',
-              'title': 'F24 - Динмар',
-              'bestseller': true,
-              'novelty': false,
-              'discount': true,
-            })
-          </div>
-          <div class="our-goods__slide swiper-slide" data-slide-category="bestseller, discount">
-            @@include('./src/html/our-goods-slide.html', {
-              'id': '004',
-              'image-src': 'images/products/our-goods-example.png',
-              'title': 'F24 - Динмар',
-              'bestseller': true,
-              'novelty': false,
-              'discount': true,
-            })
-          </div>
-          <div class="our-goods__slide swiper-slide" data-slide-category="novelty, discount">
-            @@include('./src/html/our-goods-slide.html', {
-              'id': '005',
-              'image-src': 'images/products/our-goods-example.png',
-              'title': 'F24 - Динмар',
-              'bestseller': true,
-              'novelty': true,
-              'discount': true,
-            })
-          </div>
-          <div class="our-goods__slide swiper-slide" data-slide-category="novelty, discount">
-            @@include('./src/html/our-goods-slide.html', {
-              'id': '006',
-              'image-src': 'images/products/our-goods-example.png',
-              'title': 'F24 - Динмар',
-              'bestseller': false,
-              'novelty': true,
-              'discount': true,
-            })
-          </div>
+          @@include('./src/html/our-goods-slide.html', {
+            'id': '001',
+            'image-src': 'images/products/our-goods-example.png',
+            'title': 'F24 - Динмар',
+            'bestseller': true,
+            'novelty': false,
+            'discount': false,
+          })
+          @@include('./src/html/our-goods-slide.html', {
+            'id': '002',
+            'image-src': 'images/products/our-goods-example.png',
+            'title': 'F24 - Динмар',
+            'bestseller': false,
+            'novelty': true,
+            'discount': true,
+          })
+          @@include('./src/html/our-goods-slide.html', {
+            'id': '003',
+            'image-src': 'images/products/our-goods-example.png',
+            'title': 'F24 - Динмар',
+            'bestseller': true,
+            'novelty': false,
+            'discount': true,
+          })
+          @@include('./src/html/our-goods-slide.html', {
+            'id': '004',
+            'image-src': 'images/products/our-goods-example.png',
+            'title': 'F24 - Динмар',
+            'bestseller': true,
+            'novelty': false,
+            'discount': true,
+          })
+          @@include('./src/html/our-goods-slide.html', {
+            'id': '005',
+            'image-src': 'images/products/our-goods-example.png',
+            'title': 'F24 - Динмар',
+            'bestseller': true,
+            'novelty': true,
+            'discount': true,
+          })
+          @@include('./src/html/our-goods-slide.html', {
+            'id': '006',
+            'image-src': 'images/products/our-goods-example.png',
+            'title': 'F24 - Динмар',
+            'bestseller': false,
+            'novelty': true,
+            'discount': true,
+          })
+          @@include('./src/html/our-goods-slide.html', {
+            'id': '007',
+            'image-src': 'images/products/our-goods-example.png',
+            'title': 'F24 - Динмар',
+            'bestseller': false,
+            'novelty': true,
+            'discount': false,
+          })
+          @@include('./src/html/our-goods-slide.html', {
+            'id': '008',
+            'image-src': 'images/products/our-goods-example.png',
+            'title': 'F24 - Динмар',
+            'bestseller': false,
+            'novelty': false,
+            'discount': true,
+          })
         </div>
 
         <!-- <div class="swiper-pagination"></div> -->

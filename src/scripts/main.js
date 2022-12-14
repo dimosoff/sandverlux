@@ -106,17 +106,30 @@ document.addEventListener("DOMContentLoaded", function () {
 */
   // our-goods swiper //
 
-  const ogButtons = document.querySelectorAll(".our-goods__button");
+  const ogFilterButtons = document.querySelectorAll(".our-goods__button");
   let ogSlides = null;
-  ogButtons.forEach((button) =>
-    button.addEventListener("click", () => {
-
+  ogFilterButtons.forEach((button) =>
+    button.addEventListener("click", (event) => {
+      showCorrectCategory(event.currentTarget.value);
+      switchCategoryButton(event.currentTarget);
     })
   );
 
-  function showCorrectCategory (category) {
+  function showCorrectCategory(category) {
     if (ogSlides === null) return;
-    ogSlides.forEach(slide.dataset.);
+    ogSlides.forEach((slide) => addCategoryClass(slide, category));
+  }
+
+  function addCategoryClass(slide, buttonCategory) {
+    const slideCategories = slide.dataset.slideCategory.split(",");
+    slide.classList.remove("our-goods__slide-show");
+    if (!slideCategories.includes(buttonCategory)) return;
+    slide.classList.add("our-goods__slide-show");
+  }
+
+  function switchCategoryButton(button) {
+    ogFilterButtons.forEach((btn) => btn.classList.remove("active"));
+    button.classList.add("active");
   }
 
   // eslint-disable-next-line no-unused-vars, no-undef
@@ -160,14 +173,27 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     on: {
       init: function () {
-        this.isLocked ? this.el.classList.add("locked") : null;
+        updateSliderLockedState(this);
         ogSlides = this.slides;
+        showCorrectCategory("bestseller");
+      },
+      observerUpdate: function () {
+        console.log("observerUpdate");
+      },
+      lock: function () {
+        console.log("lock");
       },
       // update: function () {
-      //   myFunctions.myLazyLoad();
+      //   console.log('update');
       // },
     },
   });
+
+  function updateSliderLockedState(slider) {
+    slider.isLocked
+      ? slider.el.classList.add("locked")
+      : slider.el.classList.remove("locked");
+  }
 
   // form validation //
 

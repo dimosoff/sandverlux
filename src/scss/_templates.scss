@@ -59,7 +59,7 @@ button,
   @media ($desktop-min) {
     transition: color $transition3, background-color $transition3;
 
-    &:hover:not(:disabled) {
+    &:hover {
       background-color: $button-background-hover;
     }
   }
@@ -84,7 +84,7 @@ button,
     background-color: $primary-color;
 
     @media ($desktop-min) {
-      &:hover:not(:disabled) {
+      &:hover {
         background-color: $primary-hover;
       }
     }
@@ -94,7 +94,7 @@ button,
     background-color: $white;
 
     @media ($desktop-min) {
-      &:hover:not(:disabled) {
+      &:hover {
         color: $white;
         background-color: $text-color;
       }
