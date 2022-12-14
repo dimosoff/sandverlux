@@ -1,9 +1,10 @@
-
-<div class="our-goods__slide swiper-slide" data-slide-category="@@if(discount===true){discount,}@@if(novelty===true){novelty,}@@if(bestseller===true){bestseller,}">
+<div class="our-goods__slide swiper-slide"
+  data-slide-category="@@if(discount===true){discount,}@@if(novelty===true){novelty,}@@if(bestseller===true){bestseller,}">
   <div class="og-slide">
     <div class="og-slide__inner">
       <a href="#" class="og-slide__image-wrapper _image-wrapper">
-        <img src="@@image-src" alt="@@title" class="og-slide__image _bkgr-image _bkgr-image--contain">
+        <img src="@@image-src" alt="@@title" class="og-slide__image _bkgr-image _bkgr-image--contain" width="308"
+          height="308" loading="lazy">
       </a>
       <div class="og-slide__content">
         <a href="#" class="og-slide__heading">@@title</a>

@@ -1,0 +1,37 @@
+<section class="how-we-work">
+  <div class="how-we-work__container container">
+    <h2 class="how-we-work__heading heading">Как мы работаем</h2>
+    <div class="how-we-work__items row">
+      @@include('./src/html/how-we-work-item.html', {
+        'imageSrc': 'images/icons.svg#call-us',
+        'imageDollar': false,
+        'title': '<p>1. Звоните нам или заказывайте звонок</p>'
+      })
+      @@include('./src/html/how-we-work-item.html', {
+        'imageSrc': 'images/icons.svg#consultation',
+        'imageDollar': false,
+        'title': '<p>2. Грамотная консультация, заявка на выезд замерщика</p>'
+      })
+      @@include('./src/html/how-we-work-item.html', {
+        'imageSrc': 'images/icons.svg#specialist-departure',
+        'imageDollar': false,
+        'title': '<p>3. Выезд специалиста с образцами, точный расчет стоимости</p>'
+      })
+      @@include('./src/html/how-we-work-item.html', {
+        'imageSrc': 'images/icons.svg#material-delivery',
+        'imageDollar': true,
+        'title': '<p>4. Доставка материала к Вам домой, заключение договора, оплата за товар</p>'
+      })
+      @@include('./src/html/how-we-work-item.html', {
+        'imageSrc': 'images/icons.svg#installation',
+        'imageDollar': true,
+        'title': '<p>5. Установка, прием работ, оплата за установку</p>'
+      })
+      @@include('./src/html/how-we-work-item.html', {
+        'imageSrc': 'images/icons.svg#customer',
+        'imageDollar': false,
+        'title': '<p>6. Довольный клиент</p>'
+      })
+    </div>
+  </div>
+</section>

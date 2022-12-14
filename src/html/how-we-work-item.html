@@ -1,0 +1,17 @@
+<div class="how-we-work__item">
+  <div class="how-we-work__item-inner">
+    <div class="how-we-work__image-wrapper _image-wrapper">
+      <svg class="how-we-work__image" width="65" height="65">
+        <use href="@@imageSrc" />
+      </svg>
+      @@if (imageDollar === true) {
+        <svg class="how-we-work__image-dollar" width="12" height="22">
+          <use href="images/icons.svg#dollar" />
+        </svg>
+      }
+    </div>
+    <div class="how-we-work__title">
+      @@title
+    </div>
+  </div>
+</div>

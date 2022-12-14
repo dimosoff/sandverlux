@@ -1,32 +1,81 @@
-<footer class="footer" id="footer">
-  <div class="footer__main">
-    <div class="footer__container container">
-      <div class="footer__row row">
-        <div class="footer__column">
-          <div class="footer__inner">
-            <a class="footer__logo logo" href="/">
-              <span class="sr-only">На главную</span>
-              @@include('./src/images/logo.svg', {
-              "aria-label" : "sandverlux.by logo"
-              })
-            </a>
-            <p class="footer__company footer__company_name">000 "Кристаллпровайдер"</p>
-            <p class="footer__company footer__company_unp">УНП 193380595</p>
+<footer class="footer">
+  <div class="footer__container container">
+    <div class="footer__items row">
+      <div class="footer__item">
+        <div class="footer__inner">
+          <p class="footer__heading">Для покупателей</p>
+          <div class="footer__socials">
+
+          </div>
+          <div class="footer__info">
+            <p>ООО «Дверной Рай»<br>
+              Юридический адрес: 220006 г. Минск, ул.Маяковского, д.24, пом.1Н</p>
+            <p>Почтовый адрес: 220006, г. Минск, ул. Маяковского 24, 1Н<br>
+              Свидетельство о государственной регистрации выдано Мингорисполкомом от 02.07.2019 УНП 193276356</p>
+            <p>Магазин зарегистрирован в Торговом реестре Республики Беларусь 09.03.2021, регистрационный номер 504260
+            </p>
           </div>
         </div>
-        <div class="footer__column">
-          @@include("./src/html/main-links.html", {
-            "class": "footer__menu"
-          })
-        </div>
-        <div class="footer__column">
+      </div>
+      <div class="footer__item">
+        <div class="footer__inner">
+          <p class="footer__heading">Для покупателей</p>
+          <ul class="footer__links-list">
+            <li class="footer__list-item">
+              <a href="#" class="footer__link">Статьи</a>
+            </li>
+            <li class="footer__list-item">
+              <a href="#" class="footer__link">Часто задаваемые вопросы</a>
+            </li>
+            <li class="footer__list-item">
+              <a href="#" class="footer__link">Магазины</a>
+            </li>
+            <li class="footer__list-item">
+              <a href="#" class="footer__link">Возврат товара</a>
+            </li>
+          </ul>
+          <button class="footer__complaint _btn _btn--white" type="button" name="complaint">Оформить рекламацию</button>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="footer__basement">
-    <div class="footer__container container">
-      <p class="footer__basement-content">©&nbsp;Copyright&nbsp;2022 ООО&nbsp;«КристаллПровайдер»</p>
+      <div class="footer__item">
+        <div class="footer__inner">
+          <p class="footer__heading">Для партнеров</p>
+          <ul class="footer__links-list">
+            <li class="footer__list-item">
+              <a href="#" class="footer__link">Сотрудничество</a>
+            </li>
+            <li class="footer__list-item">
+              <a href="#" class="footer__link">Дилерам</a>
+            </li>
+          </ul>
+          <div class="footer__rating">
+            <div class="footer__rating-stars">
+              <svg class="footer__star" width="20" height="20">
+                <use href="/images/icons.svg#star" />
+              </svg>
+              <svg class="footer__star" width="20" height="20">
+                <use href="/images/icons.svg#star" />
+              </svg>
+              <svg class="footer__star" width="20" height="20">
+                <use href="/images/icons.svg#star" />
+              </svg>
+              <svg class="footer__star" width="20" height="20">
+                <use href="/images/icons.svg#star" />
+              </svg>
+              <svg class="footer__star" width="20" height="20">
+                <use href="/images/icons.svg#star" />
+              </svg>
+            </div>
+            <p>Наша оценка: 5 (на основе 1000 отзывов)</p>
+            <a href="#">Смотреть все отзывы</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__item">
+        <div class="footer__inner">
+          @@include('./src/html/contacts.html')
+        </div>
+      </div>
     </div>
   </div>
 </footer>
