@@ -13,7 +13,13 @@
     </a>
   </div>
   <div class="header-middle__item header-middle__item_grow">
-    @@include('./src/html/contacts.html')
+    @@include('./src/html/contacts.html', {
+      'instagram': true,
+      'telegram': true,
+      'facebook': false,
+      'youtube': false,
+      'whatsapp': false
+    })
   </div>
   <div class="header-middle__item">
     <button class="header-middle__call-request _btn" type="button" name="call-request">Заказать звонок</button>

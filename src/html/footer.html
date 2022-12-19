@@ -1,11 +1,17 @@
 <footer class="footer">
   <div class="footer__container container">
-    <div class="footer__items row">
+    <div class="footer__items">
       <div class="footer__item">
         <div class="footer__inner">
           <p class="footer__heading">Для покупателей</p>
           <div class="footer__socials">
-
+            @@include('./src/html/socials.html', {
+              'telegram': true,
+              'instagram': true,
+              'facebook': true,
+              'youtube': true,
+              'whatsapp': true
+            })
           </div>
           <div class="footer__info">
             <p>ООО «Дверной Рай»<br>
@@ -73,7 +79,19 @@
       </div>
       <div class="footer__item">
         <div class="footer__inner">
-          @@include('./src/html/contacts.html')
+          @@include('./src/html/contacts.html', {
+            'instagram': false,
+            'telegram': false,
+            'facebook': false,
+            'youtube': false,
+            'whatsapp': false
+          })
+          <a href="#" class="footer__btn _btn">Оплата онлайн</a>
+          <div class="footer__payment">
+            <img src="images/paypal.png" alt="paypal метод оплаты" class="footer__payment-item" width="45" height="35">
+            <img src="images/visa.png" alt="visa метод оплаты" class="footer__payment-item" width="44" height="35">
+            <img src="images/mastercard.png" alt="mastercard метод оплаты" class="footer__payment-item" width="58" height="35">
+          </div>
         </div>
       </div>
     </div>

@@ -8,18 +8,13 @@
             <use href="/images/icons.svg#phone" />
           </svg><span>+375 44 533-25-22</span>
         </a>
-        <a class="contacts__link contact__link_telegram" href="https://telegram.org/">
-          <span class="sr-only">Telegram</span>
-          <svg class="contacts__icon" width="20" height="20">
-            <use href="/images/icons.svg#telegram" />
-          </svg>
-        </a>
-        <a class="contacts__link contact__link_instagram" href="https://www.instagram.com/">
-          <span class="sr-only">Instagram</span>
-          <svg class="contacts__icon" width="20" height="20">
-            <use href="/images/icons.svg#instagram" />
-          </svg>
-        </a>
+        @@include('./src/html/socials.html', {
+          'telegram': @@telegram,
+          'instagram': @@instagram,
+          'facebook': @@facebook,
+          'youtube': @@youtube,
+          'whatsapp': @@whatsapp
+        })
       </div>
     </div>
   </div>
