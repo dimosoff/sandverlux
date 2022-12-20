@@ -37,8 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
     "button[name=top-up-account]"
   );
 
-  const doorPriceSlider = document.getElementById("door-price-slider");
-
   //faq list collapse
   const allFaqItems = document.querySelectorAll(".faq-item");
 
@@ -94,16 +92,53 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // slider //
-  /*
+
+  const doorPriceSlider = document.getElementById("door-price-slider");
+  const doorPriceMinInput = document.querySelector(
+    "input[name=door-price-min]"
+  );
+  const doorPriceMaxInput = document.querySelector(
+    "input[name=door-price-max]"
+  );
+
   noUiSlider.create(doorPriceSlider, {
-    start: [0, 100],
+    start: [
+      +doorPriceMinInput.value || 0,
+      +doorPriceMaxInput.dataset.max || 100,
+    ],
+    step: 1,
+    format: {
+      to: function (value) {
+          return parseInt(value);
+      },
+      from: function (value) {
+          return parseInt(value);
+      }
+    },
     connect: true,
     range: {
-      min: 0,
-      max: 100,
+      min: +doorPriceMinInput.dataset.min || 0,
+      max: +doorPriceMaxInput.dataset.max || 100,
     },
   });
-*/
+
+  doorPriceSlider.noUiSlider.on("update", function (values, handle) {
+    let value = values[handle];
+
+    if (handle) {
+      doorPriceMaxInput.value = value;
+    } else {
+      doorPriceMinInput.value = value;
+    }
+  });
+
+  doorPriceMinInput.addEventListener("change", function () {
+    doorPriceSlider.noUiSlider.set([this.value, null]);
+  });
+  doorPriceMaxInput.addEventListener("change", function () {
+    doorPriceSlider.noUiSlider.set([null, this.value]);
+  });
+
   // our-goods swiper //
 
   const ogFilterButtons = document.querySelectorAll(".our-goods__button");
@@ -449,6 +484,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 import * as myFunctions from "./functions.js";
-// import noUiSlider from "nouislider/dist/nouislider.mjs";
+import noUiSlider from "nouislider/dist/nouislider.mjs";
 // eslint-disable-next-line no-unused-vars
 import Swiper, { Navigation, Pagination } from "swiper";

@@ -29,24 +29,26 @@
       </label>
     </div>
   </div>
-  <div class="mft__item">
+  <div class="mft__item mft__item_shrink">
     <fieldset class="mft__item-wrapper">
       <legend class="mft__heading">Цена</legend>
-      <div class="form__item">
-        <span class="form__input-placeholder">от</span>
-        <label>
-          <span class="form__label" aria-hidden="true" hidden>минимальная цена</span>
-          <input class="form__input" type="number" name="door-price-min">
-        </label>
+      <div class="mft__items-row">
+        <div class="form__item">
+          <span class="form__input-placeholder">от</span>
+          <label>
+            <span class="form__label" aria-hidden="true" hidden>минимальная цена</span>
+            <input class="form__input" type="number" name="door-price-min" data-min="200" value="200">
+          </label>
+        </div>
+        <div class="form__item">
+          <span class="form__input-placeholder">до</span>
+          <label>
+            <span class="form__label sr-only" aria-hidden="true" hidden>максимальная цена</span>
+            <input class="form__input" type="number" name="door-price-max" data-max="50000" value="50000">
+          </label>
+        </div>
       </div>
-      <div class="form__item">
-        <span class="form__input-placeholder">до</span>
-        <label>
-          <span class="form__label sr-only" aria-hidden="true" hidden>максимальная цена</span>
-          <input class="form__input" type="number" name="door-price-max">
-        </label>
-      </div>
-      <div class="form__slider"></div>
+      <div id="door-price-slider" class="form__slider"></div>
     </fieldset>
   </div>
 </div>

@@ -759,7 +759,7 @@ body {
   }
   &__door {
     height: 100%;
-    padding: 16px;
+    padding: 17px;
     display: flex;
     align-items: center;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.05);
@@ -794,8 +794,8 @@ body {
 }
 .mft {
   height: 100%;
-  display: flex;
-  padding: 40px 84px 22px;
+  @extend %row-wrapper;
+  padding: 40px 56px 22px 59px; // 40px 81px 22px 84px;
   background-color: $primary-color;
 
   &__item-wrapper {
@@ -805,15 +805,27 @@ body {
 
     & %form-input {
       width: auto;
+      font-size: 14px; 
       max-width: 112px;
       flex-basis: 112px;
+      padding-left: 42px;
+    }
+  }
+  &__items-row {
+    display: flex;
+    @include margin-x(-3px);
+
+    & > * {
+      @include margin-x(3px);
     }
   }
   &__item {
     flex: 1 0 auto;
+    @include padding-x(25px);
 
-    & + & {
-      margin-left: 50px;
+    &_shrink {
+      flex-grow: 0;
+      flex-shrink: 1;
     }
     & %form-item {
       display: flex;
@@ -853,9 +865,71 @@ body {
       font-size: 14px;
       padding: 0 24px;
     }
+    .form__slider {
+      margin-top: 16px;
+    }
   }
   &__heading {
     color: $white;
+    padding: 0;
+    display: block;
+    font-weight: 500;
+    line-height: 1.25;
+    margin-bottom: 13px;
+  }
+  .noUi {
+    &-connects {
+      border-radius: 0;
+    }
+    &-target {
+      border-radius: 0;
+      border: none;
+    }
+    &-horizontal {
+      height: 2px;
+
+      %noui-handle {
+        width: 15px;
+        height: 15px;
+        right: -7px;
+        top: -7px;
+      }
+    }
+    &-connect {
+      background: $yellow;
+    }
+    &-handle {
+      border: none;
+      cursor: pointer;
+      box-shadow: none;
+      background: #ECB800;
+      border-radius: 50%;
+      @extend %noui-handle;
+
+      &:before,
+      &:after {
+        content: normal;
+      }
+    }
+  }
+}
+.mfb {
+  height: 100%;
+  @extend %row-wrapper;
+  padding: 40px 56px 22px 59px; // 40px 81px 22px 84px;
+  flex-direction: column;
+  background-color: $white;
+
+  &__item {
+    flex: 1 0 auto;
+    @include padding-x(25px);
+  }
+  &__item-wrapper {
+    margin: 0;
+    border: none;
+    padding: 0;
+  }
+  &__heading {
     padding: 0;
     display: block;
     font-weight: 500;
@@ -870,8 +944,12 @@ body {
   // }
   // &__heading {
   // }
-  // &__items {
-  // }
+  &__items-wrappers {
+    overflow-x: auto;
+  }
+  &__items {
+    flex-wrap: nowrap;
+  }
   &__item {
     flex: 1 1 0%;
   }
@@ -1992,3 +2070,4 @@ body {
   }
 }
 @import "_mygallery.scss";
+@import 'nouislider';
