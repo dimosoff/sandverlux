@@ -6560,9 +6560,6 @@
         },
         observerUpdate: function() {
           console.log("observerUpdate");
-        },
-        lock: function() {
-          console.log("lock");
         }
       }
     });

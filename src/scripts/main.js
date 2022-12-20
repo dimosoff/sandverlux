@@ -215,9 +215,9 @@ document.addEventListener("DOMContentLoaded", function () {
       observerUpdate: function () {
         console.log("observerUpdate");
       },
-      lock: function () {
-        console.log("lock");
-      },
+      // lock: function () {
+      //   console.log("lock");
+      // },
       // update: function () {
       //   console.log('update');
       // },

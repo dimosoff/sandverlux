@@ -79,6 +79,9 @@ body {
   font-family: $font-family;
   background-color: $body-background;
 }
+label {
+  display: inline-block;
+}
 .wrapper {
   min-height: 100vh;
 
@@ -835,7 +838,7 @@ body {
 
     & %form-input {
       width: auto;
-      font-size: 14px; 
+      font-size: 14px;
       max-width: 112px;
       flex-basis: 112px;
       padding-left: 42px;
@@ -932,7 +935,7 @@ body {
       border: none;
       cursor: pointer;
       box-shadow: none;
-      background: #ECB800;
+      background: #ecb800;
       border-radius: 50%;
       @extend %noui-handle;
 
@@ -946,25 +949,49 @@ body {
 .mfb {
   height: 100%;
   @extend %row-wrapper;
-  padding: 40px 56px 22px 59px; // 40px 81px 22px 84px;
-  flex-direction: column;
+  padding: 34px 69px 22px 72px; // 40px 81px 22px 84px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.05);
   background-color: $white;
 
   &__item {
-    flex: 1 0 auto;
-    @include padding-x(25px);
+    flex: 1 1 100%;
+    max-width: 100%;
+    @include padding-x(12px);
+
+    &_half {
+      flex: 0 1 auto;
+      max-width: 50%;
+    }
+    select {
+      background-color: $form-grey-color;
+    }
+    &:not(:last-child) {
+      margin-bottom: 35px;
+    }
   }
   &__item-wrapper {
     margin: 0;
     border: none;
     padding: 0;
+
+    &_row {
+      display: flex;
+      align-items: center;
+      @extend %mfb-wrapper-row;
+    }
   }
   &__heading {
     padding: 0;
     display: block;
     font-weight: 500;
     line-height: 1.25;
-    margin-bottom: 13px;
+    margin-bottom: 18px;
+
+    %mfb-wrapper-row & {
+      float: left;
+      margin-right: 32px;
+      margin-bottom: 0;
+    }
   }
 }
 .popular-categories {
@@ -1574,42 +1601,51 @@ body {
 }
 .footer {
   color: $white;
-  padding: 48px 0;
+  padding: 48px 0 54px;
   margin-top: 95px;
   background-color: $primary-color;
-
-  @extend %footer;
 
   // &__container {
   // }
   &__items {
-    display: flex;
     flex-wrap: nowrap;
-    @include margin-x(-5%);
+    justify-content: space-between;
   }
   &__item {
-    @include padding-x(5%);
-    flex: 1 1 auto;
+    flex: 0.16 1 0%;
     width: auto;
     max-width: 100%;
+    min-width: 293px;
 
-    &:first-child {
-      flex: 7.7 1 0%;
+    &:nth-child(1) {
+      flex-grow: 0.3;
+    }
+    &:nth-child(2) {
+      flex-grow: 0.156;
+    }
+    &:nth-child(3) {
+      flex-grow: 0.195;
+    }
+    &:nth-child(4) {
+      flex-grow: 0.189;
     }
   }
   &__inner {
     display: flex;
+    min-height: 100%;
     flex-direction: column;
 
-    & > *:nth-child(-n+1) {
+    & > *:nth-last-child(2) {
       flex-grow: 1;
+    }
+    & > *:not(:last-child) {
+      margin-bottom: 17px;
     }
   }
   &__heading {
     font-size: 20px;
     font-weight: 700;
     line-height: 1.2;
-    margin-bottom: 15px;
   }
   &__socials {
     %socials-link-icon {
@@ -1619,7 +1655,6 @@ body {
   }
   &__info {
     font-size: 14px;
-    margin-top: 19px;
     font-weight: 500;
     line-height: 1.43;
 
@@ -1631,7 +1666,7 @@ body {
   // }
   &__list-item {
     & + & {
-      margin-top: 5px;
+      margin-top: 2px;
     }
   }
   &__link {
@@ -1648,18 +1683,37 @@ body {
   }
   &__rating {
     line-height: 1.19;
+    letter-spacing: -0.02em;
+
+    a {
+      color: inherit;
+      display: inline-block;
+    }
+    & > *:not(:last-child) {
+      margin-bottom: 19px;
+    }
   }
   &__rating-stars {
     display: flex;
   }
   &__star {
+    margin-right: 8px;
   }
   &__payment {
     @extend %row-wrapper;
+    @include margin-x(-7px);
   }
-}
-%footer {
-  .contacts {
+  &__payment-item {
+    width: auto;
+    @include padding-x(7px);
+  }
+  &__btn-wrapper {
+    margin-top: 13px;
+  }
+  &__btn {
+    min-width: 245px;
+  }
+  & .contacts {
     flex-direction: column;
 
     &__label {
@@ -1667,7 +1721,16 @@ body {
     }
     &__item {
       margin-left: 0;
-      margin-bottom: 15px;
+
+      & + * {
+        margin-top: 17px;
+      }
+    }
+    &__link {
+      align-items: center;
+    }
+    &__icon + span {
+      margin-left: 14px;
     }
   }
 }
@@ -1855,6 +1918,28 @@ body {
   }
   &__slider {
     width: 100%;
+  }
+  &__color {
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 50%;
+    vertical-align: middle;
+
+    & + & {
+      margin-left: 16px;
+    }
+    .form__label {
+      color: transparent;
+      width: 50px;
+      height: 50px;
+      display: block;
+      overflow: hidden;
+      border-radius: 50%;
+      background-color: #d8b888;
+    }
+    input:checked ~ .form__label {
+      border: 2px solid $primary-color;
+    }
   }
   // &__checkbox {
   //   & ~ label {
@@ -2116,4 +2201,4 @@ body {
   }
 }
 @import "_mygallery.scss";
-@import 'nouislider';
+@import "nouislider";

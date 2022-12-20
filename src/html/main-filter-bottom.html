@@ -1,24 +1,24 @@
 <div class="mfb">
   <div class="mfb__item">
-    <fieldset class="mfb__item-wrapper">
+    <fieldset class="mfb__item-wrapper mfb__item-wrapper_row">
       <legend class="mfb__heading">Цвета</legend>
       <div class="form__item">
-        <label class="form__item_color">
+        <label class="form__color">
           <input class="form__input" type="radio" name="door-color" value="color001" aria-hidden="true" checked hidden>
-          <span class="form__label">Светлый коричневый</span>
+          <span class="form__label" style="background-color:chocolate;">Светлый коричневый</span>
         </label>
-        <label class="form__item_color">
+        <label class="form__color">
           <input class="form__input" type="radio" name="door-color" value="color002" aria-hidden="true" hidden>
-          <span class="form__label">Тёмный коричневый</span>
+          <span class="form__label" style="background-color:rgb(82, 59, 42);">Тёмный коричневый</span>
         </label>
-        <label class="form__item_color">
+        <label class="form__color">
           <input class="form__input" type="radio" name="door-color" value="color003" aria-hidden="true" hidden>
-          <span class="form__label">Ольха</span>
+          <span class="form__label" style="background-color:rgb(218, 184, 161);">Ольха</span>
         </label>
       </div>
     </fieldset>
   </div>
-  <div class="mfb__item">
+  <div class="mfb__item mfb__item_half">
     <span class="mfb__heading">Размер полотна</span>
     <div class="form__item">
       <label>
@@ -35,7 +35,7 @@
       </label>
     </div>
   </div>
-  <div class="mfb__item">
+  <div class="mfb__item mfb__item_half">
     <span class="mfb__heading">Материал</span>
     <div class="form__item">
       <label>
@@ -48,8 +48,8 @@
       </label>
     </div>
   </div>
-  <div class="mft__item">
-    <div class="mft__heading">Система открытия</div>
+  <div class="mfb__item">
+    <div class="mfb__heading">Система открытия</div>
     <div class="form__item">
       <label>
         <input class="form__checkbox" type="checkbox" name="door-opening-system">
@@ -65,8 +65,8 @@
       </label>
     </div>
   </div>
-  <div class="mft__item">
-    <div class="mft__heading">Стиль двери</div>
+  <div class="mfb__item">
+    <div class="mfb__heading">Стиль двери</div>
     <div class="form__item">
       <label>
         <input class="form__checkbox form__checkbox--img" type="checkbox" name="door-style">
@@ -74,7 +74,7 @@
       </label>
     </div>
   </div>
-  <div class="mft__item">
+  <div class="mfb__item">
     <button id="door-submit" class="_btn" type="submit" name="door-submit">Подобрать дверь</button>
   </div>
 </div>

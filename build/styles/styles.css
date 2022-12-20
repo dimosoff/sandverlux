@@ -313,9 +313,7 @@ b:not(._fw600) {
     opacity: 0;
   }
 }
-
-.og-slide__color-label, .og-slide__colors, .our-goods__filter, .mfb, .mft, .main-filter__items, .row,
-.footer__payment, .og-slide__color-label, .og-slide__colors, .our-goods__filter, .main-filter__items, .row {
+.footer__payment, .og-slide__color-label, .og-slide__colors, .our-goods__filter, .mfb, .mft, .main-filter__items, .row {
   display: flex;
   flex-wrap: wrap;
 }
@@ -342,6 +340,10 @@ body {
   font-weight: 400;
   font-family: "Montserrat", sans-serif;
   background-color: #fff;
+}
+
+label {
+  display: inline-block;
 }
 
 .wrapper {
@@ -1090,7 +1092,7 @@ body {
   border: none;
   cursor: pointer;
   box-shadow: none;
-  background: #ECB800;
+  background: #ecb800;
   border-radius: 50%;
 }
 .mft .noUi-handle:before, .mft .noUi-handle:after {
@@ -1099,26 +1101,46 @@ body {
 
 .mfb {
   height: 100%;
-  padding: 40px 56px 22px 59px;
-  flex-direction: column;
+  padding: 34px 69px 22px 72px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.05);
   background-color: #fff;
 }
 .mfb__item {
-  flex: 1 0 auto;
-  padding-left: 25px;
-  padding-right: 25px;
+  flex: 1 1 100%;
+  max-width: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.mfb__item_half {
+  flex: 0 1 auto;
+  max-width: 50%;
+}
+.mfb__item select {
+  background-color: #f4f4f4;
+}
+.mfb__item:not(:last-child) {
+  margin-bottom: 35px;
 }
 .mfb__item-wrapper {
   margin: 0;
   border: none;
   padding: 0;
 }
+.mfb__item-wrapper_row {
+  display: flex;
+  align-items: center;
+}
 .mfb__heading {
   padding: 0;
   display: block;
   font-weight: 500;
   line-height: 1.25;
-  margin-bottom: 13px;
+  margin-bottom: 18px;
+}
+.mfb__item-wrapper_row .mfb__heading {
+  float: left;
+  margin-right: 32px;
+  margin-bottom: 0;
 }
 
 .popular-categories {
@@ -1623,38 +1645,47 @@ body {
 
 .footer {
   color: #fff;
-  padding: 48px 0;
+  padding: 48px 0 54px;
   margin-top: 95px;
   background-color: #84a878;
 }
 .footer__items {
-  display: flex;
   flex-wrap: nowrap;
-  margin-left: -5%;
-  margin-right: -5%;
+  justify-content: space-between;
 }
 .footer__item {
-  padding-left: 5%;
-  padding-right: 5%;
-  flex: 1 1 auto;
+  flex: 0.16 1 0%;
   width: auto;
   max-width: 100%;
+  min-width: 293px;
 }
-.footer__item:first-child {
-  flex: 7.7 1 0%;
+.footer__item:nth-child(1) {
+  flex-grow: 0.3;
+}
+.footer__item:nth-child(2) {
+  flex-grow: 0.156;
+}
+.footer__item:nth-child(3) {
+  flex-grow: 0.195;
+}
+.footer__item:nth-child(4) {
+  flex-grow: 0.189;
 }
 .footer__inner {
   display: flex;
+  min-height: 100%;
   flex-direction: column;
 }
-.footer__inner > *:nth-child(-n+1) {
+.footer__inner > *:nth-last-child(2) {
   flex-grow: 1;
+}
+.footer__inner > *:not(:last-child) {
+  margin-bottom: 17px;
 }
 .footer__heading {
   font-size: 20px;
   font-weight: 700;
   line-height: 1.2;
-  margin-bottom: 15px;
 }
 .footer__socials .socials-links__icon {
   width: 35px;
@@ -1662,7 +1693,6 @@ body {
 }
 .footer__info {
   font-size: 14px;
-  margin-top: 19px;
   font-weight: 500;
   line-height: 1.43;
 }
@@ -1670,7 +1700,7 @@ body {
   margin-top: 20px;
 }
 .footer__list-item + .footer__list-item {
-  margin-top: 5px;
+  margin-top: 2px;
 }
 .footer__link {
   color: inherit;
@@ -1686,9 +1716,35 @@ body {
 }
 .footer__rating {
   line-height: 1.19;
+  letter-spacing: -0.02em;
+}
+.footer__rating a {
+  color: inherit;
+  display: inline-block;
+}
+.footer__rating > *:not(:last-child) {
+  margin-bottom: 19px;
 }
 .footer__rating-stars {
   display: flex;
+}
+.footer__star {
+  margin-right: 8px;
+}
+.footer__payment {
+  margin-left: -7px;
+  margin-right: -7px;
+}
+.footer__payment-item {
+  width: auto;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+.footer__btn-wrapper {
+  margin-top: 13px;
+}
+.footer__btn {
+  min-width: 245px;
 }
 .footer .contacts {
   flex-direction: column;
@@ -1698,7 +1754,15 @@ body {
 }
 .footer .contacts__item {
   margin-left: 0;
-  margin-bottom: 15px;
+}
+.footer .contacts__item + * {
+  margin-top: 17px;
+}
+.footer .contacts__link {
+  align-items: center;
+}
+.footer .contacts__icon + span {
+  margin-left: 14px;
 }
 
 .form__select, .form__input[type=file] ~ label, .form__input, .mft__item [type=radio].form__input + .form__label {
@@ -1854,6 +1918,27 @@ body {
 }
 .form__slider {
   width: 100%;
+}
+.form__color {
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.form__color + .form__color {
+  margin-left: 16px;
+}
+.form__color .form__label {
+  color: transparent;
+  width: 50px;
+  height: 50px;
+  display: block;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: #d8b888;
+}
+.form__color input:checked ~ .form__label {
+  border: 2px solid #84a878;
 }
 .form__error-message {
   font-size: 14px;
