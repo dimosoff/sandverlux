@@ -271,24 +271,26 @@
       </label>
     </div>
   </div>
-  <div class="mft__item">
+  <div class="mft__item mft__item_shrink">
     <fieldset class="mft__item-wrapper">
       <legend class="mft__heading">Цена</legend>
-      <div class="form__item">
-        <span class="form__input-placeholder">от</span>
-        <label>
-          <span class="form__label" aria-hidden="true" hidden>минимальная цена</span>
-          <input class="form__input" type="number" name="door-price-min">
-        </label>
+      <div class="mft__items-row">
+        <div class="form__item">
+          <span class="form__input-placeholder">от</span>
+          <label>
+            <span class="form__label" aria-hidden="true" hidden>минимальная цена</span>
+            <input class="form__input" type="number" name="door-price-min" data-min="200" value="200">
+          </label>
+        </div>
+        <div class="form__item">
+          <span class="form__input-placeholder">до</span>
+          <label>
+            <span class="form__label sr-only" aria-hidden="true" hidden>максимальная цена</span>
+            <input class="form__input" type="number" name="door-price-max" data-max="50000" value="50000">
+          </label>
+        </div>
       </div>
-      <div class="form__item">
-        <span class="form__input-placeholder">до</span>
-        <label>
-          <span class="form__label sr-only" aria-hidden="true" hidden>максимальная цена</span>
-          <input class="form__input" type="number" name="door-price-max">
-        </label>
-      </div>
-      <div class="form__slider"></div>
+      <div id="door-price-slider" class="form__slider"></div>
     </fieldset>
   </div>
 </div>
@@ -305,15 +307,15 @@
     <fieldset class="mfb__item-wrapper">
       <legend class="mfb__heading">Цвета</legend>
       <div class="form__item">
-        <label>
+        <label class="form__item_color">
           <input class="form__input" type="radio" name="door-color" value="color001" aria-hidden="true" checked hidden>
           <span class="form__label">Светлый коричневый</span>
         </label>
-        <label>
+        <label class="form__item_color">
           <input class="form__input" type="radio" name="door-color" value="color002" aria-hidden="true" hidden>
           <span class="form__label">Тёмный коричневый</span>
         </label>
-        <label>
+        <label class="form__item_color">
           <input class="form__input" type="radio" name="door-color" value="color003" aria-hidden="true" hidden>
           <span class="form__label">Ольха</span>
         </label>
@@ -387,8 +389,9 @@
     <section class="popular-categories">
   <div class="popular-categories__container container">
     <h2 class="popular-categories__heading heading">Популярные категории</h2>
-    <div class="popular-categories__items row">
-      <div class="popular-categories__item">
+    <div class="popular-categories__items-wrappers">
+      <div class="popular-categories__items row">
+        <div class="popular-categories__item">
   <div class="popular-categories__inner">
     <div class="popular-categories__image-wrapper _image-wrapper">
       <svg class="popular-categories__image" width="60" height="60">
@@ -398,7 +401,7 @@
     <span class="popular-categories__title">Межкомнатные двери</span>
   </div>
 </div>
-      <div class="popular-categories__item">
+        <div class="popular-categories__item">
   <div class="popular-categories__inner">
     <div class="popular-categories__image-wrapper _image-wrapper">
       <svg class="popular-categories__image" width="60" height="60">
@@ -408,7 +411,7 @@
     <span class="popular-categories__title">Входные двери</span>
   </div>
 </div>
-      <div class="popular-categories__item">
+        <div class="popular-categories__item">
   <div class="popular-categories__inner">
     <div class="popular-categories__image-wrapper _image-wrapper">
       <svg class="popular-categories__image" width="60" height="60">
@@ -418,7 +421,7 @@
     <span class="popular-categories__title">Скрытые двери</span>
   </div>
 </div>
-      <div class="popular-categories__item">
+        <div class="popular-categories__item">
   <div class="popular-categories__inner">
     <div class="popular-categories__image-wrapper _image-wrapper">
       <svg class="popular-categories__image" width="60" height="60">
@@ -428,7 +431,7 @@
     <span class="popular-categories__title">Двери эмаль</span>
   </div>
 </div>
-      <div class="popular-categories__item">
+        <div class="popular-categories__item">
   <div class="popular-categories__inner">
     <div class="popular-categories__image-wrapper _image-wrapper">
       <svg class="popular-categories__image" width="60" height="60">
@@ -438,7 +441,7 @@
     <span class="popular-categories__title">Раздвижные двери</span>
   </div>
 </div>
-      <div class="popular-categories__item">
+        <div class="popular-categories__item">
   <div class="popular-categories__inner">
     <div class="popular-categories__image-wrapper _image-wrapper">
       <svg class="popular-categories__image" width="60" height="60">
@@ -448,7 +451,7 @@
     <span class="popular-categories__title">Двойные двери</span>
   </div>
 </div>
-      <div class="popular-categories__item">
+        <div class="popular-categories__item">
   <div class="popular-categories__inner">
     <div class="popular-categories__image-wrapper _image-wrapper">
       <svg class="popular-categories__image" width="60" height="60">
@@ -458,7 +461,7 @@
     <span class="popular-categories__title">Двери из массива</span>
   </div>
 </div>
-      <div class="popular-categories__item">
+        <div class="popular-categories__item">
   <div class="popular-categories__inner">
     <div class="popular-categories__image-wrapper _image-wrapper">
       <svg class="popular-categories__image" width="60" height="60">
@@ -468,7 +471,7 @@
     <span class="popular-categories__title">Фурнитура</span>
   </div>
 </div>
-      <div class="popular-categories__item">
+        <div class="popular-categories__item">
   <div class="popular-categories__inner">
     <div class="popular-categories__image-wrapper _image-wrapper">
       <svg class="popular-categories__image" width="60" height="60">
@@ -478,7 +481,7 @@
     <span class="popular-categories__title">Экошпон</span>
   </div>
 </div>
-      <div class="popular-categories__item">
+        <div class="popular-categories__item">
   <div class="popular-categories__inner">
     <div class="popular-categories__image-wrapper _image-wrapper">
       <svg class="popular-categories__image" width="60" height="60">
@@ -488,7 +491,7 @@
     <span class="popular-categories__title">Стеклянные двери</span>
   </div>
 </div>
-      <div class="popular-categories__item">
+        <div class="popular-categories__item">
   <div class="popular-categories__inner">
     <div class="popular-categories__image-wrapper _image-wrapper">
       <svg class="popular-categories__image" width="60" height="60">
@@ -498,6 +501,7 @@
     <span class="popular-categories__title">Двери для бани и сауны</span>
   </div>
 </div>
+      </div>
     </div>
   </div>
 </section>
