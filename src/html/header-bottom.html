@@ -2,12 +2,15 @@
   <div class="header-bottom__item">
     <nav class="header-bottom__links">
       <ul class="header-bottom__links-list">
-        <li class="header-bottom__list-item">
+        <li class="header-bottom__list-item _hover-to-open">
           <a href="#" class="header-bottom__link header-bottom__catalog">
             <div class="header-bottom__catalog-burger">
-              <span></span><span></span><span></span><span class="sr-only">Каталог</span>
+              <span></span><span></span><span></span>
             </div><span>Каталог</span>
           </a>
+          <div class="header-bottom__menu _hover-to-open__target">
+            @@include('./src/html/catalog.html')
+          </div>
         </li>
         <li class="header-bottom__list-item"><a href="#" class="header-bottom__link">Распродажа</a></li>
         <li class="header-bottom__list-item"><a href="#" class="header-bottom__link">Замер и доставка</a></li>
