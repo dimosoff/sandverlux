@@ -962,7 +962,19 @@ label {
       flex: 0 1 auto;
       max-width: 50%;
     }
+    & %form-item {
+      display: flex;
+
+      & label {
+        display: flex;
+
+        // &:focus-visible {
+        // }
+      }
+    }
     select {
+      max-width: 50%;
+      min-width: 342px;
       background-color: $form-grey-color;
     }
     &:not(:last-child) {
@@ -1737,15 +1749,15 @@ label {
 
 %f-item-element {
   border: none;
-  background-color: $white;
+  background-color: $form-grey-color;
 }
 %f-checkbox-pseudo {
   content: "";
   position: absolute;
-  top: -2px;
+  top: -1px;
   left: 0;
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   display: block;
 }
 
@@ -1765,7 +1777,6 @@ label {
     }
   }
   &__label {
-    height: 45px;
     font-size: 14px;
     line-height: 1.375;
     @extend %form-label;
@@ -1938,54 +1949,52 @@ label {
       background-color: #d8b888;
     }
     input:checked ~ .form__label {
-      border: 2px solid $primary-color;
+      border: 3px solid $primary-color;
     }
   }
-  // &__checkbox {
-  //   & ~ label {
-  //     color: $white;
-  //     cursor: pointer;
-  //     display: block;
-  //     position: relative;
-  //     font-size: 15px;
-  //     padding-left: 36px;
+  &__checkbox {
+    & ~ .form__label {
+      cursor: pointer;
+      display: block;
+      position: relative;
+      min-height: 0;
+      padding-left: 32px;
 
-  //     &:before {
-  //       @extend %f-item-element;
-  //       @extend %f-checkbox-pseudo;
-  //     }
-  //     &:after {
-  //       @extend %f-checkbox-pseudo;
-  //       opacity: 0;
-  //       background: url("../images/check.svg") 6px 3px / auto no-repeat
-  //         transparent;
-  //       transition: opacity $transition3, background-position $transition3;
-  //     }
-  //   }
-  //   &:focus,
-  //   &:focus-visible {
-  //     & ~ label {
-  //       &:before {
-  //         @include focus-styles;
-  //       }
-  //     }
-  //   }
-  //   &:focus:not(:focus-visible) {
-  //     & ~ label {
-  //       &:before {
-  //         @extend %focus-styles-disable;
-  //       }
-  //     }
-  //   }
-  //   &:checked {
-  //     & ~ label {
-  //       &:after {
-  //         opacity: 1;
-  //         background-position: 6px 5px;
-  //       }
-  //     }
-  //   }
-  // }
+      &:before {
+        @extend %f-item-element;
+        @extend %f-checkbox-pseudo;
+      }
+      &:after {
+        @extend %f-checkbox-pseudo;
+        opacity: 0;
+        background: url("../images/check.svg") 6px 3px / auto no-repeat
+          transparent;
+        transition: opacity $transition3, background-position $transition3;
+      }
+    }
+    &:focus,
+    &:focus-visible {
+      & ~ .form__label {
+        &:before {
+          @include focus-styles;
+        }
+      }
+    }
+    &:focus:not(:focus-visible) {
+      & ~ .form__label {
+        &:before {
+        }
+      }
+    }
+    &:checked {
+      & ~ .form__label {
+        &:after {
+          opacity: 1;
+          background-position: 6px 5px;
+        }
+      }
+    }
+  }
   &__error-message {
     font-size: 14px;
     font-weight: 500;

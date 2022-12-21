@@ -1115,7 +1115,15 @@ label {
   flex: 0 1 auto;
   max-width: 50%;
 }
+.mfb__item .form__item {
+  display: flex;
+}
+.mfb__item .form__item label {
+  display: flex;
+}
 .mfb__item select {
+  max-width: 50%;
+  min-width: 342px;
   background-color: #f4f4f4;
 }
 .mfb__item:not(:last-child) {
@@ -1765,9 +1773,19 @@ label {
   margin-left: 14px;
 }
 
-.form__select, .form__input[type=file] ~ label, .form__input, .mft__item [type=radio].form__input + .form__label {
+.form__checkbox ~ .form__label:before, .form__select, .form__input[type=file] ~ label, .form__input, .mft__item [type=radio].form__input + .form__label {
   border: none;
-  background-color: #fff;
+  background-color: #f4f4f4;
+}
+
+.form__checkbox ~ .form__label:after, .form__checkbox ~ .form__label:before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  display: block;
 }
 
 .form__row {
@@ -1781,7 +1799,6 @@ label {
   min-height: 45px;
 }
 .form__label {
-  height: 45px;
   font-size: 14px;
   line-height: 1.375;
 }
@@ -1938,7 +1955,26 @@ label {
   background-color: #d8b888;
 }
 .form__color input:checked ~ .form__label {
-  border: 2px solid #84a878;
+  border: 3px solid #84a878;
+}
+.form__checkbox ~ .form__label {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  min-height: 0;
+  padding-left: 32px;
+}
+.form__checkbox ~ .form__label:after {
+  opacity: 0;
+  background: url("../images/check.svg") 6px 3px/auto no-repeat transparent;
+  transition: opacity 0.3s ease-out, background-position 0.3s ease-out;
+}
+.form__checkbox:focus ~ .form__label:before, .form__checkbox:focus-visible ~ .form__label:before {
+  box-shadow: 0 0 0 2px #f9c201 !important;
+}
+.form__checkbox:checked ~ .form__label:after {
+  opacity: 1;
+  background-position: 6px 5px;
 }
 .form__error-message {
   font-size: 14px;
