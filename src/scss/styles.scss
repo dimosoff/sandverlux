@@ -38,6 +38,8 @@ $header-bottom-height: 70px;
 
 $header-height-mobile: 75px;
 
+$container-padding: 70px;
+
 @import "_nullstyle.scss";
 @import "_fonts.scss";
 @import "_templates.scss";
@@ -99,8 +101,8 @@ label {
 .container {
   margin: 0 auto;
   max-width: 100%;
-  padding-left: 70px;
-  padding-right: 70px;
+  padding-left: $container-padding;
+  padding-right: $container-padding;
 
   @media ($mobile-max) {
     padding: 0 15px;
@@ -292,6 +294,41 @@ label {
   &__item {
     & + & {
       margin-left: 30px;
+    }
+  }
+  %hover-to-open {
+    &::after {
+      height: 25px;
+    }
+  }
+  &__menu-wrapper {
+    padding: 10px 30px 15px;
+    min-width: 150px;
+    min-width: max-content;
+    background-color: $white;
+    transform: translate(0, 25px) scale(0.9);
+
+    %hover-to-open-hover & {
+      transform: translate(0, 15px);
+    }
+  }
+  // &__menu {
+  // }
+  &__menu-item {
+    & + li {
+      margin-top: 5px;
+    }
+  }
+  &__menu-link {
+    color: inherit;
+    display: block;
+    padding: 8px 0;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color $transition3;
+
+    &:hover {
+      color: $primary-color;
     }
   }
   &__links-list {
@@ -517,6 +554,7 @@ label {
     border: 0;
     cursor: pointer;
     padding: 0;
+    z-index: 20;
     position: relative;
     margin-right: 10px;
     background-color: transparent;
@@ -527,7 +565,6 @@ label {
       position: absolute;
       width: 100%;
       height: 2px;
-      z-index: 20;
       border-radius: 3px;
       background-color: $yellow;
       transition: transform 0.6s ease, opacity $transition3;
@@ -548,6 +585,22 @@ label {
   &__link {
     // font-size: 15px;
     @extend %header-top-links;
+  }
+  %hover-to-open {
+    &::after {
+      height: 25px;
+    }
+  }
+  &__menu {
+    left: -$container-padding;
+    padding: 10px 30px 15px;
+    min-width: 100vw;
+    background-color: $white;
+    transform: translate(0, 35px);
+
+    %hover-to-open-hover & {
+      transform: translate(0, 25px);
+    }
   }
   &__search {
     flex-grow: 1;
@@ -608,6 +661,23 @@ label {
   // &__feature-icon {
   // }
 }
+.catalog {
+  &__title {
+  }
+  &__list {
+  }
+  &__list-item {
+  }
+  &__link {
+  }
+  &__link-image {
+  }
+  &__name {
+  }
+  &__list-wrapper {
+  }
+}
+
 .search-form {
   color: $white;
   position: relative;
@@ -949,7 +1019,7 @@ label {
 .mfb {
   height: 100%;
   @extend %row-wrapper;
-  padding: 34px 69px 22px 72px; // 40px 81px 22px 84px;
+  padding: 34px 69px 40px 72px; // 40px 81px 22px 84px;
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.05);
   background-color: $white;
 
@@ -1005,6 +1075,10 @@ label {
       margin-bottom: 0;
     }
   }
+  &__button {
+    width: 100%;
+    padding: 15px 30px;
+  }
 }
 .popular-categories {
   padding: 75px 0;
@@ -1015,6 +1089,8 @@ label {
   // }
   &__items-wrappers {
     overflow-x: auto;
+    scrollbar-width: thin;
+    @include scrollbars(8px);
   }
   &__items {
     flex-wrap: nowrap;
@@ -1945,6 +2021,7 @@ label {
       height: 50px;
       display: block;
       overflow: hidden;
+      user-select: none;
       border-radius: 50%;
       background-color: #d8b888;
     }
@@ -1953,44 +2030,87 @@ label {
     }
   }
   &__checkbox {
-    & ~ .form__label {
-      cursor: pointer;
-      display: block;
-      position: relative;
-      min-height: 0;
-      padding-left: 32px;
+    margin-right: 32px;
 
-      &:before {
-        @extend %f-item-element;
-        @extend %f-checkbox-pseudo;
-      }
-      &:after {
-        @extend %f-checkbox-pseudo;
-        opacity: 0;
-        background: url("../images/check.svg") 6px 3px / auto no-repeat
-          transparent;
-        transition: opacity $transition3, background-position $transition3;
-      }
-    }
-    &:focus,
-    &:focus-visible {
+    input {
       & ~ .form__label {
+        cursor: pointer;
+        display: block;
+        position: relative;
+        min-height: 0;
+        padding-left: 32px;
+
         &:before {
-          @include focus-styles;
+          @extend %f-item-element;
+          @extend %f-checkbox-pseudo;
         }
-      }
-    }
-    &:focus:not(:focus-visible) {
-      & ~ .form__label {
-        &:before {
-        }
-      }
-    }
-    &:checked {
-      & ~ .form__label {
         &:after {
-          opacity: 1;
-          background-position: 6px 5px;
+          @extend %f-checkbox-pseudo;
+          opacity: 0;
+          background: url("../images/icons.svg#check") 4px 1px/12px auto
+            no-repeat transparent;
+          transition: opacity $transition3, background-position $transition3;
+        }
+      }
+      &:focus,
+      &:focus-visible {
+        & ~ .form__label {
+          &:before {
+            @include focus-styles;
+          }
+        }
+      }
+      &:focus:not(:focus-visible) {
+        & ~ .form__label {
+          &:before {
+          }
+        }
+      }
+      &:checked {
+        & ~ .form__label {
+          &:after {
+            opacity: 1;
+            background-position: 4px 4px;
+          }
+        }
+      }
+    }
+    &--img {
+      margin-right: 15px;
+
+      input {
+        & ~ .form__label {
+          text-align: center;
+          transition: background-color 0.3s;
+          user-select: none;
+          padding-left: 0;
+          padding-bottom: 12px;
+          background-color: transparent;
+
+          &::before,
+          &::after {
+            width: 74px;
+            height: 74px;
+            margin: 14px 13px 11px;
+            position: relative;
+            background-color: transparent;
+          }
+          &::after {
+            opacity: 1;
+            position: absolute;
+            background-size: contain;
+            background-image: url("../images/icons.svg#door-style-01");
+            background-position: center center;
+          }
+        }
+        &:checked {
+          & ~ .form__label {
+            background-color: $form-grey-color;
+
+            &:after {
+              background-position: center center;
+            }
+          }
         }
       }
     }
