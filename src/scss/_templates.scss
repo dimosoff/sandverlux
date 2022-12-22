@@ -171,7 +171,8 @@ b {
     visibility: hidden;
   }
 
-  &:hover {
+  &:hover,
+  &:focus-within {
     @extend %hover-to-open-hover !optional;
 
     &::after {
@@ -190,7 +191,6 @@ b {
     %hover-to-open-hover > & {
       opacity: 1;
       visibility: visible;
-      transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
     }
   }
 }

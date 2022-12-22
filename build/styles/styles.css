@@ -289,7 +289,7 @@ b:not(._fw600) {
   position: absolute;
   visibility: hidden;
 }
-._hover-to-open:hover::after {
+._hover-to-open:hover::after, ._hover-to-open:focus-within::after {
   visibility: visible;
 }
 ._hover-to-open__target {
@@ -301,10 +301,9 @@ b:not(._fw600) {
   visibility: hidden;
   transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
 }
-._hover-to-open:hover > ._hover-to-open__target {
+._hover-to-open:hover > ._hover-to-open__target, ._hover-to-open:focus-within > ._hover-to-open__target {
   opacity: 1;
   visibility: visible;
-  transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
 }
 
 @media (min-width: 992px) {
@@ -370,6 +369,7 @@ body {
   font-weight: 400;
   font-family: "Montserrat", sans-serif;
   background-color: #fff;
+  overflow-x: hidden;
 }
 
 label {
@@ -570,7 +570,7 @@ label {
   background-color: #fff;
   transform: translate(0, 25px) scale(0.9);
 }
-._hover-to-open:hover .header-top__menu-wrapper {
+._hover-to-open:hover .header-top__menu-wrapper, ._hover-to-open:focus-within .header-top__menu-wrapper {
   transform: translate(0, 15px);
 }
 .header-top__menu-item + li {
@@ -596,7 +596,31 @@ label {
   margin-left: 35px;
 }
 .header-top__link {
+  display: inline-block;
+  position: relative;
   font-size: 14px;
+  transform: translateY(0);
+  transition: transform 0.3s ease-out;
+}
+.header-top__link::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  opacity: 0;
+  transform: translateY(0);
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  background-color: #fff;
+}
+.header-top__link:hover {
+  transform: translateY(-2px);
+}
+.header-top__link:hover::after {
+  opacity: 1;
+  transform: translateY(2px);
 }
 .header-top__about {
   display: flex;
@@ -621,7 +645,7 @@ label {
   z-index: 20;
   border-radius: 3px;
   background-color: #f9c201;
-  transition: transform 0.6s ease, opacity 0.3s ease-out;
+  transition: transform 0.6s ease, opacity 0.3s ease-out, background-color 0.3s ease-out;
 }
 .header-top__about-burger span:nth-child(1) {
   top: 0;
@@ -634,11 +658,30 @@ label {
   top: 10px;
   transition-delay: 0.1s;
 }
+._hover-to-open:hover .header-top__about-burger span, ._hover-to-open:focus-within .header-top__about-burger span {
+  background-color: #fff;
+}
+._hover-to-open:hover .header-top__about-burger span:nth-child(1), ._hover-to-open:focus-within .header-top__about-burger span:nth-child(1) {
+  transform: translateY(5px) rotate(40deg);
+}
+._hover-to-open:hover .header-top__about-burger span:nth-child(2), ._hover-to-open:focus-within .header-top__about-burger span:nth-child(2) {
+  transform: rotate(-40deg);
+}
+._hover-to-open:hover .header-top__about-burger span:nth-child(3), ._hover-to-open:focus-within .header-top__about-burger span:nth-child(3) {
+  opacity: 0;
+  transform: translateY(5px);
+}
 .header-top__our-shops {
   font-size: 16px;
 }
 .header-top__our-shops-icon {
   vertical-align: baseline;
+  transform: scale(1);
+  transform-origin: center bottom;
+  transition: transform 0.3s;
+}
+.header-top__our-shops:hover .header-top__our-shops-icon {
+  transform: scale(1.3);
 }
 .header-top__our-shops-label {
   margin-left: 9px;
@@ -819,11 +862,11 @@ label {
 .header-bottom__menu {
   left: -70px;
   padding: 10px 30px 15px;
-  min-width: 100vw;
-  background-color: #fff;
+  width: 100vw;
+  background-color: #E6EDE4;
   transform: translate(0, 35px);
 }
-._hover-to-open:hover .header-bottom__menu {
+._hover-to-open:hover .header-bottom__menu, ._hover-to-open:focus-within .header-bottom__menu {
   transform: translate(0, 25px);
 }
 .header-bottom__search {
@@ -876,6 +919,41 @@ label {
   border: none;
   padding: 0;
   background-color: transparent;
+}
+
+.catalog__list-item {
+  position: static;
+  max-width: 250px;
+}
+.catalog__list-item:hover > .catalog__link {
+  color: #84a878;
+}
+.catalog__link {
+  color: inherit;
+  display: flex;
+  padding: 10px 0;
+  font-weight: 500;
+  align-items: center;
+  text-decoration: none;
+  transition: color 0.3s ease-out;
+}
+.catalog__link-image {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  margin-right: 10px;
+}
+.catalog__name {
+  line-height: 1.25;
+}
+.catalog__list-wrapper {
+  top: 10px;
+  left: 300px;
+  min-width: 250px;
+  max-width: 250px;
+}
+.catalog__list-wrapper .catalog__link {
+  font-weight: 400;
 }
 
 .search-form {

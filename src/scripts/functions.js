@@ -38,11 +38,8 @@ function setAnchorsEvents() {
     elem.addEventListener("click", (event) => {
       event.preventDefault();
 
-      const link =
-        event.target.getAttribute("href") ||
-        event.target.parentElement?.getAttribute("href") ||
-        event.target.firstElementChild?.getAttribute("href");
-      if (link === "#") return;
+      const link = event.currentTarget.getAttribute("href");
+      if (link === "#" || link === undefined) return;
 
       const linkTarget = document.getElementById(link.substring(1));
       if (!linkTarget) return;
