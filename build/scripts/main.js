@@ -6410,6 +6410,25 @@
     const topUpAccountButton = document.querySelector(
       "button[name=top-up-account]"
     );
+    const catalogBannerWrappers = document.querySelectorAll(
+      ".catalog__banners-wrapper"
+    );
+    catalogBannerWrappers.forEach((elem) => {
+      elem.style.maxWidth = `${window.innerWidth - elem.getBoundingClientRect().left}px`;
+      elem.addEventListener("wheel", (event2) => {
+        event2.preventDefault();
+        let delta = event2.deltaY;
+        const step = delta / 10;
+        let timer = setInterval(function() {
+          if (delta <= 0)
+            clearInterval(timer);
+          else {
+            elem.scrollLeft += step;
+            delta -= step;
+          }
+        }, 20);
+      });
+    });
     const allFaqItems = document.querySelectorAll(".faq-item");
     if (allFaqItems.length) {
       allFaqItems.forEach((item) => {

@@ -37,6 +37,29 @@ document.addEventListener("DOMContentLoaded", function () {
     "button[name=top-up-account]"
   );
 
+  //catalog banners scrolling horizonally and max width
+  const catalogBannerWrappers = document.querySelectorAll(
+    ".catalog__banners-wrapper"
+  );
+  catalogBannerWrappers.forEach((elem) => {
+    elem.style.maxWidth = `${
+      window.innerWidth - elem.getBoundingClientRect().left
+    }px`;
+
+    elem.addEventListener("wheel", (event) => {
+      event.preventDefault();
+      let delta = event.deltaY;
+      const step = delta/10;
+      let timer = setInterval(function () {
+        if (delta <= 0) clearInterval(timer);
+        else {
+          elem.scrollLeft += step;
+          delta -= step;
+        }
+      }, 20);
+    });
+  });
+
   //faq list collapse
   const allFaqItems = document.querySelectorAll(".faq-item");
 
@@ -109,11 +132,11 @@ document.addEventListener("DOMContentLoaded", function () {
     step: 1,
     format: {
       to: function (value) {
-          return parseInt(value);
+        return parseInt(value);
       },
       from: function (value) {
-          return parseInt(value);
-      }
+        return parseInt(value);
+      },
     },
     connect: true,
     range: {
