@@ -20,8 +20,8 @@ $button-background-hover: #e3b100;
 }
 ._image-wrapper {
   display: block;
-  position: relative;
   overflow: hidden;
+  position: relative;
   max-width: 100%;
 }
 a,
@@ -57,7 +57,8 @@ button,
   background-color: $button-background;
 
   @media ($desktop-min) {
-    transition: color $transition3, background-color $transition3;
+    transition: color $transition3, background-color $transition3,
+      opacity $transition3;
 
     &:hover {
       background-color: $button-background-hover;
@@ -100,6 +101,17 @@ button,
       }
     }
   }
+  &--transparent {
+    border: 2px solid $white;
+    background-color: transparent;
+
+    @media ($desktop-min) {
+      &:hover {
+        color: $text-color;
+        background-color: $white;
+      }
+    }
+  }
 }
 ._custom-content {
   & > * + * {
@@ -107,22 +119,21 @@ button,
   }
 }
 .scroll-top {
-  position: fixed;
-  border: 0;
-  width: 55px;
-  height: 55px;
+  width: 45px;
+  height: 45px;
+  border: 1px solid $items-border;
   padding: 0;
   opacity: 0;
   z-index: 100;
+  position: fixed;
   visibility: hidden;
-  box-shadow: 0 0 20px rgba(131, 69, 228, 0.28);
-  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(132, 168, 120, 0.28);
   background-color: $white;
   transition: opacity $transition3, visibility $transition3;
 
   @media ($desktop-min) {
-    right: 80px;
-    bottom: 80px;
+    right: 48px;
+    bottom: 70px;
   }
   @media ($tablet-max) and ($tablet-mad) {
     right: 60px;
@@ -162,7 +173,7 @@ b {
   @extend %hover-to-open !optional;
 
   &::after {
-    content: '';
+    content: "";
     top: 100%;
     left: 0;
     right: 0;
@@ -193,6 +204,30 @@ b {
       opacity: 1;
       visibility: visible;
       pointer-events: all;
+    }
+  }
+}
+._wheel-to-hide {
+  &::before {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    opacity: 0;
+    content: "";
+    display: block;
+    position: absolute;
+    animation: wheel-to-hide 2s infinite;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+    background: url("../images/icons/mouse-wheel.png") 50% 50%/30px auto
+      no-repeat rgba(255, 255, 255, 0.5);
+  }
+  &.active {
+    &::before {
+      opacity: 1;
+      visibility: visible;
     }
   }
 }
@@ -249,6 +284,24 @@ b {
   }
   26.7% {
     opacity: 0;
+  }
+}
+@keyframes wheel-to-hide {
+  30% {
+    background-position: 50% 45%;
+    // transform: translateY(-10px);
+  }
+  40% {
+    background-position: 50% 54%;
+    // transform: translateY(8px);
+  }
+  55% {
+    background-position: 50% 42.5%;
+    // transform: translateY(-5px);
+  }
+  75% {
+    background-position: 50% 50.5%;
+    // transform: translateY(1px);
   }
 }
 // @keyframes pulse {

@@ -67,22 +67,62 @@ function setAnchorsEvents() {
 export function toHorizontalScroll(element) {
   element.addEventListener("wheel", (event) => {
     event.preventDefault();
-    element.scrollLeft += event.deltaY/2;
+    element.scrollLeft += event.deltaY / 2;
   });
 }
 
-export function scrollToTop() {
-  let $scrollTopElement = document.querySelector(".scroll-top");
-  window.addEventListener("scroll", function () {
-    let hasClass = $scrollTopElement.classList.contains("_active"),
-      isScrolled = scrollY > 35;
-    if (isScrolled && !hasClass) {
-      $scrollTopElement.classList.add("_active");
-    } else if (!isScrolled && hasClass) {
-      $scrollTopElement.classList.remove("_active");
+export function onKeydownAction(element, customFunction) {
+  element.addEventListener("keydown", (e) => {
+    if (e.key === " " || e.key === "Enter" || e.key === "Spacebar") {
+      e.preventDefault();
+      customFunction();
     }
   });
-  $scrollTopElement.addEventListener("click", () => {
+}
+
+export function wheelToHide() {
+  const elements = document.querySelectorAll("._wheel-to-hide");
+  if (!elements.length) return;
+
+  elements.forEach((element) => {
+    if (
+      element.scrollWidth <= element.clientWidth ||
+      document.cookie.includes("wheelToHideHidden")
+    ) {
+      element.classList.remove("active");
+      setTimeout(() => element.classList.remove("_wheel-to-hide"), 500);
+      return;
+    }
+
+    element.scrollLeft = 0;
+    element.classList.add("active");
+    element.addEventListener("scroll", (event) => hide(event.target), {
+      once: true,
+    });
+    element.addEventListener("click", (event) => hide(event.target), {
+      once: true,
+    });
+  });
+
+  function hide(element) {
+    element.classList.remove("active");
+    document.cookie = "wheelToHideHidden=; max-age=604800; samesite=lax";
+    setTimeout(() => element.classList.remove("_wheel-to-hide"), 500);
+  }
+}
+
+export function scrollToTop() {
+  const scrollTopElement = document.querySelector(".scroll-top");
+  window.addEventListener("scroll", function () {
+    let hasClass = scrollTopElement.classList.contains("_active"),
+      isScrolled = scrollY > 35;
+    if (isScrolled && !hasClass) {
+      scrollTopElement.classList.add("_active");
+    } else if (!isScrolled && hasClass) {
+      scrollTopElement.classList.remove("_active");
+    }
+  });
+  scrollTopElement.addEventListener("click", () => {
     let currentScrollTop = window.scrollY;
     animate({
       duration: 600,
@@ -92,8 +132,8 @@ export function scrollToTop() {
       },
     });
   });
-  if (scrollY > 35 && !$scrollTopElement.classList.contains("_active")) {
-    $scrollTopElement.classList.add("_active");
+  if (scrollY > 35 && !scrollTopElement.classList.contains("_active")) {
+    scrollTopElement.classList.add("_active");
   }
 }
 

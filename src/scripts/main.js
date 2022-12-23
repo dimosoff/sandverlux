@@ -60,12 +60,10 @@ document.addEventListener("DOMContentLoaded", function () {
       answerButton.addEventListener("click", () => {
         faqCollapseAnimation(answerButton, answerWrapper);
       });
-      answerButton.addEventListener("keydown", (e) => {
-        if (e.key === " " || e.key === "Enter" || e.key === "Spacebar") {
-          e.preventDefault();
-          faqCollapseAnimation(answerButton, answerWrapper);
-        }
-      });
+      myFunctions.onKeydownAction(
+        answerButton,
+        faqCollapseAnimation(answerButton, answerWrapper)
+      );
     });
   }
 
@@ -84,6 +82,14 @@ document.addEventListener("DOMContentLoaded", function () {
     thankYouPopopup.classList.remove(popupClassActive);
     topUpPopopup.classList.remove(popupClassActive);
   });
+
+  // popular categories scrolling horizontally
+
+  const popularCategoriesScroll = document.querySelector(
+    ".popular-categories__items"
+  );
+  if (popularCategoriesScroll)
+    myFunctions.toHorizontalScroll(popularCategoriesScroll);
 
   // "contacts" form placeholder state movement //
 
@@ -493,6 +499,15 @@ document.addEventListener("DOMContentLoaded", function () {
       e.target.value = phoneArray;
     });
   }
+
+  const radioButtons = document.querySelectorAll(".form__radio");
+  radioButtons.forEach((button) =>
+    myFunctions.onKeydownAction(button, function () {
+      button.click();
+    })
+  );
+
+  myFunctions.wheelToHide();
 });
 
 import * as myFunctions from "./functions.js";

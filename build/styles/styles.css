@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *::before,
 *::after {
@@ -80,42 +81,42 @@ button {
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: local(""), url("../fonts/montserrat-v25-latin_cyrillic-300.woff2") format("woff2"), url("../fonts/montserrat-v25-latin_cyrillic-300.woff") format("woff");
+  src: local("☺"), url("../fonts/montserrat-v25-latin_cyrillic-300.woff2") format("woff2"), url("../fonts/montserrat-v25-latin_cyrillic-300.woff") format("woff");
 }
 @font-face {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local(""), url("../fonts/montserrat-v25-latin_cyrillic-regular.woff2") format("woff2"), url("../fonts/montserrat-v25-latin_cyrillic-regular.woff") format("woff");
+  src: local("☺"), url("../fonts/montserrat-v25-latin_cyrillic-regular.woff2") format("woff2"), url("../fonts/montserrat-v25-latin_cyrillic-regular.woff") format("woff");
 }
 @font-face {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: local(""), url("../fonts/montserrat-v25-latin_cyrillic-500.woff2") format("woff2"), url("../fonts/montserrat-v25-latin_cyrillic-500.woff") format("woff");
+  src: local("☺"), url("../fonts/montserrat-v25-latin_cyrillic-500.woff2") format("woff2"), url("../fonts/montserrat-v25-latin_cyrillic-500.woff") format("woff");
 }
 @font-face {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: local(""), url("../fonts/montserrat-v25-latin_cyrillic-600.woff2") format("woff2"), url("../fonts/montserrat-v25-latin_cyrillic-600.woff") format("woff");
+  src: local("☺"), url("../fonts/montserrat-v25-latin_cyrillic-600.woff2") format("woff2"), url("../fonts/montserrat-v25-latin_cyrillic-600.woff") format("woff");
 }
 @font-face {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: local(""), url("../fonts/montserrat-v25-latin_cyrillic-800.woff2") format("woff2"), url("../fonts/montserrat-v25-latin_cyrillic-800.woff") format("woff");
+  src: local("☺"), url("../fonts/montserrat-v25-latin_cyrillic-800.woff2") format("woff2"), url("../fonts/montserrat-v25-latin_cyrillic-800.woff") format("woff");
 }
 @font-face {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local(""), url("../fonts/montserrat-v25-latin_cyrillic-700.woff2") format("woff2"), url("../fonts/montserrat-v25-latin_cyrillic-700.woff") format("woff");
+  src: local("☺"), url("../fonts/montserrat-v25-latin_cyrillic-700.woff2") format("woff2"), url("../fonts/montserrat-v25-latin_cyrillic-700.woff") format("woff");
 }
 ._bkgr-image {
   position: absolute;
@@ -136,8 +137,8 @@ button {
 
 ._image-wrapper {
   display: block;
-  position: relative;
   overflow: hidden;
+  position: relative;
   max-width: 100%;
 }
 
@@ -175,7 +176,7 @@ button,
 }
 @media (min-width: 992px) {
   ._btn {
-    transition: color 0.3s ease-out, background-color 0.3s ease-out;
+    transition: color 0.3s ease-out, background-color 0.3s ease-out, opacity 0.3s ease-out;
   }
   ._btn:hover {
     background-color: #e3b100;
@@ -218,29 +219,38 @@ button,
     background-color: #585858;
   }
 }
+._btn--transparent {
+  border: 2px solid #fff;
+  background-color: transparent;
+}
+@media (min-width: 992px) {
+  ._btn--transparent:hover {
+    color: #585858;
+    background-color: #fff;
+  }
+}
 
 ._custom-content > * + * {
   margin-top: 1em;
 }
 
 .scroll-top {
-  position: fixed;
-  border: 0;
-  width: 55px;
-  height: 55px;
+  width: 45px;
+  height: 45px;
+  border: 1px solid #d1d1d1;
   padding: 0;
   opacity: 0;
   z-index: 100;
+  position: fixed;
   visibility: hidden;
-  box-shadow: 0 0 20px rgba(131, 69, 228, 0.28);
-  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(132, 168, 120, 0.28);
   background-color: #fff;
   transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
 }
 @media (min-width: 992px) {
   .scroll-top {
-    right: 80px;
-    bottom: 80px;
+    right: 48px;
+    bottom: 70px;
   }
 }
 @media (max-width: 991.98px) and (max-width: 767.98px) {
@@ -308,6 +318,26 @@ b:not(._fw600) {
   pointer-events: all;
 }
 
+._wheel-to-hide::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  opacity: 0;
+  content: "";
+  display: block;
+  position: absolute;
+  animation: wheel-to-hide 2s infinite;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s;
+  background: url("../images/icons/mouse-wheel.png") 50% 50%/30px auto no-repeat rgba(255, 255, 255, 0.5);
+}
+._wheel-to-hide.active::before {
+  opacity: 1;
+  visibility: visible;
+}
+
 @media (min-width: 992px) {
   ._mobile-only {
     display: none !important;
@@ -344,6 +374,20 @@ b:not(._fw600) {
     opacity: 0;
   }
 }
+@keyframes wheel-to-hide {
+  30% {
+    background-position: 50% 45%;
+  }
+  40% {
+    background-position: 50% 54%;
+  }
+  55% {
+    background-position: 50% 42.5%;
+  }
+  75% {
+    background-position: 50% 50.5%;
+  }
+}
 .footer__payment, .og-slide__color-label, .og-slide__colors, .our-goods__filter, .mfb, .mft, .main-filter__items, .row {
   display: flex;
   flex-wrap: wrap;
@@ -355,7 +399,7 @@ b:not(._fw600) {
   justify-content: center;
 }
 
-.socials-links__link, .contacts__link {
+.socials-links__link, .contacts__link, .header-top__our-shops, .header-bottom__link, .header-top__link, .logo {
   margin: -5px;
   padding: 5px;
 }
@@ -537,7 +581,7 @@ label {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 100;
   transform: translateY(0);
 }
 .header._scrolled {
@@ -557,15 +601,13 @@ label {
   position: relative;
   transform: translateY(0);
   transition: transform 0.3s ease-out;
-  padding-top: 5px;
-  padding-bottom: 5px;
 }
 .header-bottom__link::after, .header-top__link::after {
   content: "";
   display: block;
   position: absolute;
-  left: 0;
-  right: 0;
+  left: 5px;
+  right: 5px;
   bottom: 4px;
   height: 1px;
   opacity: 0;
@@ -680,7 +722,7 @@ label {
   align-items: center;
 }
 .header-top__our-shops {
-  padding: 5px 0;
+  display: inline-block;
   font-size: 16px;
 }
 .header-top__our-shops-icon {
@@ -892,7 +934,12 @@ label {
   color: #fff;
   width: 40px;
   height: 40px;
+  transform: scale(1);
+  transition: transform 0.2s;
   text-decoration: none;
+}
+.header-bottom__feature-link:hover {
+  transform: scale(1.25);
 }
 .header-bottom__number {
   position: absolute;
@@ -905,14 +952,8 @@ label {
   line-height: 15px;
   transform: translateX(50%);
 }
-.header-bottom__comparison {
-  text-decoration: none;
-}
 .header-bottom__comparison .header-bottom__number {
   right: 1px;
-}
-.header-bottom__wishlist {
-  text-decoration: none;
 }
 .header-bottom__wishlist .header-bottom__number {
   right: 2px;
@@ -1127,12 +1168,6 @@ label {
 }
 .main-banner__button {
   padding: 15px 37px;
-  border: 2px solid #fff;
-  background-color: transparent;
-}
-.main-banner__button:hover {
-  color: #585858;
-  background-color: #fff;
 }
 .main-banner__button:focus-visible {
   box-shadow: 0 0 0 2px #f9c201 !important;
@@ -1397,25 +1432,57 @@ label {
 }
 
 .popular-categories {
-  padding: 75px 0;
+  padding: 75px 0 45px;
 }
-.popular-categories__items-wrappers {
+.popular-categories__items-wrapper {
+  position: relative;
+}
+.popular-categories__items-wrapper::before, .popular-categories__items-wrapper::after {
+  content: "";
+  top: 0;
+  width: 30px;
+  bottom: 0;
+  z-index: 1;
+  position: absolute;
+  background: none center/100% 100% no-repeat transparent;
+  pointer-events: none;
+}
+.popular-categories__items-wrapper::before {
+  left: -30px;
+  background-image: linear-gradient(to right, #fff, transparent);
+}
+.popular-categories__items-wrapper::after {
+  right: -30px;
+  background-image: linear-gradient(to left, #fff, transparent);
+}
+.popular-categories__items {
+  margin: -30px !important;
+  flex-wrap: nowrap;
   overflow-x: auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-.popular-categories__items-wrappers::-webkit-scrollbar {
+.popular-categories__items::-webkit-scrollbar {
   display: none;
-}
-.popular-categories__items {
-  flex-wrap: nowrap;
 }
 .popular-categories__item {
   flex: 1 1 0%;
 }
+.popular-categories__item:first-child {
+  padding-left: 30px;
+}
+.popular-categories__item:last-child {
+  padding-right: 30px;
+}
 .popular-categories__inner {
+  color: inherit;
+  display: block;
   padding: 15px 15px 20px;
   text-align: center;
+  user-select: none;
+  text-decoration: none;
   background-color: #fff;
   transition: box-shadow 0.3s;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0);
@@ -1430,6 +1497,7 @@ label {
 .popular-categories__title {
   display: block;
   font-size: 14px;
+  min-width: 85px;
   margin-top: 15px;
   transition: color 0.3s;
   font-weight: 500;

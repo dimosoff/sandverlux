@@ -64,17 +64,50 @@
       element.scrollLeft += event2.deltaY / 2;
     });
   }
-  function scrollToTop() {
-    let $scrollTopElement = document.querySelector(".scroll-top");
-    window.addEventListener("scroll", function() {
-      let hasClass3 = $scrollTopElement.classList.contains("_active"), isScrolled = scrollY > 35;
-      if (isScrolled && !hasClass3) {
-        $scrollTopElement.classList.add("_active");
-      } else if (!isScrolled && hasClass3) {
-        $scrollTopElement.classList.remove("_active");
+  function onKeydownAction(element, customFunction) {
+    element.addEventListener("keydown", (e) => {
+      if (e.key === " " || e.key === "Enter" || e.key === "Spacebar") {
+        e.preventDefault();
+        customFunction();
       }
     });
-    $scrollTopElement.addEventListener("click", () => {
+  }
+  function wheelToHide() {
+    const elements = document.querySelectorAll("._wheel-to-hide");
+    if (!elements.length)
+      return;
+    elements.forEach((element) => {
+      if (element.scrollWidth <= element.clientWidth || document.cookie.includes("wheelToHideHidden")) {
+        element.classList.remove("active");
+        setTimeout(() => element.classList.remove("_wheel-to-hide"), 500);
+        return;
+      }
+      element.scrollLeft = 0;
+      element.classList.add("active");
+      element.addEventListener("scroll", (event2) => hide(event2.target), {
+        once: true
+      });
+      element.addEventListener("click", (event2) => hide(event2.target), {
+        once: true
+      });
+    });
+    function hide(element) {
+      element.classList.remove("active");
+      document.cookie = "wheelToHideHidden=; max-age=604800; samesite=lax";
+      setTimeout(() => element.classList.remove("_wheel-to-hide"), 500);
+    }
+  }
+  function scrollToTop() {
+    const scrollTopElement = document.querySelector(".scroll-top");
+    window.addEventListener("scroll", function() {
+      let hasClass3 = scrollTopElement.classList.contains("_active"), isScrolled = scrollY > 35;
+      if (isScrolled && !hasClass3) {
+        scrollTopElement.classList.add("_active");
+      } else if (!isScrolled && hasClass3) {
+        scrollTopElement.classList.remove("_active");
+      }
+    });
+    scrollTopElement.addEventListener("click", () => {
       let currentScrollTop = window.scrollY;
       animate({
         duration: 600,
@@ -84,8 +117,8 @@
         }
       });
     });
-    if (scrollY > 35 && !$scrollTopElement.classList.contains("_active")) {
-      $scrollTopElement.classList.add("_active");
+    if (scrollY > 35 && !scrollTopElement.classList.contains("_active")) {
+      scrollTopElement.classList.add("_active");
     }
   }
   function animate({ timing, draw, duration }) {
@@ -6431,12 +6464,10 @@
         answerButton.addEventListener("click", () => {
           faqCollapseAnimation(answerButton, answerWrapper);
         });
-        answerButton.addEventListener("keydown", (e) => {
-          if (e.key === " " || e.key === "Enter" || e.key === "Spacebar") {
-            e.preventDefault();
-            faqCollapseAnimation(answerButton, answerWrapper);
-          }
-        });
+        onKeydownAction(
+          answerButton,
+          faqCollapseAnimation(answerButton, answerWrapper)
+        );
       });
     }
     popupCloseButtons.forEach((elem) => {
@@ -6451,6 +6482,11 @@
       thankYouPopopup.classList.remove(popupClassActive);
       topUpPopopup.classList.remove(popupClassActive);
     });
+    const popularCategoriesScroll = document.querySelector(
+      ".popular-categories__items"
+    );
+    if (popularCategoriesScroll)
+      toHorizontalScroll(popularCategoriesScroll);
     if (formElements) {
       formElements.forEach((elem) => {
         const elemLabel = elem.previousElementSibling || elem.nextElementSibling;
@@ -6779,6 +6815,13 @@
         e.target.value = phoneArray;
       });
     }
+    const radioButtons = document.querySelectorAll(".form__radio");
+    radioButtons.forEach(
+      (button) => onKeydownAction(button, function() {
+        button.click();
+      })
+    );
+    wheelToHide();
   });
 })();
 //# sourceMappingURL=main.js.map

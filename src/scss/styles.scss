@@ -167,6 +167,7 @@ label {
 }
 .logo {
   display: inline-block;
+  @extend %link-indent;
 
   @media ($desktop-min) {
     transition: transform $transition3;
@@ -268,7 +269,7 @@ label {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 100;
   transform: translateY(0);
   // transition: transform $transition3;
 
@@ -291,15 +292,14 @@ label {
   position: relative;
   transform: translateY(0);
   transition: transform $transition3;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  @extend %link-indent;
 
   &::after {
     content: "";
     display: block;
     position: absolute;
-    left: 0;
-    right: 0;
+    left: 5px;
+    right: 5px;
     bottom: 4px;
     height: 1px;
     opacity: 0;
@@ -436,9 +436,10 @@ label {
     @extend %header-burger;
   }
   &__our-shops {
-    padding: 5px 0;
+    display: inline-block;
     font-size: 16px;
     @extend %header-top-links;
+    @extend %link-indent;
 
     &:hover {
       @extend %header-our-shops-hover !optional;
@@ -553,7 +554,7 @@ label {
 
     &[href]:hover {
       @extend %contact-link-hover !optional;
-  
+
       & span {
         transform: translateX(3px);
       }
@@ -595,7 +596,7 @@ label {
     display: flex;
     text-decoration: none;
     @extend %link-indent;
-    
+
     &:hover {
       @extend %social-link-hover !optional;
     }
@@ -692,8 +693,14 @@ label {
     color: $white;
     width: 40px;
     height: 40px;
+    transform: scale(1);
+    transition: transform 0.2s;
     text-decoration: none;
     @extend %flex-center;
+
+    &:hover {
+      transform: scale(1.25);
+    }
   }
   &__number {
     position: absolute;
@@ -708,15 +715,11 @@ label {
     @extend %header-bottom-number;
   }
   &__comparison {
-    text-decoration: none;
-
     & %header-bottom-number {
       right: 1px;
     }
   }
   &__wishlist {
-    text-decoration: none;
-
     & %header-bottom-number {
       right: 2px;
     }
@@ -970,13 +973,7 @@ label {
   }
   &__button {
     padding: 15px 37px;
-    border: 2px solid $white;
-    background-color: transparent;
 
-    &:hover {
-      color: $text-color;
-      background-color: $white;
-    }
     &:focus-visible {
       @include focus-styles;
     }
@@ -1287,14 +1284,41 @@ label {
   }
 }
 .popular-categories {
-  padding: 75px 0;
+  padding: 75px 0 45px;
 
   // &__container {
   // }
   // &__heading {
   // }
-  &__items-wrappers {
+  &__items-wrapper {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      top: 0;
+      width: 30px;
+      bottom: 0;
+      z-index: 1;
+      position: absolute;
+      background: none center/100% 100% no-repeat transparent;
+      pointer-events: none;
+    }
+    &::before {
+      left: -30px;
+      background-image: linear-gradient(to right, #fff, transparent);
+    }
+    &::after {
+      right: -30px;
+      background-image: linear-gradient(to left, #fff, transparent);
+    }
+  }
+  &__items {
+    margin: -30px !important;
+    flex-wrap: nowrap;
     overflow-x: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
     scrollbar-width: none;
     -ms-overflow-style: none;
 
@@ -1302,16 +1326,24 @@ label {
       display: none;
     }
   }
-  &__items {
-    flex-wrap: nowrap;
-  }
   &__item {
     flex: 1 1 0%;
+
+    &:first-child {
+      padding-left: 30px;
+    }
+    &:last-child {
+      padding-right: 30px;
+    }
   }
   &__inner {
     // height: 100%;
+    color: inherit;
+    display: block;
     padding: 15px 15px 20px;
     text-align: center;
+    user-select: none;
+    text-decoration: none;
     background-color: #fff;
     transition: box-shadow 0.3s;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0);
@@ -1329,6 +1361,7 @@ label {
   &__title {
     display: block;
     font-size: 14px;
+    min-width: 85px;
     margin-top: 15px;
     transition: color 0.3s;
     font-weight: 500;
