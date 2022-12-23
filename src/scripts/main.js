@@ -46,18 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
       window.innerWidth - elem.getBoundingClientRect().left
     }px`;
 
-    elem.addEventListener("wheel", (event) => {
-      event.preventDefault();
-      let delta = event.deltaY;
-      const step = delta/10;
-      let timer = setInterval(function () {
-        if (delta <= 0) clearInterval(timer);
-        else {
-          elem.scrollLeft += step;
-          delta -= step;
-        }
-      }, 20);
-    });
+    myFunctions.toHorizontalScroll(elem);
   });
 
   //faq list collapse

@@ -58,6 +58,12 @@
       });
     });
   }
+  function toHorizontalScroll(element) {
+    element.addEventListener("wheel", (event2) => {
+      event2.preventDefault();
+      element.scrollLeft += event2.deltaY / 2;
+    });
+  }
   function scrollToTop() {
     let $scrollTopElement = document.querySelector(".scroll-top");
     window.addEventListener("scroll", function() {
@@ -6415,19 +6421,7 @@
     );
     catalogBannerWrappers.forEach((elem) => {
       elem.style.maxWidth = `${window.innerWidth - elem.getBoundingClientRect().left}px`;
-      elem.addEventListener("wheel", (event2) => {
-        event2.preventDefault();
-        let delta = event2.deltaY;
-        const step = delta / 10;
-        let timer = setInterval(function() {
-          if (delta <= 0)
-            clearInterval(timer);
-          else {
-            elem.scrollLeft += step;
-            delta -= step;
-          }
-        }, 20);
-      });
+      toHorizontalScroll(elem);
     });
     const allFaqItems = document.querySelectorAll(".faq-item");
     if (allFaqItems.length) {

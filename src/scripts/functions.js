@@ -64,6 +64,13 @@ function setAnchorsEvents() {
   });
 }
 
+export function toHorizontalScroll(element) {
+  element.addEventListener("wheel", (event) => {
+    event.preventDefault();
+    element.scrollLeft += event.deltaY/2;
+  });
+}
+
 export function scrollToTop() {
   let $scrollTopElement = document.querySelector(".scroll-top");
   window.addEventListener("scroll", function () {
