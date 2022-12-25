@@ -97,6 +97,28 @@
       setTimeout(() => element.classList.remove("_wheel-to-hide"), 500);
     }
   }
+  function mapOverlay() {
+    const maps = document.querySelectorAll(".map");
+    if (!maps.length)
+      return;
+    maps.forEach((map) => {
+      const overlay = map.querySelector(".map__overlay");
+      if (!overlay)
+        return;
+      let timer = null;
+      overlay.addEventListener("wheel", () => {
+        if (timer !== null)
+          return;
+        overlay.classList.add("active");
+        timer = setTimeout(function() {
+          overlay.classList.remove("active");
+          clearTimeout(timer);
+          timer = null;
+        }, 2e3);
+      });
+      overlay.addEventListener("click", () => overlay.remove());
+    });
+  }
   function scrollToTop() {
     const scrollTopElement = document.querySelector(".scroll-top");
     window.addEventListener("scroll", function() {
@@ -6423,6 +6445,7 @@
     addClassOnClick(".burger", ".header", "_menu-opened");
     myLazyLoad();
     scrollToTop();
+    mapOverlay();
     myGallery;
     mySetAnchorsEvents;
     const myPopupOverlay2 = myPopupOverlay;
@@ -6546,12 +6569,58 @@
     });
     const ogFilterButtons = document.querySelectorAll(".our-goods__button");
     let ogSlides = null;
-    ogFilterButtons.forEach(
-      (button) => button.addEventListener("click", (event2) => {
-        showCorrectCategory(event2.currentTarget.value);
-        switchCategoryButton(event2.currentTarget);
-      })
-    );
+    if (ogFilterButtons.length) {
+      ogFilterButtons.forEach(
+        (button) => button.addEventListener("click", (event2) => {
+          showCorrectCategory(event2.currentTarget.value);
+          switchCategoryButton(event2.currentTarget);
+          ogSwiper.update();
+        })
+      );
+      const ogSwiper = new core_default(".our-goods__swiper", {
+        modules: [Navigation],
+        loop: false,
+        loopAdditionalSlides: 2,
+        rewind: false,
+        grabCursor: true,
+        slidesPerView: 5,
+        spaceBetween: 60,
+        setWrapperSize: true,
+        wrapperClass: "our-goods__swiper-wrapper",
+        navigation: {
+          nextEl: ".our-goods__nav-btn_next",
+          prevEl: ".our-goods__nav-btn_prev",
+          lockClass: "our-goods__nav-btn_lock"
+        },
+        breakpoints: {
+          320: {
+            slidesPerView: 1
+          },
+          576: {
+            slidesPerView: 2
+          },
+          768: {
+            slidesPerView: 3
+          },
+          992: {
+            slidesPerView: 4
+          },
+          1200: {
+            slidesPerView: 5
+          }
+        },
+        on: {
+          init: function() {
+            updateSliderLockedState(this);
+            ogSlides = this.slides;
+            showCorrectCategory("bestseller");
+          },
+          update: function() {
+            updateSliderLockedState(this);
+          }
+        }
+      });
+    }
     function showCorrectCategory(category) {
       if (ogSlides === null)
         return;
@@ -6568,49 +6637,6 @@
       ogFilterButtons.forEach((btn) => btn.classList.remove("active"));
       button.classList.add("active");
     }
-    const swiper = new core_default(".our-goods__swiper", {
-      modules: [Navigation],
-      loop: false,
-      loopAdditionalSlides: 2,
-      rewind: false,
-      grabCursor: true,
-      slidesPerView: 5,
-      spaceBetween: 60,
-      setWrapperSize: true,
-      wrapperClass: "our-goods__swiper-wrapper",
-      navigation: {
-        nextEl: ".our-goods__nav-btn_next",
-        prevEl: ".our-goods__nav-btn_prev",
-        lockClass: "our-goods__nav-btn_lock"
-      },
-      breakpoints: {
-        320: {
-          slidesPerView: 1
-        },
-        576: {
-          slidesPerView: 2
-        },
-        768: {
-          slidesPerView: 3
-        },
-        992: {
-          slidesPerView: 4
-        },
-        1200: {
-          slidesPerView: 5
-        }
-      },
-      on: {
-        init: function() {
-          updateSliderLockedState(this);
-          ogSlides = this.slides;
-          showCorrectCategory("bestseller");
-        },
-        observerUpdate: function() {
-          console.log("observerUpdate");
-        }
-      }
-    });
     function updateSliderLockedState(slider) {
       slider.isLocked ? slider.el.classList.add("locked") : slider.el.classList.remove("locked");
     }

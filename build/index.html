@@ -230,7 +230,7 @@
               </li>
             </ul>
           </div>
-          <div class="catalog__list-inner catalog__banners-wrapper _wheel-to-hide">
+          <div class="catalog__list-inner catalog__banners-wrapper">
             <aside class="catalog__banner">
               <a href="#" class="catalog__banner-link">
                 <p class="catalog__banner-image-wrapper _image-wrapper">
@@ -562,7 +562,7 @@
   <div class="popular-categories__container container">
     <h2 class="popular-categories__heading heading">Популярные категории</h2>
     <div class="popular-categories__items-wrapper">
-      <div class="popular-categories__items row _wheel-to-hide">
+      <div class="popular-categories__items row">
         <div class="popular-categories__item">
   <a class="popular-categories__inner" href="#">
     <div class="popular-categories__image-wrapper _image-wrapper">
@@ -1646,8 +1646,13 @@
       </div>
     </div>
     <div class="our-shops__map">
-      <iframe src="https://yandex.com/map-widget/v1/-/CCUnqLRPOD" width="1780" height="445"
-        allowfullscreen="true"></iframe>
+      <div class="map">
+        <div class="map__overlay">
+          <p class="map__message">Нажмите, чтобы взаимодействовать</p>
+        </div>
+        <iframe src="https://yandex.com/map-widget/v1/-/CCUnqLRPOD" width="1780" height="445"
+          allowfullscreen="true"></iframe>
+      </div>
     </div>
   </div>
 </section>

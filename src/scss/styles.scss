@@ -20,6 +20,7 @@ $catalog-background: #e6ede4;
 // $main-gradient: linear-gradient(89.97deg, #9056ec 0.58%, #bb8fff 79.26%);
 // $faq-gradient: linear-gradient(89.97deg, #fdd65b 0.58%, #f28a0c 99.97%);
 
+$desktop-mad-xl: "max-width: 1365.98px";
 $desktop-min-xl: "min-width: 1200px";
 $desktop-max: "max-width: 1199.98px";
 $desktop-min: "min-width: 992px";
@@ -69,6 +70,35 @@ $container-padding: 70px;
 %link-indent {
   margin: -5px;
   padding: 5px;
+}
+@mixin link-hover-underline($color: $white) {
+  display: inline-block;
+  position: relative;
+  transform: translateY(0);
+  transition: transform $transition3;
+  @extend %link-indent;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 5px;
+    right: 5px;
+    bottom: 4px;
+    height: 1px;
+    opacity: 0;
+    transform: translateY(0);
+    transition: transform $transition3, opacity $transition3;
+    background-color: $color;
+  }
+  &:hover {
+    transform: translateY(-2px);
+
+    &::after {
+      opacity: 1;
+      transform: translateY(2px);
+    }
+  }
 }
 
 html {
@@ -195,20 +225,16 @@ label {
   }
 }
 .burger {
-  display: none;
   width: 33px;
   height: 19px;
   border: 0;
   cursor: pointer;
   padding: 0;
+  display: block;
   position: relative;
   perspective: 50px;
   background-color: transparent;
   transition: transform $transition3;
-
-  @media ($tablet-max) {
-    display: block;
-  }
 
   & span {
     display: block;
@@ -286,35 +312,6 @@ label {
   line-height: 1.2;
   font-weight: 600;
   text-decoration: none;
-}
-%header-link-hover {
-  display: inline-block;
-  position: relative;
-  transform: translateY(0);
-  transition: transform $transition3;
-  @extend %link-indent;
-
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 5px;
-    right: 5px;
-    bottom: 4px;
-    height: 1px;
-    opacity: 0;
-    transform: translateY(0);
-    transition: transform $transition3, opacity $transition3;
-    background-color: $white;
-  }
-  &:hover {
-    transform: translateY(-2px);
-
-    &::after {
-      opacity: 1;
-      transform: translateY(2px);
-    }
-  }
 }
 %header-burger {
   width: 19px;
@@ -426,7 +423,7 @@ label {
   &__link {
     font-size: 14px;
     @extend %header-top-links;
-    @extend %header-link-hover;
+    @include link-hover-underline();
   }
   &__about {
     display: flex;
@@ -479,7 +476,7 @@ label {
       margin-left: 30px;
     }
     &_mobile-only {
-      @media ($desktop-min) {
+      @media ($desktop-min-xl) {
         display: none;
       }
     }
@@ -490,6 +487,12 @@ label {
   &__call-request {
     width: 235px;
     max-width: 100%;
+
+    @media ($desktop-mad-xl) {
+      width: auto;
+      padding: 12px 25px;
+      max-width: min-content;
+    }
   }
 }
 .contacts {
@@ -516,6 +519,10 @@ label {
   &__content {
     font-size: 20px;
     line-height: 1.2;
+
+    @media ($desktop-mad-xl) {
+      font-size: 19px;
+    }
   }
   &__phone-wrapper {
     display: flex;
@@ -638,6 +645,17 @@ label {
       margin-left: 33px;
     }
   }
+  &__link {
+    // font-size: 15px;
+    text-align: center;
+    @extend %header-top-links;
+    @include link-hover-underline();
+  }
+  %hover-to-open {
+    &::after {
+      height: 25px;
+    }
+  }
   &__catalog {
     display: flex;
     align-items: center;
@@ -650,16 +668,6 @@ label {
   }
   &__catalog-burger {
     @extend %header-burger;
-  }
-  &__link {
-    // font-size: 15px;
-    @extend %header-top-links;
-    @extend %header-link-hover;
-  }
-  %hover-to-open {
-    &::after {
-      height: 25px;
-    }
   }
   &__menu {
     left: -$container-padding;
@@ -742,6 +750,9 @@ label {
   // }
   &__list-inner {
     height: $column-height;
+    overflow-y: auto;
+    overflow-x: hidden;
+    @include small-scrollbar($secondary-color, $catalog-background);
 
     @extend %catalog-list-inner !optional;
   }
@@ -795,8 +806,6 @@ label {
     & > %catalog-list-inner {
       width: $row-width;
       padding: 20px 0;
-      overflow-y: auto;
-      overflow-x: hidden;
       flex-shrink: 0;
 
       &%catalog-banners-wrapper {
@@ -811,12 +820,8 @@ label {
   &__banners-wrapper {
     display: flex;
     position: relative;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
+    overflow-x: auto;
+    @include small-scrollbar($secondary-color, $catalog-background);
 
     @extend %catalog-banners-wrapper !optional;
   }
@@ -1319,12 +1324,7 @@ label {
     overflow-x: auto;
     padding-top: 30px;
     padding-bottom: 30px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
+    @include small-scrollbar($secondary-color, $catalog-background);
   }
   &__item {
     flex: 1 1 0%;
@@ -1396,12 +1396,13 @@ label {
     margin-top: 40px;
   }
   &__swiper {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    list-style: none;
     padding: 0;
     z-index: 1;
+    position: relative;
+    list-style: none;
+    transition: margin 0.3s;
+    margin-left: 0;
+    margin-right: 0;
 
     &:not(.locked) {
       margin-left: 70px;
@@ -1439,10 +1440,13 @@ label {
     width: 140px;
     bottom: 0;
     cursor: pointer;
+    opacity: 1;
     z-index: 10;
     @extend %flex-center;
     position: absolute;
     min-width: 70px;
+    visibility: visible;
+    transition: opacity 0.3s, visibility 0.3s;
     background-color: transparent;
 
     &_prev {
@@ -1454,7 +1458,9 @@ label {
       transform: translateX(100%);
     }
     &_lock {
-      display: none;
+      // display: none;
+      opacity: 0;
+      visibility: hidden;
     }
   }
   &__prev-icon {
@@ -1499,7 +1505,7 @@ label {
   // }
   // }
   &__content {
-    margin-top: 5px;
+    margin-top: 10px;
     line-height: 1.2;
   }
   &__heading {
@@ -1810,8 +1816,8 @@ label {
   &__bottom {
     display: flex;
     flex-grow: 1;
-    padding-top: 12px;
-    padding-bottom: 18px;
+    padding-top: 13px;
+    padding-bottom: 28px;
     flex-direction: column;
   }
   &__text {
@@ -1819,15 +1825,48 @@ label {
     line-height: 1.875;
   }
   &__button-wrapper {
-    margin-top: 12px;
+    margin-top: 21px;
     text-align: right;
   }
   &__link {
     color: $primary-color;
-    padding: 10px 0;
     display: inline-block;
     font-weight: 600;
     text-decoration: none;
+    @include link-hover-underline($primary-color);
+  }
+}
+.map {
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+    background-color: rgba(255, 255, 255, 0.5);
+    @extend %flex-center;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+  &__message {
+    padding: 20px;
+    max-width: 100%;
+    max-width: 300px;
+    text-align: center;
+    font-weight: 600;
+  }
+  iframe {
+    width: 100%;
+    border: none;
+    display: block;
   }
 }
 .our-shops {
@@ -1918,15 +1957,10 @@ label {
     background-color: transparent;
   }
   &__map {
-    position: relative;
-    overflow: hidden;
     margin-top: 40px;
 
     & iframe {
-      width: 100%;
-      border: none;
       height: 445px;
-      display: block;
     }
   }
 }
@@ -2256,7 +2290,7 @@ label {
     vertical-align: middle;
 
     & + & {
-      margin-left: 16px;
+      margin-left: 20px;
     }
     .form__label {
       color: transparent;

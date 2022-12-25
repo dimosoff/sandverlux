@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   myFunctions.addClassOnClick(".burger", ".header", "_menu-opened");
   myFunctions.myLazyLoad();
   myFunctions.scrollToTop();
+  myFunctions.mapOverlay();
   myFunctions.myGallery;
   myFunctions.mySetAnchorsEvents;
   const myPopupOverlay = myFunctions.myPopupOverlay;
@@ -161,12 +162,73 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const ogFilterButtons = document.querySelectorAll(".our-goods__button");
   let ogSlides = null;
-  ogFilterButtons.forEach((button) =>
-    button.addEventListener("click", (event) => {
-      showCorrectCategory(event.currentTarget.value);
-      switchCategoryButton(event.currentTarget);
-    })
-  );
+
+  if (ogFilterButtons.length) {
+    ogFilterButtons.forEach((button) =>
+      button.addEventListener("click", (event) => {
+        showCorrectCategory(event.currentTarget.value);
+        switchCategoryButton(event.currentTarget);
+        ogSwiper.update();
+      })
+    );
+    // eslint-disable-next-line no-unused-vars, no-undef
+    const ogSwiper = new Swiper(".our-goods__swiper", {
+      modules: [Navigation],
+      loop: false,
+      loopAdditionalSlides: 2,
+      rewind: false,
+      grabCursor: true,
+      slidesPerView: 5,
+      spaceBetween: 60,
+      //autoHeight: true,
+      setWrapperSize: true,
+      wrapperClass: "our-goods__swiper-wrapper",
+
+      //pagination: {
+      //  el: '.swiper-pagination',
+      //},
+
+      navigation: {
+        nextEl: ".our-goods__nav-btn_next",
+        prevEl: ".our-goods__nav-btn_prev",
+        lockClass: "our-goods__nav-btn_lock",
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+        },
+        576: {
+          slidesPerView: 2,
+        },
+        768: {
+          slidesPerView: 3,
+        },
+        992: {
+          slidesPerView: 4,
+        },
+        1200: {
+          slidesPerView: 5,
+        },
+      },
+      on: {
+        init: function () {
+          updateSliderLockedState(this);
+          ogSlides = this.slides;
+          showCorrectCategory("bestseller");
+        },
+        // observerUpdate: function () {
+        //   console.log("observerUpdate");
+        // },
+        // lock: function () {
+        //   console.log("lock");
+        // },
+        update: function () {
+          updateSliderLockedState(this);
+          // console.log('update');
+        },
+      },
+    });
+  }
 
   function showCorrectCategory(category) {
     if (ogSlides === null) return;
@@ -184,63 +246,6 @@ document.addEventListener("DOMContentLoaded", function () {
     ogFilterButtons.forEach((btn) => btn.classList.remove("active"));
     button.classList.add("active");
   }
-
-  // eslint-disable-next-line no-unused-vars, no-undef
-  const swiper = new Swiper(".our-goods__swiper", {
-    modules: [Navigation],
-    loop: false,
-    loopAdditionalSlides: 2,
-    rewind: false,
-    grabCursor: true,
-    slidesPerView: 5,
-    spaceBetween: 60,
-    //autoHeight: true,
-    setWrapperSize: true,
-    wrapperClass: "our-goods__swiper-wrapper",
-
-    //pagination: {
-    //  el: '.swiper-pagination',
-    //},
-
-    navigation: {
-      nextEl: ".our-goods__nav-btn_next",
-      prevEl: ".our-goods__nav-btn_prev",
-      lockClass: "our-goods__nav-btn_lock",
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-      },
-      576: {
-        slidesPerView: 2,
-      },
-      768: {
-        slidesPerView: 3,
-      },
-      992: {
-        slidesPerView: 4,
-      },
-      1200: {
-        slidesPerView: 5,
-      },
-    },
-    on: {
-      init: function () {
-        updateSliderLockedState(this);
-        ogSlides = this.slides;
-        showCorrectCategory("bestseller");
-      },
-      observerUpdate: function () {
-        console.log("observerUpdate");
-      },
-      // lock: function () {
-      //   console.log("lock");
-      // },
-      // update: function () {
-      //   console.log('update');
-      // },
-    },
-  });
 
   function updateSliderLockedState(slider) {
     slider.isLocked

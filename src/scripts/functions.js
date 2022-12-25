@@ -111,6 +111,29 @@ export function wheelToHide() {
   }
 }
 
+export function mapOverlay() {
+  const maps = document.querySelectorAll(".map");
+  if (!maps.length) return;
+
+  maps.forEach((map) => {
+    const overlay = map.querySelector(".map__overlay");
+    if (!overlay) return;
+
+    let timer = null;
+    overlay.addEventListener("wheel", () => {
+      if (timer !== null) return;
+
+      overlay.classList.add("active");
+      timer = setTimeout(function () {
+        overlay.classList.remove("active");
+        clearTimeout(timer);
+        timer = null;
+      }, 2000);
+    });
+    overlay.addEventListener("click", () => overlay.remove());
+  });
+}
+
 export function scrollToTop() {
   const scrollTopElement = document.querySelector(".scroll-top");
   window.addEventListener("scroll", function () {
