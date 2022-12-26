@@ -24,7 +24,7 @@
     <div class="header-bottom__search">
       <form class="search-form">
         <label class="search-form__label sr-only" for="header-search" aria-hidden="true">Поиск</label>
-        <input class="search-form__input" type="search" id="header-search" name="header-search" placeholder="Поиск">
+        <input class="search-form__input header-search" type="search" name="header-search" placeholder="Поиск">
         <button class="search-form__button" type="submit" name="header-search-button">
           <svg class="search-form__button-icon" width="20" height="20">
             <use href="/images/icons.svg#search" />
@@ -32,32 +32,32 @@
         </button>
       </form>
     </div>
-    <div class="header-bottom__features">
-      <div class="header-bottom__feature-item">
-        <a class="header-bottom__feature-link header-bottom__comparison" href="#">
+    <div class="header-bottom__features feature-buttons _desktop-only">
+      <div class="feature-buttons__item">
+        <a class="feature-buttons__link feature-buttons__comparison" href="#">
           <span class="sr-only">Сравнение</span>
-          <svg class="header-bottom__feature-icon" width="32.24" height="24">
+          <svg class="feature-buttons__icon" width="32.24" height="24">
             <use href="/images/icons.svg#scales" />
           </svg>
-          <i class="header-bottom__number" id="comparison-count">0</i>
+          <i class="feature-buttons__number comparison-count">0</i>
         </a>
       </div>
-      <div class="header-bottom__feature-item">
-        <a class="header-bottom__feature-link header-bottom__wishlist" href="#">
+      <div class="feature-buttons__item">
+        <a class="feature-buttons__link feature-buttons__wishlist" href="#">
           <span class="sr-only">Список желаемого</span>
-          <svg class="header-bottom__feature-icon" width="25.73" height="24">
+          <svg class="feature-buttons__icon" width="25.73" height="24">
             <use href="/images/icons.svg#heart" />
           </svg>
-          <i class="header-bottom__number" id="wishlist-count">0</i>
+          <i class="feature-buttons__number wishlist-count">0</i>
         </a>
       </div>
-      <div class="header-bottom__feature-item">
-        <button class="header-bottom__feature-link header-bottom__cart" type="button" name="cart-button">
+      <div class="feature-buttons__item">
+        <button class="feature-buttons__link feature-buttons__cart" type="button" name="cart-button">
           <span class="sr-only">Корзина</span>
-          <svg class="header-bottom__feature-icon" width="24" height="24">
+          <svg class="feature-buttons__icon" width="24" height="24">
             <use href="/images/icons.svg#cart" />
           </svg>
-          <i class="header-bottom__number" id="cart-count">0</i>
+          <i class="feature-buttons__number cart-count">0</i>
         </button>
       </div>
     </div>

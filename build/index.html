@@ -26,8 +26,57 @@
 <body>
   <div class="wrapper">
     <header class="header">
-  <div class="header__item">
-    <nav class="header-top container">
+  <article class="header__mobile _tablet-and-mobile-only">
+    <h3 class="sr-only">Мобильная шапка сайта</h3>
+    <div class="header__mobile-inner">
+      <div class="header__mobile-item">
+        <button class="burger">
+          <span></span><span></span><span></span><span class="sr-only">Меню</span>
+        </button>
+      </div>
+      <div class="header__mobile-item">
+        <a class="logo" href="/">
+          <span class="sr-only">На главную</span>
+          <svg class="logo__icon" aria-label="sandverlux.by logo" width="144" height="99">
+            <use href="/images/icons.svg#logo" />
+          </svg>
+        </a>
+      </div>
+      <div class="header__mobile-item feature-buttons">
+        <div class="feature-buttons__item">
+          <a class="feature-buttons__link feature-buttons__comparison" href="#">
+            <span class="sr-only">Сравнение</span>
+            <svg class="feature-buttons__icon" width="32.24" height="24">
+              <use href="/images/icons.svg#scales" />
+            </svg>
+            <i class="feature-buttons__number comparison-count">0</i>
+          </a>
+        </div>
+        <div class="feature-buttons__item">
+          <a class="feature-buttons__link feature-buttons__wishlist" href="#">
+            <span class="sr-only">Список желаемого</span>
+            <svg class="feature-buttons__icon" width="25.73" height="24">
+              <use href="/images/icons.svg#heart" />
+            </svg>
+            <i class="feature-buttons__number wishlist-count">0</i>
+          </a>
+        </div>
+        <div class="feature-buttons__item">
+          <button class="feature-buttons__link feature-buttons__cart" type="button" name="cart-button">
+            <span class="sr-only">Корзина</span>
+            <svg class="feature-buttons__icon" width="24" height="24">
+              <use href="/images/icons.svg#cart" />
+            </svg>
+            <i class="feature-buttons__number cart-count">0</i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </article>
+  <article class="header__navigation">
+    <h3 class="sr-only">Шапка сайта для настольного пк</h3>
+    <div class="header__item">
+      <nav class="header-top container">
   <div class="header-top__item">
     <ul class="header-top__links-list">
       <li class="header-top__list-item _hover-to-open">
@@ -60,15 +109,10 @@
     </a>
   </div>
 </nav>
-  </div>
-  <div class="header__item">
-    <div class="header-middle container">
-  <div class="header-middle__item header-middle__item_mobile-only">
-    <button class="burger">
-      <span></span><span></span><span></span><span class="sr-only">Меню</span>
-    </button>
-  </div>
-  <div class="header-middle__item">
+    </div>
+    <div class="header__item">
+      <div class="header-middle container">
+  <div class="header-middle__item _desktop-only">
     <a class="logo" href="/">
       <span class="sr-only">На главную</span>
       <svg class="logo__icon" aria-label="sandverlux.by logo" width="144" height="99">
@@ -137,9 +181,9 @@
     <button class="header-middle__call-request _btn" type="button" name="call-request">Заказать звонок</button>
   </div>
 </div>
-  </div>
-  <div class="header__item">
-    <div class="header-bottom container">
+    </div>
+    <div class="header__item">
+      <div class="header-bottom container">
   <div class="header-bottom__item">
     <nav class="header-bottom__links">
       <ul class="header-bottom__links-list">
@@ -310,7 +354,7 @@
     <div class="header-bottom__search">
       <form class="search-form">
         <label class="search-form__label sr-only" for="header-search" aria-hidden="true">Поиск</label>
-        <input class="search-form__input" type="search" id="header-search" name="header-search" placeholder="Поиск">
+        <input class="search-form__input header-search" type="search" name="header-search" placeholder="Поиск">
         <button class="search-form__button" type="submit" name="header-search-button">
           <svg class="search-form__button-icon" width="20" height="20">
             <use href="/images/icons.svg#search" />
@@ -318,38 +362,39 @@
         </button>
       </form>
     </div>
-    <div class="header-bottom__features">
-      <div class="header-bottom__feature-item">
-        <a class="header-bottom__feature-link header-bottom__comparison" href="#">
+    <div class="header-bottom__features feature-buttons _desktop-only">
+      <div class="feature-buttons__item">
+        <a class="feature-buttons__link feature-buttons__comparison" href="#">
           <span class="sr-only">Сравнение</span>
-          <svg class="header-bottom__feature-icon" width="32.24" height="24">
+          <svg class="feature-buttons__icon" width="32.24" height="24">
             <use href="/images/icons.svg#scales" />
           </svg>
-          <i class="header-bottom__number" id="comparison-count">0</i>
+          <i class="feature-buttons__number comparison-count">0</i>
         </a>
       </div>
-      <div class="header-bottom__feature-item">
-        <a class="header-bottom__feature-link header-bottom__wishlist" href="#">
+      <div class="feature-buttons__item">
+        <a class="feature-buttons__link feature-buttons__wishlist" href="#">
           <span class="sr-only">Список желаемого</span>
-          <svg class="header-bottom__feature-icon" width="25.73" height="24">
+          <svg class="feature-buttons__icon" width="25.73" height="24">
             <use href="/images/icons.svg#heart" />
           </svg>
-          <i class="header-bottom__number" id="wishlist-count">0</i>
+          <i class="feature-buttons__number wishlist-count">0</i>
         </a>
       </div>
-      <div class="header-bottom__feature-item">
-        <button class="header-bottom__feature-link header-bottom__cart" type="button" name="cart-button">
+      <div class="feature-buttons__item">
+        <button class="feature-buttons__link feature-buttons__cart" type="button" name="cart-button">
           <span class="sr-only">Корзина</span>
-          <svg class="header-bottom__feature-icon" width="24" height="24">
+          <svg class="feature-buttons__icon" width="24" height="24">
             <use href="/images/icons.svg#cart" />
           </svg>
-          <i class="header-bottom__number" id="cart-count">0</i>
+          <i class="feature-buttons__number cart-count">0</i>
         </button>
       </div>
     </div>
   </div>
 </div>
-  </div>
+    </div>
+  </article>
   <!-- <div class="header__background"></div> -->
 </header>
     <main class="main-banner">

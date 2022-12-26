@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const ogSwiper = new Swiper(".our-goods__swiper", {
       modules: [Navigation],
       loop: false,
-      loopAdditionalSlides: 2,
+      // loopAdditionalSlides: 2,
       rewind: false,
       grabCursor: true,
       slidesPerView: 5,

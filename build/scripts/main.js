@@ -6580,7 +6580,6 @@
       const ogSwiper = new core_default(".our-goods__swiper", {
         modules: [Navigation],
         loop: false,
-        loopAdditionalSlides: 2,
         rewind: false,
         grabCursor: true,
         slidesPerView: 5,

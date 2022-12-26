@@ -38,7 +38,7 @@ $header-top-height: 60px;
 $header-middle-height: 110px;
 $header-bottom-height: 70px;
 
-$header-height-mobile: 75px;
+$header-height-mobile: 65px;
 
 $container-padding: 70px;
 
@@ -102,16 +102,16 @@ $container-padding: 70px;
 }
 
 html {
-  font-size: 16px;
+  font-size: calc(0.580208rem + 0.35vw);
 }
 body {
   color: $text-color;
   font-size: inherit;
+  overflow-x: hidden;
   line-height: 1.5;
   font-weight: 400;
   font-family: $font-family;
   background-color: $body-background;
-  overflow-x: hidden;
 }
 label {
   display: inline-block;
@@ -119,15 +119,12 @@ label {
 .wrapper {
   min-height: 100vh;
 
-  @media ($desktop-min) {
+  @media ($desktop-min-xl) {
     margin-top: $header-top-height + $header-middle-height +
       $header-bottom-height;
   }
-  @media ($tablet-max) {
-    margin-top: $header-height-mobile + 30px;
-  }
-  @media ($mobile-max) {
-    margin-top: $header-height-mobile + 20px;
+  @media ($desktop-max) {
+    margin-top: $header-height-mobile;
   }
 }
 .container {
@@ -211,6 +208,10 @@ label {
     height: auto;
     transition: width $transition3;
 
+    @media ($desktop-max) {
+      width: 66px;
+    }
+
     // %header-scrolled & {
     //   width: 139px;
     // }
@@ -230,12 +231,22 @@ label {
   border: 0;
   cursor: pointer;
   padding: 0;
+  z-index: 150;
   display: block;
   position: relative;
   perspective: 50px;
   background-color: transparent;
   transition: transform $transition3;
 
+  &:before {
+    content: "";
+    top: -12px;
+    left: -5px;
+    right: -5px;
+    bottom: -12px;
+    display: block;
+    position: absolute;
+  }
   & span {
     display: block;
     position: absolute;
@@ -247,7 +258,7 @@ label {
     background-color: $white;
     transition: transform 0.6s ease, opacity $transition3;
 
-    // @media ($tablet-max) {
+    // @media ($desktop-max) {
     //   %menu-opened & {
     //     background-color: $scrolled-color;
     //   }
@@ -295,17 +306,98 @@ label {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 100;
-  transform: translateY(0);
+  z-index: 110;
   // transition: transform $transition3;
 
-  &._scrolled {
-    position: fixed;
-    transform: translateY(-($header-top-height + $header-middle-height));
-    //@extend %header-scrolled;
+  @media ($desktop-min-xl) {
+    transform: translateY(0);
   }
-  // &__item {
-  // }
+  @media ($desktop-max) {
+    position: fixed;
+
+    .container {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+  }
+  &._scrolled {
+    @extend %header-scrolled !optional;
+
+    @media ($desktop-min-xl) {
+      position: fixed;
+      transform: translateY(-($header-top-height + $header-middle-height));
+    }
+  }
+  &._menu-opened {
+    @extend %menu-opened !optional;
+  }
+  &__mobile {
+    z-index: 10;
+    position: relative;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+    background-color: $primary-color;
+  }
+  &__mobile-inner {
+    display: flex;
+    padding: 0 20px;
+    min-height: $header-height-mobile;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__mobile-item {
+    flex: 1 1 0%;
+
+    &:nth-child(2) {
+      text-align: center;
+    }
+    &:nth-child(3) {
+      flex-grow: 1;
+      justify-content: flex-end;
+    }
+  }
+  &__navigation {
+    display: flex;
+    flex-direction: column;
+
+    @media ($desktop-max) {
+      position: fixed;
+      top: $header-height-mobile;
+      left: 0;
+      width: 360px;
+      bottom: 0;
+      // opacity: 0;
+      transform: translateX(-100%);
+      overflow-y: auto;
+      overflow-x: hidden;
+      visibility: hidden;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.13);
+      transition: opacity $transition3, visibility $transition3,
+        transform $transition3;
+      @include small-scrollbar($catalog-background, $secondary-color);
+
+      %menu-opened & {
+        // opacity: 1;
+        transform: translateX(0);
+        visibility: visible;
+      }
+    }
+    @media ($mobile-max) {
+      width: 100%;
+    }
+  }
+  &__item {
+    @media ($desktop-max) {
+      &:nth-child(1) {
+        order: 3;
+      }
+      &:nth-child(2) {
+        order: 1;
+      }
+      &:nth-child(3) {
+        order: 2;
+      }
+    }
+  }
 }
 %header-top-links {
   color: $white;
@@ -366,13 +458,26 @@ label {
 .header-top {
   display: flex;
   min-height: 60px;
-  align-items: center;
   justify-content: space-between;
   background-color: $secondary-color;
 
+  @media ($desktop-min-xl) {
+    align-items: center;
+  }
+  @media ($desktop-max) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    flex-direction: column;
+  }
+
   &__item {
     & + & {
-      margin-left: 30px;
+      @media ($desktop-min-xl) {
+        margin-left: 30px;
+      }
+      @media ($desktop-max) {
+        margin-top: 10px;
+      }
     }
   }
   %hover-to-open {
@@ -413,17 +518,31 @@ label {
   &__links-list {
     display: flex;
     line-height: 1;
-    align-items: center;
+
+    @media ($desktop-min-xl) {
+      align-items: center;
+    }
+    @media ($desktop-max) {
+      flex-direction: column;
+    }
   }
   &__list-item {
     & + & {
-      margin-left: 35px;
+      @media ($desktop-min-xl) {
+        margin-left: 35px;
+      }
+      @media ($desktop-max) {
+        margin-top: 10px;
+      }
     }
   }
   &__link {
-    font-size: 14px;
     @extend %header-top-links;
     @include link-hover-underline();
+
+    @media ($desktop-min-xl) {
+      font-size: 14px;
+    }
   }
   &__about {
     display: flex;
@@ -466,18 +585,29 @@ label {
 .header-middle {
   display: flex;
   min-height: 110px;
-  align-items: center;
   padding-top: 11px;
   justify-content: space-between;
   background-color: $primary-color;
 
+  @media ($desktop-min-xl) {
+    align-items: center;
+  }
+  @media ($desktop-max) {
+    min-height: 100%;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    flex-direction: column;
+  }
+
   &__item {
-    &:not(&_mobile-only) + & {
-      margin-left: 30px;
+    @media ($desktop-min-xl) {
+      & + & {
+        margin-left: 30px;
+      }
     }
-    &_mobile-only {
-      @media ($desktop-min-xl) {
-        display: none;
+    @media ($desktop-max) {
+      &:not(._desktop-only) + & {
+        margin-top: 25px;
       }
     }
     &_grow {
@@ -488,10 +618,23 @@ label {
     width: 235px;
     max-width: 100%;
 
-    @media ($desktop-mad-xl) {
+    @media ($desktop-mad-xl) and ($desktop-min-xl) {
       width: auto;
       padding: 12px 25px;
       max-width: min-content;
+    }
+    @media ($desktop-max) {
+      width: 100%;
+    }
+  }
+
+  @media ($desktop-max) {
+    %contacts-label {
+      margin-bottom: 7px;
+    }
+    %contacts-item-item {
+      margin-top: 15px;
+      margin-left: 0;
     }
   }
 }
@@ -499,9 +642,15 @@ label {
   display: flex;
   justify-content: space-around;
 
+  @media ($desktop-max) {
+    flex-direction: column;
+  }
+
   &__item {
     & + & {
       margin-left: 30px;
+
+      @extend %contacts-item-item !optional;
     }
     &:last-child {
       flex-grow: 0.14;
@@ -515,6 +664,8 @@ label {
     font-weight: 500;
     line-height: 1.2;
     margin-bottom: 13px;
+
+    @extend %contacts-label !optional;
   }
   &__content {
     font-size: 20px;
@@ -545,6 +696,7 @@ label {
     height: 20px;
     transform: scale(1);
     transition: transform 0.3s;
+    flex-shrink: 0;
 
     & + span {
       margin-left: 11px;
@@ -618,31 +770,56 @@ label {
 .header-bottom {
   display: flex;
   min-height: 70px;
-  align-items: center;
   justify-content: space-between;
   background-color: $primary-color;
+
+  @media ($desktop-min-xl) {
+    align-items: center;
+  }
+  @media ($desktop-max) {
+    padding-top: 25px;
+    padding-bottom: 20px;
+    flex-direction: column-reverse;
+  }
 
   &__item {
     display: flex;
     align-items: center;
 
     & + & {
-      margin-left: 30px;
+      @media ($desktop-min-xl) {
+        margin-left: 30px;
+      }
     }
     &:last-child {
       flex-grow: 1;
     }
   }
-  // &__links {
-  // }
+  &__links {
+    @media ($desktop-max) {
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
   &__links-list {
     display: flex;
     line-height: 1;
-    align-items: center;
+
+    @media ($desktop-min-xl) {
+      align-items: center;
+    }
+    @media ($desktop-max) {
+      flex-direction: column;
+    }
   }
   &__list-item {
     & + & {
-      margin-left: 33px;
+      @media ($desktop-min-xl) {
+        margin-left: 33px;
+      }
+      @media ($desktop-max) {
+        margin-top: 10px;
+      }
     }
   }
   &__link {
@@ -685,11 +862,14 @@ label {
     margin-left: auto;
   }
   &__features {
-    display: flex;
     margin-left: 25px;
-    align-items: center;
   }
-  &__feature-item {
+}
+.feature-buttons {
+  display: flex;
+  align-items: center;
+
+  &__item {
     position: relative;
 
     & + & {
@@ -697,7 +877,7 @@ label {
       padding-top: 2px;
     }
   }
-  &__feature-link {
+  &__link {
     color: $white;
     width: 40px;
     height: 40px;
@@ -710,6 +890,8 @@ label {
       transform: scale(1.25);
     }
   }
+  // &__icon {
+  // }
   &__number {
     position: absolute;
     top: 0;
@@ -737,8 +919,6 @@ label {
     padding: 0;
     background-color: transparent;
   }
-  // &__feature-icon {
-  // }
 }
 .catalog {
   $row-width: 300px;
@@ -934,7 +1114,7 @@ label {
   &__slide {
     display: flex;
     position: relative;
-    min-height: 650px;
+    min-height: 40.625rem;
     align-items: center;
   }
   &__image-wrapper {
@@ -967,13 +1147,13 @@ label {
   }
   &__heading {
     color: inherit;
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.225;
     text-transform: none;
 
     & + * {
-      margin-top: 62px;
+      margin-top: 3.875rem;
     }
   }
   &__button {
@@ -985,7 +1165,7 @@ label {
   }
   &__progress {
     display: flex;
-    margin-top: 110px;
+    margin-top: 6.875rem;
   }
   &__progress-item {
     flex: 1;
@@ -1004,7 +1184,7 @@ label {
     }
   }
   &__progress-content {
-    font-size: 22px;
+    font-size: 1.375rem;
     font-weight: 400;
     line-height: 1.36;
   }
@@ -1012,7 +1192,7 @@ label {
     color: $yellow-accent;
     display: block;
     position: relative;
-    font-size: 50px;
+    font-size: 3.25rem;
     transform: translateX(0);
     font-weight: 700;
     animation: 9s ease-out 0s forwards infinite running main-banner-value;

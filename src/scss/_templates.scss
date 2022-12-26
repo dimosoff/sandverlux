@@ -254,13 +254,23 @@ b {
   scrollbar-color: $foreground-color $background-color;
   scrollbar-width: thin;
 }
-@media ($desktop-min) {
-  ._mobile-only {
+@media ($desktop-max) {
+  ._desktop-only {
     display: none !important;
   }
 }
-@media ($mobile-max) {
-  ._desktop-only {
+@media ($desktop-min-xl), ($tablet-min) {
+  ._tablet-only {
+    display: none !important;
+  }
+}
+@media ($desktop-min-xl) {
+  ._tablet-and-mobile-only {
+    display: none !important;
+  }
+}
+@media ($tablet-min) {
+  ._mobile-only {
     display: none !important;
   }
 }
