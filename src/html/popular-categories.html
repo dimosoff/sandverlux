@@ -2,7 +2,7 @@
   <div class="popular-categories__container container">
     <h2 class="popular-categories__heading heading">Популярные категории</h2>
     <div class="popular-categories__items-wrapper">
-      <div class="popular-categories__items row">
+      <div class="popular-categories__items">
         @@include('./src/html/popular-categories-item.html', {
         'title': 'Межкомнатные двери',
         'image-url': 'images/icons.svg#doors-interior',
@@ -47,6 +47,17 @@
         'title': 'Двери для бани и сауны',
         'image-url': 'images/icons.svg#dooors-bath-and-sauna',
         })
+      </div>
+
+      <div class="popular-categories__nav-btn popular-categories__nav-btn_prev">
+        <svg class="popular-categories__prev-icon" width="20" height="10">
+          <use href="/images/icons.svg#chevron-down" />
+        </svg>
+      </div>
+      <div class="popular-categories__nav-btn popular-categories__nav-btn_next">
+        <svg class="popular-categories__next-icon" width="20" height="10">
+          <use href="/images/icons.svg#chevron-down" />
+        </svg>
       </div>
     </div>
   </div>

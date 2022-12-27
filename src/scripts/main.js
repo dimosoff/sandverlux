@@ -84,14 +84,6 @@ document.addEventListener("DOMContentLoaded", function () {
     topUpPopopup.classList.remove(popupClassActive);
   });
 
-  // popular categories scrolling horizontally
-
-  const popularCategoriesScroll = document.querySelector(
-    ".popular-categories__items"
-  );
-  if (popularCategoriesScroll)
-    myFunctions.toHorizontalScroll(popularCategoriesScroll);
-
   // "contacts" form placeholder state movement //
 
   if (formElements) {
@@ -171,14 +163,14 @@ document.addEventListener("DOMContentLoaded", function () {
         ogSwiper.update();
       })
     );
-    // eslint-disable-next-line no-unused-vars, no-undef
+    // eslint-disable-next-line no-unused-vars
     const ogSwiper = new Swiper(".our-goods__swiper", {
       modules: [Navigation],
       loop: false,
       // loopAdditionalSlides: 2,
       rewind: false,
       grabCursor: true,
-      slidesPerView: 5,
+      slidesPerView: 'auto', //5,
       spaceBetween: 60,
       //autoHeight: true,
       setWrapperSize: true,
@@ -192,24 +184,35 @@ document.addEventListener("DOMContentLoaded", function () {
         nextEl: ".our-goods__nav-btn_next",
         prevEl: ".our-goods__nav-btn_prev",
         lockClass: "our-goods__nav-btn_lock",
+        disabledClass: "our-goods__nav-btn_disabled",
       },
       breakpoints: {
-        320: {
-          slidesPerView: 1,
+        0: {
+          // slidesPerView: 2,
+          spaceBetween: 45,
         },
         576: {
-          slidesPerView: 2,
-        },
-        768: {
-          slidesPerView: 3,
-        },
-        992: {
-          slidesPerView: 4,
-        },
-        1200: {
-          slidesPerView: 5,
+          // slidesPerView: 'auto',
+          spaceBetween: 60,
         },
       },
+      // breakpoints: {
+      //   320: {
+      //     slidesPerView: 1,
+      //   },
+      //   576: {
+      //     slidesPerView: 2,
+      //   },
+      //   768: {
+      //     slidesPerView: 3,
+      //   },
+      //   992: {
+      //     slidesPerView: 4,
+      //   },
+      //   1200: {
+      //     slidesPerView: 5,
+      //   },
+      // },
       on: {
         init: function () {
           updateSliderLockedState(this);
@@ -225,6 +228,54 @@ document.addEventListener("DOMContentLoaded", function () {
         update: function () {
           updateSliderLockedState(this);
           // console.log('update');
+        },
+        resize: function () {
+          updateSliderLockedState(this);
+        },
+      },
+    });
+  }
+
+  // popular categories
+
+  const popularCategories = document.querySelectorAll(".popular-categories");
+  
+  if (popularCategories) {
+    // eslint-disable-next-line no-unused-vars
+    const pcSwiper = new Swiper(".popular-categories__items-wrapper", {
+      modules: [Navigation],
+      loop: false,
+      rewind: false,
+      grabCursor: true,
+      slidesPerView: 'auto',
+      spaceBetween: 30,
+      autoHeight: false,
+      setWrapperSize: true,
+      wrapperClass: "popular-categories__items",
+      slideClass: "popular-categories__item",
+      navigation: {
+        nextEl: ".popular-categories__nav-btn_next",
+        prevEl: ".popular-categories__nav-btn_prev",
+        lockClass: "popular-categories__nav-btn_lock",
+        disabledClass: "popular-categories__nav-btn_disabled",
+      },
+      breakpoints: {
+        0: {
+          spaceBetween: 10,
+        },
+        576: {
+          spaceBetween: 30,
+        },
+      },
+      on: {
+        init: function () {
+          updateSliderLockedState(this);
+        },
+        update: function () {
+          updateSliderLockedState(this);
+        },
+        resize: function () {
+          updateSliderLockedState(this);
         },
       },
     });

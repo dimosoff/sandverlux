@@ -6505,11 +6505,6 @@
       thankYouPopopup.classList.remove(popupClassActive);
       topUpPopopup.classList.remove(popupClassActive);
     });
-    const popularCategoriesScroll = document.querySelector(
-      ".popular-categories__items"
-    );
-    if (popularCategoriesScroll)
-      toHorizontalScroll(popularCategoriesScroll);
     if (formElements) {
       formElements.forEach((elem) => {
         const elemLabel = elem.previousElementSibling || elem.nextElementSibling;
@@ -6582,30 +6577,22 @@
         loop: false,
         rewind: false,
         grabCursor: true,
-        slidesPerView: 5,
+        slidesPerView: "auto",
         spaceBetween: 60,
         setWrapperSize: true,
         wrapperClass: "our-goods__swiper-wrapper",
         navigation: {
           nextEl: ".our-goods__nav-btn_next",
           prevEl: ".our-goods__nav-btn_prev",
-          lockClass: "our-goods__nav-btn_lock"
+          lockClass: "our-goods__nav-btn_lock",
+          disabledClass: "our-goods__nav-btn_disabled"
         },
         breakpoints: {
-          320: {
-            slidesPerView: 1
+          0: {
+            spaceBetween: 45
           },
           576: {
-            slidesPerView: 2
-          },
-          768: {
-            slidesPerView: 3
-          },
-          992: {
-            slidesPerView: 4
-          },
-          1200: {
-            slidesPerView: 5
+            spaceBetween: 60
           }
         },
         on: {
@@ -6615,6 +6602,49 @@
             showCorrectCategory("bestseller");
           },
           update: function() {
+            updateSliderLockedState(this);
+          },
+          resize: function() {
+            updateSliderLockedState(this);
+          }
+        }
+      });
+    }
+    const popularCategories = document.querySelectorAll(".popular-categories");
+    if (popularCategories) {
+      const pcSwiper = new core_default(".popular-categories__items-wrapper", {
+        modules: [Navigation],
+        loop: false,
+        rewind: false,
+        grabCursor: true,
+        slidesPerView: "auto",
+        spaceBetween: 30,
+        autoHeight: false,
+        setWrapperSize: true,
+        wrapperClass: "popular-categories__items",
+        slideClass: "popular-categories__item",
+        navigation: {
+          nextEl: ".popular-categories__nav-btn_next",
+          prevEl: ".popular-categories__nav-btn_prev",
+          lockClass: "popular-categories__nav-btn_lock",
+          disabledClass: "popular-categories__nav-btn_disabled"
+        },
+        breakpoints: {
+          0: {
+            spaceBetween: 10
+          },
+          576: {
+            spaceBetween: 30
+          }
+        },
+        on: {
+          init: function() {
+            updateSliderLockedState(this);
+          },
+          update: function() {
+            updateSliderLockedState(this);
+          },
+          resize: function() {
             updateSliderLockedState(this);
           }
         }
