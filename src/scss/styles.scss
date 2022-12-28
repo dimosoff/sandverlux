@@ -223,8 +223,8 @@ label {
   }
 }
 .burger {
-  width: 33px;
-  height: 19px;
+  width: 25px;
+  height: 16px;
   border: 0;
   cursor: pointer;
   padding: 0;
@@ -248,7 +248,7 @@ label {
     display: block;
     position: absolute;
     width: 100%;
-    height: 3px;
+    height: 2px;
     z-index: 20;
     perspective: 50px;
     border-radius: 3px;
@@ -265,11 +265,11 @@ label {
       top: 0;
 
       %menu-opened & {
-        transform: translateY(8px) rotateY(180deg) rotateZ(45deg);
+        transform: translateY(7px) rotateY(180deg) rotateZ(45deg);
       }
     }
     &:nth-child(2) {
-      top: 8px;
+      top: 7px;
       transition-delay: 0.2s;
 
       %menu-opened & {
@@ -278,11 +278,11 @@ label {
       }
     }
     &:nth-child(3) {
-      top: 16px;
+      top: 14px;
       transition-delay: 0.1s;
 
       %menu-opened & {
-        transform: translateY(-8px) rotateY(180deg) rotateZ(-45deg);
+        transform: translateY(-7px) rotateY(180deg) rotateZ(-45deg);
       }
     }
 
@@ -1142,8 +1142,8 @@ label {
     padding-bottom: 9px;
 
     @media ($tablet-mad) {
-      padding-top: 3rem;
-      padding-bottom: 3rem;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
     }
   }
   &__heading {
@@ -1155,6 +1155,10 @@ label {
 
     & + * {
       margin-top: 3.875rem;
+
+      @media ($tablet-mad) {
+        margin-top: 1.575rem;
+      }
     }
   }
   &__button {
@@ -1167,6 +1171,10 @@ label {
   &__progress {
     margin-top: 6.875rem;
     justify-content: space-between;
+
+    @media ($tablet-mad) {
+      margin-top: 3.675rem;
+    }
   }
   &__progress-item {
     @media ($tablet-mid) {
@@ -1240,17 +1248,27 @@ label {
 .main-filter {
   padding: 3.125rem 0 4.6875rem;
 
+  @media ($tablet-mad) {
+    padding: 2.325rem 0 3.888rem;
+  }
+
   // &__container {
   // }
   &__items {
     @extend %row-wrapper;
+
+    @media ($tablet-mad) {
+      flex-direction: column;
+    }
   }
   &__item {
-    &:nth-child(odd) {
-      @include column-size(39.1%, 0px);
-    }
-    &:nth-child(even) {
-      @include column-size(60.9%, 0px);
+    @media ($tablet-mid) {
+      &:nth-child(odd) {
+        @include column-size(39.1%, 0px);
+      }
+      &:nth-child(even) {
+        @include column-size(60.9%, 0px);
+      }
     }
   }
   &__door {
@@ -1261,9 +1279,12 @@ label {
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.05);
     align-items: center;
 
-    @media ($desktop-max) {
+    @media ($desktop-max) and ($tablet-mid) {
       padding: 25px 17px;
       flex-direction: column;
+    }
+    @media ($mobile-max) {
+      padding: 11px;
     }
   }
   &__door-image-wrapper {
@@ -1273,6 +1294,14 @@ label {
     overflow: visible;
     max-width: 146px;
     flex-basis: 146px;
+
+    @media ($mobile-max) {
+      width: 50px;
+      height: 50px;
+      margin: 0 1rem;
+      max-width: 50px;
+      flex-basis: 50px;
+    }
 
     &::before {
       top: -28px;
@@ -1294,12 +1323,20 @@ label {
     margin-left: 12px;
     margin-right: 15px;
 
-    @media ($desktop-max) {
+    @media ($desktop-max) and ($tablet-mid) {
       margin-top: 20px;
+    }
+    @media ($mobile-max) {
+      margin-left: 0;
+      margin-right: 0;
     }
   }
   &__door-heading {
     font-weight: 600;
+
+    @media ($mobile-max) {
+      font-size: 1.675rem;
+    }
   }
   &__description {
     font-size: 1.125rem;
@@ -1309,6 +1346,9 @@ label {
     @media ($desktop-max) {
       font-size: 1.25rem;
     }
+    @media ($mobile-max) {
+      margin-top: 0.5rem;
+    }
   }
   &__doors-wrapper {
     height: 100%;
@@ -1316,6 +1356,15 @@ label {
     @media ($desktop-max) {
       height: 0;
       padding-bottom: 100%;
+    }
+    @media ($tablet-mad) {
+      display: none;
+    }
+    @media ($mobile-max) {
+      top: -5px;
+      left: 48%;
+      width: 62px;
+      bottom: -11px;
     }
   }
   &__doors-image {
@@ -1332,7 +1381,6 @@ label {
   }
   @media ($desktop-max) {
     padding: 2.5rem 1.5rem 1.375rem 1.688rem;
-    align-items: center;
   }
   &__item-wrapper {
     margin: 0;
@@ -1678,7 +1726,7 @@ label {
   &__next-icon {
     transform: rotate(-90deg);
     transition: transform 0.2s;
-    
+
     %pc-nav-btn-hover & {
       transform: rotate(-90deg) scale(1.4);
     }
@@ -1826,7 +1874,7 @@ label {
   &__next-icon {
     transform: rotate(-90deg);
     transition: transform 0.2s;
-    
+
     %og-nav-btn-hover & {
       transform: rotate(-90deg) scale(1.4);
     }
@@ -1998,7 +2046,6 @@ label {
     }
   }
   &__item {
-
     @media ($desktop-min-xl) {
       flex: 0 0 16.6666%;
       max-width: 16.6666%;

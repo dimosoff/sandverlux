@@ -534,8 +534,8 @@ label {
 }
 
 .burger {
-  width: 33px;
-  height: 19px;
+  width: 25px;
+  height: 16px;
   border: 0;
   cursor: pointer;
   padding: 0;
@@ -559,7 +559,7 @@ label {
   display: block;
   position: absolute;
   width: 100%;
-  height: 3px;
+  height: 2px;
   z-index: 20;
   perspective: 50px;
   border-radius: 3px;
@@ -570,10 +570,10 @@ label {
   top: 0;
 }
 .header._menu-opened .burger span:nth-child(1) {
-  transform: translateY(8px) rotateY(180deg) rotateZ(45deg);
+  transform: translateY(7px) rotateY(180deg) rotateZ(45deg);
 }
 .burger span:nth-child(2) {
-  top: 8px;
+  top: 7px;
   transition-delay: 0.2s;
 }
 .header._menu-opened .burger span:nth-child(2) {
@@ -581,11 +581,11 @@ label {
   opacity: 0;
 }
 .burger span:nth-child(3) {
-  top: 16px;
+  top: 14px;
   transition-delay: 0.1s;
 }
 .header._menu-opened .burger span:nth-child(3) {
-  transform: translateY(-8px) rotateY(180deg) rotateZ(-45deg);
+  transform: translateY(-7px) rotateY(180deg) rotateZ(-45deg);
 }
 .header._menu-opened .burger {
   transform: rotateY(180deg);
@@ -1429,8 +1429,8 @@ label {
 }
 @media (max-width: 767.98px) {
   .main-banner__content {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 }
 .main-banner__heading {
@@ -1443,6 +1443,11 @@ label {
 .main-banner__heading + * {
   margin-top: 3.875rem;
 }
+@media (max-width: 767.98px) {
+  .main-banner__heading + * {
+    margin-top: 1.575rem;
+  }
+}
 .main-banner__button {
   padding: 15px 37px;
 }
@@ -1452,6 +1457,11 @@ label {
 .main-banner__progress {
   margin-top: 6.875rem;
   justify-content: space-between;
+}
+@media (max-width: 767.98px) {
+  .main-banner__progress {
+    margin-top: 3.675rem;
+  }
 }
 @media (min-width: 768px) {
   .main-banner__progress-item {
@@ -1515,13 +1525,25 @@ label {
 .main-filter {
   padding: 3.125rem 0 4.6875rem;
 }
-.main-filter__item:nth-child(odd) {
-  flex: 0 1 calc(39.1% - 0px);
-  max-width: calc(39.1% - 0px);
+@media (max-width: 767.98px) {
+  .main-filter {
+    padding: 2.325rem 0 3.888rem;
+  }
 }
-.main-filter__item:nth-child(even) {
-  flex: 0 1 calc(60.9% - 0px);
-  max-width: calc(60.9% - 0px);
+@media (max-width: 767.98px) {
+  .main-filter__items {
+    flex-direction: column;
+  }
+}
+@media (min-width: 768px) {
+  .main-filter__item:nth-child(odd) {
+    flex: 0 1 calc(39.1% - 0px);
+    max-width: calc(39.1% - 0px);
+  }
+  .main-filter__item:nth-child(even) {
+    flex: 0 1 calc(60.9% - 0px);
+    max-width: calc(60.9% - 0px);
+  }
 }
 .main-filter__door {
   height: 100%;
@@ -1531,10 +1553,15 @@ label {
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.05);
   align-items: center;
 }
-@media (max-width: 1199.98px) {
+@media (max-width: 1199.98px) and (min-width: 768px) {
   .main-filter__door {
     padding: 25px 17px;
     flex-direction: column;
+  }
+}
+@media (max-width: 575.98px) {
+  .main-filter__door {
+    padding: 11px;
   }
 }
 .main-filter__door-image-wrapper {
@@ -1544,6 +1571,15 @@ label {
   overflow: visible;
   max-width: 146px;
   flex-basis: 146px;
+}
+@media (max-width: 575.98px) {
+  .main-filter__door-image-wrapper {
+    width: 50px;
+    height: 50px;
+    margin: 0 1rem;
+    max-width: 50px;
+    flex-basis: 50px;
+  }
 }
 .main-filter__door-image-wrapper::before {
   top: -28px;
@@ -1561,13 +1597,24 @@ label {
   margin-left: 12px;
   margin-right: 15px;
 }
-@media (max-width: 1199.98px) {
+@media (max-width: 1199.98px) and (min-width: 768px) {
   .main-filter__door-content {
     margin-top: 20px;
   }
 }
+@media (max-width: 575.98px) {
+  .main-filter__door-content {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 .main-filter__door-heading {
   font-weight: 600;
+}
+@media (max-width: 575.98px) {
+  .main-filter__door-heading {
+    font-size: 1.675rem;
+  }
 }
 .main-filter__description {
   font-size: 1.125rem;
@@ -1579,6 +1626,11 @@ label {
     font-size: 1.25rem;
   }
 }
+@media (max-width: 575.98px) {
+  .main-filter__description {
+    margin-top: 0.5rem;
+  }
+}
 .main-filter__doors-wrapper {
   height: 100%;
 }
@@ -1586,6 +1638,19 @@ label {
   .main-filter__doors-wrapper {
     height: 0;
     padding-bottom: 100%;
+  }
+}
+@media (max-width: 767.98px) {
+  .main-filter__doors-wrapper {
+    display: none;
+  }
+}
+@media (max-width: 575.98px) {
+  .main-filter__doors-wrapper {
+    top: -5px;
+    left: 48%;
+    width: 62px;
+    bottom: -11px;
   }
 }
 .main-filter__doors-image {
@@ -1604,7 +1669,6 @@ label {
 @media (max-width: 1199.98px) {
   .mft {
     padding: 2.5rem 1.5rem 1.375rem 1.688rem;
-    align-items: center;
   }
 }
 .mft__item-wrapper {
