@@ -1,33 +1,23 @@
 <div class="reviews__item">
   <article class="reviews__inner">
     <header class="reviews__top">
-      <div class="reviews__author">@@author</div>
+      <p class="reviews__author">@@author</p>
       <div class="reviews__rating">
-        @@if (rating > 0) {
-        <svg class="reviews__star" width="20" height="20">
+        <svg class="reviews__star @@if(rating>0){active}" width="20" height="20">
           <use href="/images/icons.svg#star" />
         </svg>
-        }
-        @@if (rating > 1) {
-        <svg class="reviews__star" width="20" height="20">
+        <svg class="reviews__star @@if(rating>1){active}" width="20" height="20">
           <use href="/images/icons.svg#star" />
         </svg>
-        }
-        @@if (rating > 2) {
-        <svg class="reviews__star" width="20" height="20">
+        <svg class="reviews__star @@if(rating>2){active}" width="20" height="20">
           <use href="/images/icons.svg#star" />
         </svg>
-        }
-        @@if (rating > 3) {
-        <svg class="reviews__star" width="20" height="20">
+        <svg class="reviews__star @@if(rating>3){active}" width="20" height="20">
           <use href="/images/icons.svg#star" />
         </svg>
-        }
-        @@if (rating > 4) {
-        <svg class="reviews__star" width="20" height="20">
+        <svg class="reviews__star @@if(rating>4){active}" width="20" height="20">
           <use href="/images/icons.svg#star" />
         </svg>
-        }
       </div>
       <time class="reviews__time">@@date</time>
     </header>
