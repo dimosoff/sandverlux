@@ -3,11 +3,19 @@
     <nav class="header-bottom__links">
       <ul class="header-bottom__links-list">
         <li class="header-bottom__list-item _hover-to-open">
-          <a href="#" class="header-bottom__link header-bottom__catalog">
-            <div class="header-bottom__catalog-burger">
-              <span></span><span></span><span></span>
-            </div><span>Каталог</span>
-          </a>
+          <div class="header-bottom__buttons-wrapper">
+            <a href="#" class="header-bottom__link header-bottom__catalog">
+              <div class="header-bottom__catalog-burger">
+                <span></span><span></span><span></span>
+              </div><span>Каталог</span>
+            </a>
+            <button class="header__collapse-button _tablet-and-mobile-only" type="button" name="button-collapse">
+              <svg class="header__collapse-button-image" width="20" height="20">
+                <use href="images/icons.svg#chevron-down-white" />
+              </svg>
+              <span class="sr-only">Развернуть меню</span>
+            </button>
+          </div>
           <div class="header-bottom__menu _hover-to-open__target">
             @@include('./src/html/catalog.html')
           </div>

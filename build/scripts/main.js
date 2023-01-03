@@ -6479,6 +6479,11 @@
       elem.style.maxWidth = `${window.innerWidth - elem.getBoundingClientRect().left}px`;
       toHorizontalScroll(elem);
     });
+    document.querySelectorAll('button[name="button-collapse"]').forEach(
+      (button) => button.addEventListener("click", (event2) => {
+        event2.currentTarget.parentElement.parentElement.classList.toggle("active");
+      })
+    );
     const allFaqItems = document.querySelectorAll(".faq-item");
     if (allFaqItems.length) {
       allFaqItems.forEach((item) => {

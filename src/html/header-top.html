@@ -2,11 +2,19 @@
   <div class="header-top__item">
     <ul class="header-top__links-list">
       <li class="header-top__list-item _hover-to-open">
-        <a href="#" class="header-top__link header-top__about">
-          <div class="header-top__about-burger">
-            <span></span><span></span><span></span><span class="sr-only">О компании</span>
-          </div><span>О компании</span>
-        </a>
+        <div class="header-top__buttons-wrapper">
+          <a href="#" class="header-top__link header-top__about">
+            <div class="header-top__about-burger">
+              <span></span><span></span><span></span><span class="sr-only">О компании</span>
+            </div><span>О компании</span>
+          </a>
+          <button class="header__collapse-button _tablet-and-mobile-only" type="button" name="button-collapse">
+            <svg class="header__collapse-button-image" width="20" height="20">
+              <use href="images/icons.svg#chevron-down-white" />
+            </svg>
+            <span class="sr-only">Развернуть меню</span>
+          </button>
+        </div>
         <div class="header-top__menu-wrapper _hover-to-open__target">
           <ul class="header-top__menu">
             <li class="header-top__menu-item"><a href="#" class="header-top__menu-link">Отзывы</a></li>

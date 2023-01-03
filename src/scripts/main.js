@@ -50,6 +50,14 @@ document.addEventListener("DOMContentLoaded", function () {
     myFunctions.toHorizontalScroll(elem);
   });
 
+  document
+    .querySelectorAll('button[name="button-collapse"]')
+    .forEach((button) =>
+      button.addEventListener("click", (event) => {
+        event.currentTarget.parentElement.parentElement.classList.toggle("active");
+      })
+    );
+
   //faq list collapse
   const allFaqItems = document.querySelectorAll(".faq-item");
 
@@ -170,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // loopAdditionalSlides: 2,
       rewind: false,
       grabCursor: true,
-      slidesPerView: 'auto', //5,
+      slidesPerView: "auto", //5,
       spaceBetween: 60,
       //autoHeight: true,
       setWrapperSize: true,
@@ -239,7 +247,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // popular categories
 
   const popularCategories = document.querySelectorAll(".popular-categories");
-  
+
   if (popularCategories) {
     // eslint-disable-next-line no-unused-vars
     const pcSwiper = new Swiper(".popular-categories__items-wrapper", {
@@ -247,7 +255,7 @@ document.addEventListener("DOMContentLoaded", function () {
       loop: false,
       rewind: false,
       grabCursor: true,
-      slidesPerView: 'auto',
+      slidesPerView: "auto",
       spaceBetween: 30,
       autoHeight: false,
       setWrapperSize: true,

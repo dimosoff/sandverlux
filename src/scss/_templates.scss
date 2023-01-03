@@ -173,13 +173,16 @@ b {
   @extend %hover-to-open !optional;
 
   &::after {
-    content: "";
     top: 100%;
     left: 0;
     right: 0;
     height: 0;
     position: absolute;
     visibility: hidden;
+
+    @media ($desktop-min-xl) {
+      content: "";
+    }
   }
 
   &:hover,
@@ -198,12 +201,24 @@ b {
     min-width: 100%;
     visibility: hidden;
     // pointer-events: none;
-    transition: transform 0.3s, opacity 0.3s, visibility 0.3s;
+    transition: transform 0.3s, opacity 0.3s, visibility 0.3s, padding 0.3s,
+      max-height 0.3s;
 
-    %hover-to-open-hover > & {
-      opacity: 1;
-      visibility: visible;
-      // pointer-events: all;
+    @extend %hover-to-open-target !optional;
+
+    @media ($desktop-min-xl) {
+      %hover-to-open-hover > & {
+        opacity: 1;
+        visibility: visible;
+        // pointer-events: all;
+      }
+    }
+    @media ($desktop-max) {
+      %hover-to-open.active > & {
+        opacity: 1;
+        visibility: visible;
+        // pointer-events: all;
+      }
     }
   }
 }
