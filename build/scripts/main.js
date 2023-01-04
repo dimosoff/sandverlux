@@ -6629,7 +6629,7 @@
       );
     }
     const popularCategories = document.querySelectorAll(".popular-categories");
-    if (popularCategories) {
+    if (popularCategories.length) {
       const pcSwiper = new core_default(".popular-categories__items-wrapper", {
         modules: [Navigation],
         loop: false,
@@ -6688,6 +6688,17 @@
     }
     function updateSliderLockedState(slider) {
       slider.isLocked ? slider.el.classList.add("locked") : slider.el.classList.remove("locked");
+    }
+    const osMapButtons = document.querySelectorAll(
+      'button[name="our-shops-set-marker"]'
+    );
+    const osMap = document.getElementById("our-shops-map");
+    if (osMapButtons.length && osMap) {
+      osMapButtons.forEach(
+        (button) => button.addEventListener("click", (event2) => {
+          osMap.src = osMap.src.slice(0, -10) + event2.currentTarget.value;
+        })
+      );
     }
     const validateEmail = (email) => {
       return email.match(

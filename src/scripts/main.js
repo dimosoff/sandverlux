@@ -261,7 +261,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const popularCategories = document.querySelectorAll(".popular-categories");
 
-  if (popularCategories) {
+  if (popularCategories.length) {
     // eslint-disable-next-line no-unused-vars
     const pcSwiper = new Swiper(".popular-categories__items-wrapper", {
       modules: [Navigation],
@@ -325,6 +325,19 @@ document.addEventListener("DOMContentLoaded", function () {
     slider.isLocked
       ? slider.el.classList.add("locked")
       : slider.el.classList.remove("locked");
+  }
+
+  // map switcher
+  const osMapButtons = document.querySelectorAll(
+    'button[name="our-shops-set-marker"]'
+  );
+  const osMap = document.getElementById("our-shops-map");
+  if (osMapButtons.length && osMap) {
+    osMapButtons.forEach((button) =>
+      button.addEventListener("click", (event) => {
+        osMap.src = osMap.src.slice(0, -10) + event.currentTarget.value;
+      })
+    );
   }
 
   // form validation //

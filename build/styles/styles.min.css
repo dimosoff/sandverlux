@@ -3317,9 +3317,14 @@ label {
   height: 2.1875rem;
 }
 .footer__info {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.43;
+}
+@media (max-width: 767.98px) {
+  .footer__info {
+    font-size: 12px;
+  }
 }
 .footer__info > * + * {
   margin-top: 20px;
