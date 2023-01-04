@@ -189,6 +189,10 @@ label {
 
   & + * {
     margin-top: 2.5rem;
+
+    @media ($tablet-mad) {
+      margin-top: 2rem;
+    }
   }
 }
 .logo {
@@ -393,7 +397,7 @@ label {
       }
       %hover-to-open.active > %hover-to-open-target {
         padding: 15px 0 5px;
-        max-height: 100vh;
+        max-height: 150vh;
       }
     }
   }
@@ -1031,6 +1035,11 @@ label {
     @media ($desktop-min-xl) {
       height: $column-height;
     }
+    @media ($mobile-max) {
+      & + & {
+        margin-top: 1rem;
+      }
+    }
   }
   &__list-heading:not(:empty) {
     color: $text-color-lighter;
@@ -1039,6 +1048,12 @@ label {
     padding: 10px 0 20px 30px;
     font-size: 15px;
     font-weight: 300;
+
+    @media ($mobile-max) {
+      color: $yellow;
+      padding: 10px 0 10px 20px;
+      font-weight: 500;
+    }
   }
   &__list-item {
     @media ($desktop-min-xl) {
@@ -1071,10 +1086,16 @@ label {
     @media ($desktop-max) {
       color: $white;
     }
+    @media ($mobile-max) {
+      padding-left: 20px;
+    }
     %hover-to-open-hover > %catalog-buttons-wrapper > & {
       @media ($desktop-min-xl) {
         background-color: $white;
       }
+    }
+    %catalog-buttons-wrapper & {
+      padding-right: 50px;
     }
   }
   &__link-image {
@@ -1104,7 +1125,7 @@ label {
 
     & > %catalog-list-inner {
       flex-shrink: 0;
-      
+
       @media ($desktop-min-xl) {
         width: $row-width;
         padding: 20px 0;
@@ -1379,7 +1400,7 @@ label {
   padding: 3.125rem 0 4.6875rem;
 
   @media ($tablet-mad) {
-    padding: 2.325rem 0 3.888rem;
+    padding: 2.325rem 0 2.4rem;
   }
 
   // &__container {
@@ -1726,9 +1747,17 @@ label {
     }
     & %form-checkbox {
       margin-bottom: $mfb-bottom-gap;
+
+      @media ($mobile-max) {
+        margin-bottom: 1.5rem;
+      }
     }
     & %form-color {
       margin-bottom: $mfb-bottom-gap;
+
+      @media ($mobile-max) {
+        margin-bottom: 1.5rem;
+      }
 
       %form-label {
         width: 3.125rem;
@@ -1740,8 +1769,35 @@ label {
         }
       }
     }
+    & %form-checkbox-wrapper-img {
+      @media ($mobile-max) {
+        margin-right: -1.75rem;
+        margin-bottom: -1.75rem;
+      }
+    }
     & %form-checkbox-img {
       margin-right: $mfb-bottom-gap;
+
+      @media ($mobile-max) {
+        margin-right: 1.75rem;
+      }
+
+      %form-label {
+        @media ($mobile-max) {
+          font-size: 12px;
+        }
+
+        &::before,
+        &::after {
+          width: 4.625rem;
+          height: 4.625rem;
+
+          @media ($mobile-max) {
+            width: 5rem;
+            height: 5rem;
+          }
+        }
+      }
     }
     select {
       max-width: 50%;
@@ -1754,6 +1810,10 @@ label {
     }
     &:not(:last-child) {
       margin-bottom: 2.1875rem;
+
+      @media ($mobile-max) {
+        margin-bottom: 2.7rem;
+      }
     }
   }
   &__item-wrapper {
@@ -1780,6 +1840,7 @@ label {
     }
     @media ($mobile-max) {
       font-size: 1.3rem;
+      margin-bottom: 1.2rem;
     }
 
     %mfb-wrapper-row & {
@@ -1795,6 +1856,10 @@ label {
 .popular-categories {
   padding: 4.6875rem 0 2.8125rem;
   overflow: hidden;
+
+  @media ($tablet-mad) {
+    padding: 2.4rem 0 0;
+  }
 
   // &__container {
   // }
@@ -1833,6 +1898,10 @@ label {
   }
   &__item {
     flex: 0 1 0%;
+
+    &.swiper-slide-active {
+      @extend %popular-categories-active !optional;
+    }
   }
   &__inner {
     color: inherit;
@@ -1845,10 +1914,19 @@ label {
     transition: box-shadow 0.3s, background-color 0.3s;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0);
 
-    &:hover {
-      color: $primary-color;
-      box-shadow: 0px 0px 1.875rem rgba(0, 0, 0, 0.08);
-      background-color: #fff;
+    @media ($tablet-min) {
+      &:hover {
+        color: $primary-color;
+        box-shadow: 0px 0px 1.875rem rgba(0, 0, 0, 0.08);
+        background-color: #fff;
+      }
+    }
+    @media ($mobile-max) {
+      %popular-categories-active & {
+        color: $primary-color;
+        box-shadow: 0px 0px 1.875rem rgba(0, 0, 0, 0.08);
+        background-color: #fff;
+      }
     }
   }
   // &__image-wrapper {
@@ -1938,6 +2016,10 @@ label {
   padding: 4.6875rem 0;
   overflow: hidden;
 
+  @media ($tablet-mad) {
+    padding: 2.4rem 0 2rem;
+  }
+
   // &__container {
   // }
   // &__heading {
@@ -1955,8 +2037,10 @@ label {
 
     @media ($mobile-max) {
       width: 100%;
+      padding: 1rem 1.875rem;
       max-width: 100%;
       margin-right: 0;
+      margin-bottom: 9px;
     }
 
     &:not(.active) {
@@ -1968,6 +2052,10 @@ label {
   }
   &__slider-wrapper {
     margin-top: 2.5rem;
+
+    @media ($tablet-mad) {
+      margin-top: 2rem;
+    }
   }
   &__swiper {
     padding: 0;
@@ -2088,7 +2176,12 @@ label {
   }
 }
 .og-slide {
-  @include margin-x(-15px);
+  width: 310px;
+  max-width: 100%;
+
+  @media ($desktop-min) {
+    @include margin-x(-15px);
+  }
 
   &:hover {
     @extend %og-slide-hover !optional;
@@ -2100,15 +2193,24 @@ label {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0);
     transition: transform 0.3s, box-shadow 0.3s;
 
-    %og-slide-hover & {
-      transform: translateY(-5px);
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+    @media ($desktop-min) {
+      %og-slide-hover & {
+        transform: translateY(-5px);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+      }
+    }
+    @media ($tablet-max) {
+      padding: 15px 0;
     }
   }
   &__image-wrapper {
     width: 100%;
     border-bottom: 2px solid $primary-color;
     padding-bottom: 100%;
+
+    @media ($mobile-max) {
+      padding-bottom: 220px;
+    }
   }
   // &__image {
   // transition: transform 0.3s;
@@ -2120,6 +2222,10 @@ label {
     font-size: 16px;
     margin-top: 10px;
     line-height: 1.2;
+
+    @media ($mobile-max) {
+      font-size: 14px;
+    }
   }
   &__heading {
     color: $heading-color;
@@ -2128,6 +2234,10 @@ label {
   }
   &__price-wrapper {
     margin-top: 6px;
+
+    @media ($mobile-max) {
+      margin-top: 8px;
+    }
   }
   &__price {
     color: $primary-color;
@@ -2144,6 +2254,10 @@ label {
     font-size: 14px;
     margin-top: 9px;
     font-weight: 700;
+
+    @media ($mobile-max) {
+      font-size: 12px;
+    }
   }
   // &__form {
   // }
@@ -2151,8 +2265,15 @@ label {
     width: 100%;
     padding: 12px 30px;
     margin-top: 14px;
+
+    @media ($mobile-max) {
+      padding: 8px 30px;
+      font-size: 12px;
+      margin-top: 11px;
+    }
   }
   &__colors {
+    flex-wrap: nowrap;
     margin-top: 15px;
     @extend %row-wrapper;
     justify-content: center;
@@ -2166,23 +2287,33 @@ label {
     border-radius: 50%;
     justify-content: center;
     background-color: #d9d9d9;
-    transition: transform 0.3s;
-    transform: scale(1);
+
+    @media ($desktop-min) {
+      transition: transform 0.3s;
+      transform: scale(1);
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+    @media ($mobile-max) {
+      margin-left: 3px;
+      margin-right: 3px;
+    }
 
     &.active {
       @extend %og-slide-active-label;
     }
-    &:hover {
-      transform: scale(1.2);
-    }
   }
   &__color {
     width: 30px;
+    height: 0;
     margin: 1px;
-    height: 30px;
     display: block;
     position: relative;
     border-radius: 50%;
+    padding-bottom: 92.4%;
+    padding-bottom: calc(100% - 2px);
     transform: scale(1);
     transition: transform 0.3s;
 
@@ -2195,13 +2326,16 @@ label {
     left: 0;
     display: flex;
     position: absolute;
-    transform: translateX(15px);
     transition: transform $transition3;
     align-items: flex-start;
     flex-direction: column;
 
-    %og-slide-hover & {
-      transform: translateX(0);
+    @media ($desktop-min) {
+      transform: translateX(15px);
+
+      %og-slide-hover & {
+        transform: translateX(0);
+      }
     }
   }
   &__badge {
@@ -2211,6 +2345,10 @@ label {
     line-height: 1;
     font-weight: 700;
     text-transform: uppercase;
+
+    @media ($mobile-max) {
+      font-size: 10px;
+    }
 
     & + & {
       margin-top: 5px;
@@ -2230,6 +2368,10 @@ label {
 }
 .how-we-work {
   padding: 4.6875rem 0;
+
+  @media ($tablet-mad) {
+    padding: 2.4rem 0;
+  }
 
   // &__container {
   // }
@@ -2283,6 +2425,10 @@ label {
     transition: transform 0.3s;
     background-color: $white;
 
+    @media ($mobile-max) {
+      padding-top: 2rem;
+    }
+
     &:hover {
       transform: translateY(-0.625rem);
       @extend %hww-inner-hover;
@@ -2333,10 +2479,17 @@ label {
     @media ($tablet-mad) {
       font-size: 1.15rem;
     }
+    @media ($mobile-max) {
+      margin-top: 1rem;
+    }
   }
 }
 .about-us {
   padding: 4.6875rem 0;
+
+  @media ($tablet-mad) {
+    padding: 2.4rem 0;
+  }
 
   // &__container {
   // }
@@ -2369,6 +2522,11 @@ label {
     font-weight: 300;
     line-height: 2.143;
 
+    @media ($mobile-max) {
+      margin-top: -0.6em;
+      line-height: 1.7857;
+    }
+
     & * + * {
       margin-top: 2em;
     }
@@ -2389,12 +2547,20 @@ label {
 .our-virtues {
   padding: 4.6875rem 0;
 
+  @media ($tablet-mad) {
+    padding: 2.4rem 0;
+  }
+
   // &__container {
   // }
   &__items {
     margin-left: -1.875rem;
     margin-right: -1.875rem;
     margin-bottom: -3.75rem;
+
+    @media ($mobile-max) {
+      margin-bottom: -2.75rem;
+    }
   }
   &__item {
     @include padding-x(1.875rem);
@@ -2410,6 +2576,10 @@ label {
   }
   &__inner {
     margin-bottom: 3.75rem;
+
+    @media ($mobile-max) {
+      margin-bottom: 2.75rem;
+    }
   }
   // &__icon-wrapper {
   // }
@@ -2446,6 +2616,10 @@ label {
 }
 .reviews {
   padding: 4.6875rem 0;
+
+  @media ($tablet-mad) {
+    padding: 2.4rem 0;
+  }
 
   // &__container {
   // }
@@ -2511,6 +2685,10 @@ label {
     font-size: 1.25rem;
     font-weight: 500;
     line-height: 1.3;
+
+    @media ($mobile-max) {
+      font-size: 1.4rem;
+    }
   }
   &__rating {
     display: flex;
@@ -2537,6 +2715,10 @@ label {
     padding-top: 0.8125rem;
     flex-direction: column;
     padding-bottom: 1.75rem;
+
+    @media ($mobile-max) {
+      font-size: 1.2rem;
+    }
   }
   &__text {
     display: -webkit-box;
@@ -2595,6 +2777,10 @@ label {
 .our-shops {
   padding: 4.6875rem 0;
 
+  @media ($tablet-mad) {
+    padding: 2.4rem 0;
+  }
+
   // &__container {
   // }
   // &__heading {
@@ -2642,6 +2828,9 @@ label {
     }
     @media ($tablet-mad) {
       padding: 1.2rem 1.2rem 1rem 2rem;
+    }
+    @media ($mobile-max) {
+      font-size: 1.3rem;
     }
 
     &::before {
@@ -2711,6 +2900,10 @@ label {
   padding: 3rem 0 0.375rem;
   margin-top: 5.9375rem;
   background-color: $primary-color;
+
+  @media ($tablet-mad) {
+    margin-top: 2.4rem;
+  }
 
   // &__container {
   // }
@@ -2787,6 +2980,9 @@ label {
     @media ($tablet-max) {
       font-size: 1.5rem;
     }
+    @media ($mobile-max) {
+      font-size: 1.7rem;
+    }
   }
   &__socials {
     %socials-link-icon {
@@ -2822,6 +3018,9 @@ label {
     @media ($tablet-max) {
       font-size: 1.3rem;
     }
+    @media ($mobile-max) {
+      font-size: 1.5rem;
+    }
   }
   &__complaint {
     font-weight: 500;
@@ -2849,6 +3048,10 @@ label {
   &__payment {
     @extend %row-wrapper;
     @include margin-x(-7px);
+
+    @media ($mobile-max) {
+      margin-top: 1rem;
+    }
   }
   &__payment-item {
     width: auto;
@@ -3070,6 +3273,9 @@ label {
   &__slider {
     width: 100%;
   }
+  &__color-wrapper {
+    margin-right: -26px;
+  }
   &__color {
     cursor: pointer;
     display: inline-block;
@@ -3141,6 +3347,11 @@ label {
           }
         }
       }
+    }
+    &-wrapper--img {
+      margin-right: -15px;
+
+      @extend %form-checkbox-wrapper-img !optional;
     }
     &--img {
       margin-right: 15px;

@@ -54,7 +54,9 @@ document.addEventListener("DOMContentLoaded", function () {
     .querySelectorAll('button[name="button-collapse"]')
     .forEach((button) =>
       button.addEventListener("click", (event) => {
-        event.currentTarget.parentElement.parentElement.classList.toggle("active");
+        event.currentTarget.parentElement.parentElement.classList.toggle(
+          "active"
+        );
       })
     );
 
@@ -196,11 +198,11 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       breakpoints: {
         0: {
-          // slidesPerView: 2,
-          spaceBetween: 45,
+          slidesPerView: 2,
+          spaceBetween: 15,
         },
         576: {
-          // slidesPerView: 'auto',
+          slidesPerView: "auto",
           spaceBetween: 60,
         },
       },
@@ -242,6 +244,17 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       },
     });
+
+    // color switcher
+    const ogColorLabels = document.querySelectorAll(".og-slide__color-label");
+    ogColorLabels.forEach((label) =>
+      label.addEventListener("click", (event) => {
+        event.currentTarget.parentElement.childNodes.forEach((label) =>
+          label.nodeType === 1 ? label.classList.remove("active") : null
+        );
+        event.currentTarget.classList.add("active");
+      })
+    );
   }
 
   // popular categories
@@ -270,9 +283,11 @@ document.addEventListener("DOMContentLoaded", function () {
       breakpoints: {
         0: {
           spaceBetween: 10,
+          centeredSlides: true,
         },
         576: {
           spaceBetween: 30,
+          centeredSlides: false,
         },
       },
       on: {

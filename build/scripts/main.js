@@ -6481,7 +6481,9 @@
     });
     document.querySelectorAll('button[name="button-collapse"]').forEach(
       (button) => button.addEventListener("click", (event2) => {
-        event2.currentTarget.parentElement.parentElement.classList.toggle("active");
+        event2.currentTarget.parentElement.parentElement.classList.toggle(
+          "active"
+        );
       })
     );
     const allFaqItems = document.querySelectorAll(".faq-item");
@@ -6594,9 +6596,11 @@
         },
         breakpoints: {
           0: {
-            spaceBetween: 45
+            slidesPerView: 2,
+            spaceBetween: 15
           },
           576: {
+            slidesPerView: "auto",
             spaceBetween: 60
           }
         },
@@ -6614,6 +6618,15 @@
           }
         }
       });
+      const ogColorLabels = document.querySelectorAll(".og-slide__color-label");
+      ogColorLabels.forEach(
+        (label) => label.addEventListener("click", (event2) => {
+          event2.currentTarget.parentElement.childNodes.forEach(
+            (label2) => label2.nodeType === 1 ? label2.classList.remove("active") : null
+          );
+          event2.currentTarget.classList.add("active");
+        })
+      );
     }
     const popularCategories = document.querySelectorAll(".popular-categories");
     if (popularCategories) {
@@ -6636,10 +6649,12 @@
         },
         breakpoints: {
           0: {
-            spaceBetween: 10
+            spaceBetween: 10,
+            centeredSlides: true
           },
           576: {
-            spaceBetween: 30
+            spaceBetween: 30,
+            centeredSlides: false
           }
         },
         on: {
