@@ -328,17 +328,17 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // map switcher
-  const osMapButtons = document.querySelectorAll(
-    'button[name="our-shops-set-marker"]'
-  );
-  const osMap = document.getElementById("our-shops-map");
-  if (osMapButtons.length && osMap) {
-    osMapButtons.forEach((button) =>
-      button.addEventListener("click", (event) => {
-        osMap.src = osMap.src.slice(0, -10) + event.currentTarget.value;
-      })
-    );
-  }
+  // const osMapButtons = document.querySelectorAll(
+  //   'button[name="our-shops-set-marker"]'
+  // );
+  // const osMap = document.getElementById("our-shops-map");
+  // if (osMapButtons.length && osMap) {
+  //   osMapButtons.forEach((button) =>
+  //     button.addEventListener("click", (event) => {
+  //       osMap.src = osMap.src.slice(0, -10) + event.currentTarget.value;
+  //     })
+  //   );
+  // }
 
   // form validation //
 

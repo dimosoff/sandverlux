@@ -6689,17 +6689,6 @@
     function updateSliderLockedState(slider) {
       slider.isLocked ? slider.el.classList.add("locked") : slider.el.classList.remove("locked");
     }
-    const osMapButtons = document.querySelectorAll(
-      'button[name="our-shops-set-marker"]'
-    );
-    const osMap = document.getElementById("our-shops-map");
-    if (osMapButtons.length && osMap) {
-      osMapButtons.forEach(
-        (button) => button.addEventListener("click", (event2) => {
-          osMap.src = osMap.src.slice(0, -10) + event2.currentTarget.value;
-        })
-      );
-    }
     const validateEmail = (email) => {
       return email.match(
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
