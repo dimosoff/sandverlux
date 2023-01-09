@@ -1,0 +1,21 @@
+<nav class="breadcrumbs">
+  <div class="breadcrumbs__container container">
+    <div class="breadcrumbs__list-wrapper">
+      <ol class="breadcrumbs__list">
+        <li class="breadcrumbs__list-item">
+          <a href="/" class="breadcrumbs__link">Главная</a>
+        </li>
+        @@if (link02 != '') {
+        <li class="breadcrumbs__list-item">
+          <a href="/" class="breadcrumbs__link">@@link02</a>
+        </li>
+        }
+        @@if (link03 != '') {
+        <li class="breadcrumbs__list-item">
+          <a href="/" class="breadcrumbs__link">@@link03</a>
+        </li>
+        }
+      </ol>
+    </div>
+  </div>
+</nav>

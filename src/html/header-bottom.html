@@ -31,8 +31,10 @@
   <div class="header-bottom__item">
     <div class="header-bottom__search">
       <form class="search-form">
-        <label class="search-form__label sr-only" for="header-search" aria-hidden="true">Поиск</label>
-        <input class="search-form__input header-search" type="search" name="header-search" placeholder="Поиск">
+        <label class="search-form__label">
+          <span class="sr-only" aria-hidden="true">Поиск</span>
+          <input class="search-form__input header-search" type="search" name="header-search" placeholder="Поиск">
+        </label>
         <button class="search-form__button" type="submit" name="header-search-button">
           <svg class="search-form__button-icon" width="20" height="20">
             <use href="/images/icons.svg#search" />
@@ -43,7 +45,7 @@
     <div class="header-bottom__features feature-buttons _desktop-only">
       <div class="feature-buttons__item">
         <a class="feature-buttons__link feature-buttons__comparison" href="#">
-          <span class="sr-only">Сравнение</span>
+          <span class="sr-only">Список сравнения</span>
           <svg class="feature-buttons__icon" width="32.24" height="24">
             <use href="/images/icons.svg#scales" />
           </svg>

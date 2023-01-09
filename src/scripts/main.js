@@ -115,50 +115,53 @@ document.addEventListener("DOMContentLoaded", function () {
   // slider //
 
   const doorPriceSlider = document.getElementById("door-price-slider");
-  const doorPriceMinInput = document.querySelector(
-    "input[name=door-price-min]"
-  );
-  const doorPriceMaxInput = document.querySelector(
-    "input[name=door-price-max]"
-  );
 
-  noUiSlider.create(doorPriceSlider, {
-    start: [
-      +doorPriceMinInput.value || 0,
-      +doorPriceMaxInput.dataset.max || 100,
-    ],
-    step: 1,
-    format: {
-      to: function (value) {
-        return parseInt(value);
+  if (doorPriceSlider) {
+    const doorPriceMinInput = document.querySelector(
+      "input[name=door-price-min]"
+    );
+    const doorPriceMaxInput = document.querySelector(
+      "input[name=door-price-max]"
+    );
+
+    noUiSlider.create(doorPriceSlider, {
+      start: [
+        +doorPriceMinInput.value || 0,
+        +doorPriceMaxInput.dataset.max || 100,
+      ],
+      step: 1,
+      format: {
+        to: function (value) {
+          return parseInt(value);
+        },
+        from: function (value) {
+          return parseInt(value);
+        },
       },
-      from: function (value) {
-        return parseInt(value);
+      connect: true,
+      range: {
+        min: +doorPriceMinInput.dataset.min || 0,
+        max: +doorPriceMaxInput.dataset.max || 100,
       },
-    },
-    connect: true,
-    range: {
-      min: +doorPriceMinInput.dataset.min || 0,
-      max: +doorPriceMaxInput.dataset.max || 100,
-    },
-  });
+    });
 
-  doorPriceSlider.noUiSlider.on("update", function (values, handle) {
-    let value = values[handle];
+    doorPriceSlider.noUiSlider.on("update", function (values, handle) {
+      let value = values[handle];
 
-    if (handle) {
-      doorPriceMaxInput.value = value;
-    } else {
-      doorPriceMinInput.value = value;
-    }
-  });
+      if (handle) {
+        doorPriceMaxInput.value = value;
+      } else {
+        doorPriceMinInput.value = value;
+      }
+    });
 
-  doorPriceMinInput.addEventListener("change", function () {
-    doorPriceSlider.noUiSlider.set([this.value, null]);
-  });
-  doorPriceMaxInput.addEventListener("change", function () {
-    doorPriceSlider.noUiSlider.set([null, this.value]);
-  });
+    doorPriceMinInput.addEventListener("change", function () {
+      doorPriceSlider.noUiSlider.set([this.value, null]);
+    });
+    doorPriceMaxInput.addEventListener("change", function () {
+      doorPriceSlider.noUiSlider.set([null, this.value]);
+    });
+  }
 
   // our-goods swiper //
 

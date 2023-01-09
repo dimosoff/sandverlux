@@ -3,6 +3,9 @@ export const server = () => {
     open: false,
     server: {
       baseDir: `${app.path.build.html}`,
+      serveStaticOptions: {
+        extensions: ["html"],
+      },
     },
     port: 3000,
   });

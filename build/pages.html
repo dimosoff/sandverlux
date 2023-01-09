@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Страница со всеми страницами</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#9ecc8a">
+  <link rel="shortcut icon" href="/images/favicon/favicon.ico">
+  <meta name="apple-mobile-web-app-title" content="каталог дверей Sandverlux">
+  <meta name="application-name" content="каталог дверей Sandverlux">
+  <meta name="msapplication-TileColor" content="#a2d08c">
+  <meta name="msapplication-config" content="/images/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description"
+    content='Огромный выбор дверей производства России и Беларуси со склада и под заказ на сайте sandverlux.by. Салоны дверей Сандверлюкс 🚪 в Минске - это 📏 Бесплатный замер, ⌛ Оперативная доставка и установка!'>
+  <link media="screen" rel="stylesheet" href="styles/styles.min.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+  <article class="header__mobile _tablet-and-mobile-only">
+    <h3 class="sr-only">Мобильная шапка сайта</h3>
+    <div class="header__mobile-inner">
+      <div class="header__mobile-item">
+        <button class="burger">
+          <span></span><span></span><span></span><span class="sr-only">Меню</span>
+        </button>
+      </div>
+      <div class="header__mobile-item">
+        <a class="logo" href="/">
+          <span class="sr-only">На главную</span>
+          <svg class="logo__icon" aria-label="sandverlux.by logo" width="144" height="99">
+            <use href="/images/icons.svg#logo" />
+          </svg>
+        </a>
+      </div>
+      <div class="header__mobile-item feature-buttons">
+        <div class="feature-buttons__item">
+          <a class="feature-buttons__link feature-buttons__comparison" href="#">
+            <span class="sr-only">Сравнение</span>
+            <svg class="feature-buttons__icon" width="32.24" height="24">
+              <use href="/images/icons.svg#scales" />
+            </svg>
+            <i class="feature-buttons__number comparison-count">0</i>
+          </a>
+        </div>
+        <div class="feature-buttons__item">
+          <a class="feature-buttons__link feature-buttons__wishlist" href="#">
+            <span class="sr-only">Список желаемого</span>
+            <svg class="feature-buttons__icon" width="25.73" height="24">
+              <use href="/images/icons.svg#heart" />
+            </svg>
+            <i class="feature-buttons__number wishlist-count">0</i>
+          </a>
+        </div>
+        <div class="feature-buttons__item">
+          <button class="feature-buttons__link feature-buttons__cart" type="button" name="cart-button">
+            <span class="sr-only">Корзина</span>
+            <svg class="feature-buttons__icon" width="24" height="24">
+              <use href="/images/icons.svg#cart" />
+            </svg>
+            <i class="feature-buttons__number cart-count">0</i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </article>
+  <article class="header__navigation">
+    <h3 class="sr-only">Шапка сайта для настольного пк</h3>
+    <div class="header__item">
+      <nav class="header-top container">
+  <div class="header-top__item">
+    <ul class="header-top__links-list">
+      <li class="header-top__list-item _hover-to-open">
+        <div class="header-top__buttons-wrapper">
+          <a href="#" class="header-top__link header-top__about">
+            <div class="header-top__about-burger">
+              <span></span><span></span><span></span><span class="sr-only">О компании</span>
+            </div><span>О компании</span>
+          </a>
+          <button class="header__collapse-button _tablet-and-mobile-only" type="button" name="button-collapse">
+            <svg class="header__collapse-button-image" width="20" height="20">
+              <use href="images/icons.svg#chevron-down-white" />
+            </svg>
+            <span class="sr-only">Развернуть меню</span>
+          </button>
+        </div>
+        <div class="header-top__menu-wrapper _hover-to-open__target">
+          <ul class="header-top__menu">
+            <li class="header-top__menu-item"><a href="#" class="header-top__menu-link">Отзывы</a></li>
+            <li class="header-top__menu-item"><a href="#" class="header-top__menu-link">Вакансии</a></li>
+            <li class="header-top__menu-item"><a href="#" class="header-top__menu-link">Договор</a></li>
+            <li class="header-top__menu-item"><a href="#" class="header-top__menu-link">Наши работы</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="header-top__list-item"><a href="#" class="header-top__link">Ремонт дверей</a></li>
+      <li class="header-top__list-item"><a href="#" class="header-top__link">Акции</a></li>
+      <li class="header-top__list-item"><a href="#" class="header-top__link">Двери в интерьере</a></li>
+      <li class="header-top__list-item"><a href="#" class="header-top__link">Дилерам</a></li>
+      <li class="header-top__list-item"><a href="#" class="header-top__link">Контакты</a></li>
+    </ul>
+  </div>
+  <div class="header-top__item">
+    <a href="#" class="header-top__our-shops">
+      <svg class="header-top__our-shops-icon" width="14" height="16">
+        <use href="/images/icons.svg#map-marker" />
+      </svg><span class="header-top__our-shops-label">Наши магазины</span>
+    </a>
+  </div>
+</nav>
+    </div>
+    <div class="header__item">
+      <div class="header-middle container">
+  <div class="header-middle__item _desktop-only">
+    <a class="logo" href="/">
+      <span class="sr-only">На главную</span>
+      <svg class="logo__icon" aria-label="sandverlux.by logo" width="144" height="99">
+        <use href="/images/icons.svg#logo" />
+      </svg>
+    </a>
+  </div>
+  <div class="header-middle__item header-middle__item_grow">
+    <div class="contacts">
+  <div class="contacts__item">
+    <span class="contacts__label">Call-центр</span>
+    <div class="contacts__content contacts__phone">
+      <div class="contacts__phone-wrapper">
+        <a class="contacts__link" href="tel:+375445332522">
+          <svg class="contacts__icon" width="20" height="20">
+            <use href="/images/icons.svg#phone" />
+          </svg><span>+375 44 533-25-22</span>
+        </a>
+        <div class="socials-links">
+  
+  <a class="socials-links__link" href="https://telegram.org/">
+    <span class="sr-only">Telegram</span>
+    <svg class="socials-links__icon" width="20" height="20">
+      <use href="/images/icons.svg#telegram" />
+    </svg>
+  </a>
+  
+  
+  <a class="socials-links__link" href="https://www.instagram.com/">
+    <span class="sr-only">Instagram</span>
+    <svg class="socials-links__icon" width="20" height="20">
+      <use href="/images/icons.svg#instagram" />
+    </svg>
+  </a>
+  
+  
+  
+  
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="contacts__item">
+    <span class="contacts__label">Наша почта</span>
+    <div class="contacts__content contacts__email">
+      <a class="contacts__link" href="mailto:sales@dvernoirai.by">
+        <svg class="contacts__icon" width="20" height="20">
+          <use href="/images/icons.svg#email" />
+        </svg><span>sales@dvernoirai.by</span>
+      </a>
+    </div>
+  </div>
+  <div class="contacts__item">
+    <span class="contacts__label">Без выходных</span>
+    <div class="contacts__content contacts__timetable">
+      <span class="contacts__link">
+        <svg class="contacts__icon" width="20" height="20">
+          <use href="/images/icons.svg#clock" />
+        </svg><span>c 9:00 до 21:00</span>
+      </span>
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="header-middle__item">
+    <button class="header-middle__call-request _btn" type="button" name="call-request">Заказать звонок</button>
+  </div>
+</div>
+    </div>
+    <div class="header__item">
+      <div class="header-bottom container">
+  <div class="header-bottom__item">
+    <nav class="header-bottom__links">
+      <ul class="header-bottom__links-list">
+        <li class="header-bottom__list-item _hover-to-open">
+          <div class="header-bottom__buttons-wrapper">
+            <a href="#" class="header-bottom__link header-bottom__catalog">
+              <div class="header-bottom__catalog-burger">
+                <span></span><span></span><span></span>
+              </div><span>Каталог</span>
+            </a>
+            <button class="header__collapse-button _tablet-and-mobile-only" type="button" name="button-collapse">
+              <svg class="header__collapse-button-image" width="20" height="20">
+                <use href="images/icons.svg#chevron-down-white" />
+              </svg>
+              <span class="sr-only">Развернуть меню</span>
+            </button>
+          </div>
+          <div class="header-bottom__menu _hover-to-open__target">
+            <nav class="catalog">
+  <h2 class="catalog__title" hidden>Каталог</h2>
+  <ul class="catalog__list">
+    <div class="catalog__list-inner">
+      <li class="catalog__list-item _hover-to-open">
+        <div class="catalog__buttons-wrapper">
+          <a href="#" class="catalog__link">
+            <svg class="catalog__link-image" width="50" height="50">
+              <use href="images/icons.svg#door-style-01" />
+            </svg>
+            <span class="catalog__name">Межкомнатные двери</span>
+          </a>
+          <button class="header__collapse-button _tablet-and-mobile-only" type="button" name="button-collapse">
+            <svg class="header__collapse-button-image" width="20" height="20">
+              <use href="images/icons.svg#chevron-down-white" />
+            </svg>
+            <span class="sr-only">Развернуть меню</span>
+          </button>
+        </div>
+        <div class="catalog__list-wrapper _hover-to-open__target">
+          <div class="catalog__list-inner">
+            <span class="catalog__list-heading">Категории</span>
+            <ul class="catalog__list">
+              <li class="catalog__list-item">
+                <a href="#" class="catalog__link">Экошпон</a>
+              </li>
+              <li class="catalog__list-item">
+                <a href="#" class="catalog__link">Эмаль</a>
+              </li>
+              <li class="catalog__list-item">
+                <a href="#" class="catalog__link">МДФ</a>
+              </li>
+              <li class="catalog__list-item">
+                <a href="#" class="catalog__link">Из массива</a>
+              </li>
+            </ul>
+          </div>
+          <div class="catalog__list-inner">
+            <span class="catalog__list-heading">Цена</span>
+            <ul class="catalog__list">
+              <li class="catalog__list-item">
+                <a href="#" class="catalog__link">0 руб. - 50 руб.</a>
+              </li>
+              <li class="catalog__list-item">
+                <a href="#" class="catalog__link">50 руб. - 150 руб.</a>
+              </li>
+              <li class="catalog__list-item">
+                <a href="#" class="catalog__link">150 руб. - 300 руб.</a>
+              </li>
+              <li class="catalog__list-item">
+                <a href="#" class="catalog__link">300 руб. и более</a>
+              </li>
+            </ul>
+          </div>
+          <div class="catalog__list-inner catalog__banners-wrapper">
+            <aside class="catalog__banner">
+              <a href="#" class="catalog__banner-link">
+                <p class="catalog__banner-image-wrapper _image-wrapper">
+                  <img class="catalog__banner-image _bkgr-image"
+                    src="images/products/c9853f9c194ee720c0b57c6c9e73a47c.png"
+                    alt="Завертка сантехническая Arni WC E15">
+                </p>
+                <header class="catalog__banner-title">
+                  <h2 class="catalog__banner-heading">Завертка сантехническая Arni WC E15</h2>
+                </header>
+              </a>
+            </aside>
+          </div>
+        </div>
+      </li>
+      <li class="catalog__list-item _hover-to-open">
+        <div class="catalog__buttons-wrapper">
+          <a href="#" class="catalog__link">
+            <svg class="catalog__link-image" width="50" height="50">
+              <use href="images/icons.svg#door-style-01" />
+            </svg>
+            <span class="catalog__name">Двери входные металлические</span>
+          </a>
+          <button class="header__collapse-button _tablet-and-mobile-only" type="button" name="button-collapse">
+            <svg class="header__collapse-button-image" width="20" height="20">
+              <use href="images/icons.svg#chevron-down-white" />
+            </svg>
+            <span class="sr-only">Развернуть меню</span>
+          </button>
+        </div>
+        <div class="catalog__list-wrapper _hover-to-open__target">
+          <div class="catalog__list-inner">
+            <span class="catalog__list-heading">Заголовок</span>
+            <ul class="catalog__list">
+              <li class="catalog__list-item">
+                <a href="#" class="catalog__link">Белорусские</a>
+              </li>
+              <li class="catalog__list-item">
+                <a href="#" class="catalog__link">Российские</a>
+              </li>
+            </ul>
+          </div>
+          <div class="catalog__list-inner catalog__banners-wrapper">
+            <aside class="catalog__banner">
+              <a href="#" class="catalog__banner-link">
+                <p class="catalog__banner-image-wrapper _image-wrapper">
+                  <img class="catalog__banner-image _bkgr-image"
+                    src="images/products/11040c16e7868bcecc8e4db209e60835.jpg"
+                    alt="Раздвижная система Loft BDHA04 Arni">
+                </p>
+                <header class="catalog__banner-title">
+                  <h2 class="catalog__banner-heading">Раздвижная система Loft BDHA04 Arni</h2>
+                </header>
+              </a>
+            </aside>
+            <aside class="catalog__banner">
+              <a href="#" class="catalog__banner-link">
+                <p class="catalog__banner-image-wrapper _image-wrapper">
+                  <img class="catalog__banner-image _bkgr-image"
+                    src="images/products/11040c16e7868bcecc8e4db209e60835.jpg"
+                    alt="Раздвижная система Loft BDHA04 Arni">
+                </p>
+                <header class="catalog__banner-title">
+                  <h2 class="catalog__banner-heading">Раздвижная система Loft BDHA04 Arni</h2>
+                </header>
+              </a>
+            </aside>
+            <aside class="catalog__banner">
+              <a href="#" class="catalog__banner-link">
+                <p class="catalog__banner-image-wrapper _image-wrapper">
+                  <img class="catalog__banner-image _bkgr-image"
+                    src="images/products/11040c16e7868bcecc8e4db209e60835.jpg"
+                    alt="Раздвижная система Loft BDHA04 Arni">
+                </p>
+                <header class="catalog__banner-title">
+                  <h2 class="catalog__banner-heading">Раздвижная система Loft BDHA04 Arni</h2>
+                </header>
+              </a>
+            </aside>
+          </div>
+        </div>
+      </li>
+      <li class="catalog__list-item _hover-to-open">
+        <div class="catalog__buttons-wrapper">
+          <a href="#" class="catalog__link">
+            <svg class="catalog__link-image" width="50" height="50">
+              <use href="images/icons.svg#door-style-01" />
+            </svg>
+            <span class="catalog__name">Системы открывания</span>
+          </a>
+          <button class="header__collapse-button _tablet-and-mobile-only" type="button" name="button-collapse">
+            <svg class="header__collapse-button-image" width="20" height="20">
+              <use href="images/icons.svg#chevron-down-white" />
+            </svg>
+            <span class="sr-only">Развернуть меню</span>
+          </button>
+        </div>
+        <div class="catalog__list-wrapper _hover-to-open__target">
+          <div class="catalog__list-inner">
+            <ul class="catalog__list">
+              <li class="catalog__list-item">
+                <a href="#" class="catalog__link">Дверь книжка</a>
+              </li>
+              <li class="catalog__list-item">
+                <a href="#" class="catalog__link">Рото дверь</a>
+              </li>
+              <li class="catalog__list-item">
+                <a href="#" class="catalog__link">Умный (скрытый) порог</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </div>
+  </ul>
+</nav>
+          </div>
+        </li>
+        <li class="header-bottom__list-item"><a href="#" class="header-bottom__link">Распродажа</a></li>
+        <li class="header-bottom__list-item"><a href="#" class="header-bottom__link">Замер и доставка</a></li>
+        <li class="header-bottom__list-item"><a href="#" class="header-bottom__link">Установка</a></li>
+        <li class="header-bottom__list-item"><a href="#" class="header-bottom__link">Оплата</a></li>
+        <li class="header-bottom__list-item"><a href="#" class="header-bottom__link">Рассрочка</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="header-bottom__item">
+    <div class="header-bottom__search">
+      <form class="search-form">
+        <label class="search-form__label">
+          <span class="sr-only" aria-hidden="true">Поиск</span>
+          <input class="search-form__input header-search" type="search" name="header-search" placeholder="Поиск">
+        </label>
+        <button class="search-form__button" type="submit" name="header-search-button">
+          <svg class="search-form__button-icon" width="20" height="20">
+            <use href="/images/icons.svg#search" />
+          </svg><span class="sr-only">Search</span>
+        </button>
+      </form>
+    </div>
+    <div class="header-bottom__features feature-buttons _desktop-only">
+      <div class="feature-buttons__item">
+        <a class="feature-buttons__link feature-buttons__comparison" href="#">
+          <span class="sr-only">Список сравнения</span>
+          <svg class="feature-buttons__icon" width="32.24" height="24">
+            <use href="/images/icons.svg#scales" />
+          </svg>
+          <i class="feature-buttons__number comparison-count">0</i>
+        </a>
+      </div>
+      <div class="feature-buttons__item">
+        <a class="feature-buttons__link feature-buttons__wishlist" href="#">
+          <span class="sr-only">Список желаемого</span>
+          <svg class="feature-buttons__icon" width="25.73" height="24">
+            <use href="/images/icons.svg#heart" />
+          </svg>
+          <i class="feature-buttons__number wishlist-count">0</i>
+        </a>
+      </div>
+      <div class="feature-buttons__item">
+        <button class="feature-buttons__link feature-buttons__cart" type="button" name="cart-button">
+          <span class="sr-only">Корзина</span>
+          <svg class="feature-buttons__icon" width="24" height="24">
+            <use href="/images/icons.svg#cart" />
+          </svg>
+          <i class="feature-buttons__number cart-count">0</i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </article>
+  <!-- <div class="header__background"></div> -->
+</header>
+    <section class="pages" style="padding: 5rem 0;">
+  <div class="pages__container container">
+    <h1 class="pages__heading heading">Все страницы сайта</h1>
+    <nav class="pages__navigation">
+      <ul class="pages__list">
+        <li class="pages__list-item">
+          <a href="/" class="pages__link">Главная</a>
+        </li>
+        <li class="pages__list-item">
+          <a href="/catalog" class="pages__link">Каталог</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</section>
+    <footer class="footer">
+  <div class="footer__container container">
+    <div class="footer__items row not-default-row">
+      <div class="footer__item">
+        <div class="footer__inner">
+          <p class="footer__heading">Для покупателей</p>
+          <div class="footer__socials">
+            <div class="socials-links">
+  
+  <a class="socials-links__link" href="https://telegram.org/">
+    <span class="sr-only">Telegram</span>
+    <svg class="socials-links__icon" width="20" height="20">
+      <use href="/images/icons.svg#telegram" />
+    </svg>
+  </a>
+  
+  
+  <a class="socials-links__link" href="https://www.instagram.com/">
+    <span class="sr-only">Instagram</span>
+    <svg class="socials-links__icon" width="20" height="20">
+      <use href="/images/icons.svg#instagram" />
+    </svg>
+  </a>
+  
+  
+  <a class="socials-links__link" href="https://www.facebook.com/">
+    <span class="sr-only">Facebook</span>
+    <svg class="socials-links__icon" width="20" height="20">
+      <use href="/images/icons.svg#facebook" />
+    </svg>
+  </a>
+  
+  
+  <a class="socials-links__link" href="https://www.youtube.com/">
+    <span class="sr-only">YouTube</span>
+    <svg class="socials-links__icon" width="20" height="20">
+      <use href="/images/icons.svg#youtube" />
+    </svg>
+  </a>
+  
+  
+  <a class="socials-links__link" href="https://www.whatsapp.com/">
+    <span class="sr-only">WhatsApp</span>
+    <svg class="socials-links__icon" width="20" height="20">
+      <use href="/images/icons.svg#whatsapp" />
+    </svg>
+  </a>
+  
+</div>
+          </div>
+          <div class="footer__info">
+            <p>ООО «Дверной Рай»<br>
+              Юридический адрес: 220006 г. Минск, ул.Маяковского, д.24, пом.1Н</p>
+            <p>Почтовый адрес: 220006, г. Минск, ул. Маяковского 24, 1Н<br>
+              Свидетельство о государственной регистрации выдано Мингорисполкомом от 02.07.2019 УНП 193276356</p>
+            <p>Магазин зарегистрирован в Торговом реестре Республики Беларусь 09.03.2021, регистрационный номер 504260
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="footer__item">
+        <div class="footer__inner">
+          <p class="footer__heading">Для покупателей</p>
+          <ul class="footer__links-list">
+            <li class="footer__list-item">
+              <a href="#" class="footer__link">Статьи</a>
+            </li>
+            <li class="footer__list-item">
+              <a href="#" class="footer__link">Часто задаваемые вопросы</a>
+            </li>
+            <li class="footer__list-item">
+              <a href="#" class="footer__link">Магазины</a>
+            </li>
+            <li class="footer__list-item">
+              <a href="#" class="footer__link">Возврат товара</a>
+            </li>
+          </ul>
+          <div class="footer__btn-wrapper">
+            <button class="footer__complaint _btn _btn--white" type="button" name="complaint">Оформить рекламацию</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer__item">
+        <div class="footer__inner">
+          <p class="footer__heading">Для партнеров</p>
+          <ul class="footer__links-list">
+            <li class="footer__list-item">
+              <a href="#" class="footer__link">Сотрудничество</a>
+            </li>
+            <li class="footer__list-item">
+              <a href="#" class="footer__link">Дилерам</a>
+            </li>
+          </ul>
+          <div class="footer__rating">
+            <div class="footer__rating-stars">
+              <svg class="footer__star" width="30" height="30">
+                <use href="/images/icons.svg#star" />
+              </svg>
+              <svg class="footer__star" width="30" height="30">
+                <use href="/images/icons.svg#star" />
+              </svg>
+              <svg class="footer__star" width="30" height="30">
+                <use href="/images/icons.svg#star" />
+              </svg>
+              <svg class="footer__star" width="30" height="30">
+                <use href="/images/icons.svg#star" />
+              </svg>
+              <svg class="footer__star" width="30" height="30">
+                <use href="/images/icons.svg#star" />
+              </svg>
+            </div>
+            <p>Наша оценка: 5 (на основе 1000 отзывов)</p>
+            <a href="#">Смотреть все отзывы</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__item">
+        <div class="footer__inner">
+          <div class="contacts">
+  <div class="contacts__item">
+    <span class="contacts__label">Call-центр</span>
+    <div class="contacts__content contacts__phone">
+      <div class="contacts__phone-wrapper">
+        <a class="contacts__link" href="tel:+375445332522">
+          <svg class="contacts__icon" width="20" height="20">
+            <use href="/images/icons.svg#phone" />
+          </svg><span>+375 44 533-25-22</span>
+        </a>
+        <div class="socials-links">
+  
+  
+  
+  
+  
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="contacts__item">
+    <span class="contacts__label">Наша почта</span>
+    <div class="contacts__content contacts__email">
+      <a class="contacts__link" href="mailto:sales@dvernoirai.by">
+        <svg class="contacts__icon" width="20" height="20">
+          <use href="/images/icons.svg#email" />
+        </svg><span>sales@dvernoirai.by</span>
+      </a>
+    </div>
+  </div>
+  <div class="contacts__item">
+    <span class="contacts__label">Без выходных</span>
+    <div class="contacts__content contacts__timetable">
+      <span class="contacts__link">
+        <svg class="contacts__icon" width="20" height="20">
+          <use href="/images/icons.svg#clock" />
+        </svg><span>c 9:00 до 21:00</span>
+      </span>
+    </div>
+  </div>
+</div>
+          <div class="footer__btn-wrapper">
+            <a href="#" class="footer__btn _btn">Оплата онлайн</a>
+          </div>
+          <div class="footer__payment">
+            <img src="images/paypal.png" alt="paypal метод оплаты" class="footer__payment-item" width="45" height="35">
+            <img src="images/visa.png" alt="visa метод оплаты" class="footer__payment-item" width="44" height="35">
+            <img src="images/mastercard.png" alt="mastercard метод оплаты" class="footer__payment-item" width="58" height="35">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  </div>
+  <div class="popup-overlay"></div>
+
+
+<button class="scroll-top">
+  <span class="sr-only">scroll top</span>
+  <svg width="16" height="23" viewBox="0 0 16 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 23L9 1L7 1L7 23L9 23Z" fill="#84a878"/>
+</svg>
+
+</button>
+<script src="scripts/main.js"></script>
+</body>
+
+</html>
