@@ -1,0 +1,16 @@
+@@if (name != '') {
+<li class="breadcrumbs__list-item" itemscope itemprop="itemListElement" itemtype="https://schema.org/ListItem">
+  @@if (!current) {
+  <a class="breadcrumbs__link" href="@@link" itemprop="item">
+    <span itemprop="name">@@name</span>
+    <meta itemprop="position" content="@@number" />
+  </a>
+  }
+  @@if (current) {
+  <span class="breadcrumbs__link" itemprop="item">
+    <span itemprop="name">@@name</span>
+    <meta itemprop="position" content="@@number" />
+  </span>
+  }
+</li>
+}

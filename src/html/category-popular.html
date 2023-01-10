@@ -1,0 +1,15 @@
+<nav class="popular">
+  <div class="popular__list-wrapper">
+    <h2 class="popular__heading">Популярное:</h2>
+    <ul class="popular__list">
+      @@loop('./src/html/include/category-popular-item.html', '@@json-path')
+      <div class="popular__hidden-items">
+        @@loop('./src/html/include/category-popular-item.html', '@@hidden-json-path')
+      </div>
+    </ul>
+    <button class="popular__button" type="button" name="popular-collapse-button" data-title="ещё">
+      <span class="popular__button-title sr-only">показать/скрыть больше популярных меток</span>
+      <span class="popular__button-icon"></span>
+    </button>
+  </div>
+</nav>

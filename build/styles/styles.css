@@ -404,12 +404,12 @@ b:not(._fw600) {
     background-position: 50% 50.5%;
   }
 }
-.footer__payment, .how-we-work__items, .og-slide__color-label, .og-slide__colors, .our-goods__filter, .mfb__item-wrapper_row, .mfb__item .form__item, .mfb, .mft, .main-filter__items, .row {
+.subcategories__list, .footer__payment, .how-we-work__items, .og-slide__color-label, .og-slide__colors, .our-goods__filter, .mfb__item-wrapper_row, .mfb__item .form__item, .mfb, .mft, .main-filter__items, .row {
   display: flex;
   flex-wrap: wrap;
 }
 
-.popup__close, .map__overlay, .og-slide__features-inner, .our-goods__nav-btn, .popular-categories__nav-btn, .mft__item [type=radio].form__input + .form__label, .feature-buttons__link {
+.popup__close, .subcategories__link, .map__overlay, .og-slide__features-inner, .our-goods__nav-btn, .popular-categories__nav-btn, .mft__item [type=radio].form__input + .form__label, .feature-buttons__link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2568,11 +2568,10 @@ label {
 }
 @media (min-width: 992px) {
   .og-slide__features-button {
-    transform: scale(1);
-    transition: transform 0.2s;
+    transition: background-color 0.2s;
   }
   .og-slide__features-button:hover {
-    transform: scale(1.1);
+    background-color: #f9c201;
   }
 }
 .og-slide__features-button + .og-slide__features-button {
@@ -2583,11 +2582,10 @@ label {
 }
 @media (min-width: 992px) {
   .og-slide__features-button-icon {
-    transform: scale(1);
-    transition: transform 0.2s;
+    transition: color 0.2s;
   }
   .og-slide__features-button:hover .og-slide__features-button-icon {
-    transform: scale(1.2);
+    color: #fff;
   }
 }
 .og-slide__heading {
@@ -2651,11 +2649,12 @@ label {
 }
 @media (min-width: 992px) {
   .og-slide__color-label {
-    transition: transform 0.3s;
+    transition: transform 0.3s, background-color 0.3s;
     transform: scale(1);
   }
   .og-slide__color-label:hover {
-    transform: scale(1.2);
+    transform: scale(1.05);
+    background-color: #84a878;
   }
 }
 @media (max-width: 575.98px) {
@@ -3510,8 +3509,121 @@ label {
 }
 .breadcrumbs__link {
   color: #585858;
+  padding: 7px 0;
+  display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
+}
+@media (min-width: 992px) {
+  .breadcrumbs__link[href]:hover {
+    color: #2d2d2d;
+  }
+}
+.breadcrumbs__link:not([href]) {
+  cursor: default;
+}
+
+.category {
+  padding: 2.2rem 0;
+}
+.subcategories__list-wrapper {
+  margin-left: -14px;
+}
+.subcategories__link {
+  color: #2d2d2d;
+  border: 1px solid #84a878;
+  padding: 10px 15px;
+  font-weight: 500;
+  margin-left: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: #fff;
+}
+@media (min-width: 992px) {
+  .subcategories__link:hover {
+    color: #fff;
+    background-color: #84a878;
+    transition: background-color 0.2s;
+  }
+}
+.subcategories__image-wrapper {
+  height: 77px;
+}
+.subcategories__image {
+  width: auto;
+  height: auto;
+  max-height: 100%;
+}
+.subcategories__name {
+  margin-left: 19px;
+}
+
+.popular {
+  padding: 26px 34px;
+  margin-top: 2.5rem;
+  background-color: #f4f4f4;
+}
+.popular__heading {
+  color: #2d2d2d;
+  display: inline-block;
+  font-size: 18px;
+  margin-top: 34px;
+  font-weight: 500;
+  margin-left: 38px;
+}
+.popular__list-wrapper {
+  margin-left: -38px;
+  margin-top: -34px;
+}
+.popular__list {
+  display: inline;
+}
+.popular__list-item {
+  display: inline-block;
+  margin-top: 34px;
+  margin-left: 38px;
+}
+.popular__hidden-items {
+  display: inline;
+}
+.popular__link {
+  color: #585858;
+  font-size: 18px;
+}
+@media (min-width: 992px) {
+  .popular__link {
+    transition: color 0.2s;
+  }
+  .popular__link:hover {
+    color: #84a878;
+  }
+}
+.popular__button {
+  color: #84a878;
+  border: none;
+  font-size: 18px;
+  margin-top: 34px;
+  font-weight: 700;
+  margin-left: 38px;
+  background-color: transparent;
+}
+.popular__button::before {
+  content: attr(data-title);
+}
+.popular__button-icon {
+  width: 30px;
+  color: #fff;
+  height: 30px;
+  display: inline-block;
+  font-size: 20px;
+  line-height: 30px;
+  margin-left: 10px;
+  border-radius: 50%;
+  vertical-align: middle;
+  background-color: #84a878;
+}
+.popular__button-icon::before {
+  content: "+";
 }
 
 .form__checkbox input ~ .form__label:before, .form__select, .form__input[type=file] ~ label, .form__input, .mft__item [type=radio].form__input + .form__label {

@@ -1,0 +1,46 @@
+[
+  {
+    "title": "Межкомнатные двери",
+    "image-url": "images/icons.svg#doors-interior"
+  },
+  {
+    "title": "Входные двери",
+    "image-url": "images/icons.svg#doors-entrance"
+  },
+  {
+    "title": "Скрытые двери",
+    "image-url": "images/icons.svg#doors-hidden"
+  },
+  {
+    "title": "Двери эмаль",
+    "image-url": "images/icons.svg#doors-enamel"
+  },
+  {
+    "title": "Раздвижные двери",
+    "image-url": "images/icons.svg#doors-sliding"
+  },
+  {
+    "title": "Двойные двери",
+    "image-url": "images/icons.svg#doors-double"
+  },
+  {
+    "title": "Двери из массива",
+    "image-url": "images/icons.svg#doors-solid-wood"
+  },
+  {
+    "title": "Фурнитура",
+    "image-url": "images/icons.svg#doors-fittings"
+  },
+  {
+    "title": "Экошпон",
+    "image-url": "images/icons.svg#doors-ecoveneer"
+  },
+  {
+    "title": "Стеклянные двери",
+    "image-url": "images/icons.svg#doors-glass"
+  },
+  {
+    "title": "Двери для бани и сауны",
+    "image-url": "images/icons.svg#dooors-bath-and-sauna"
+  }
+]

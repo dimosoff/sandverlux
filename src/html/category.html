@@ -1,0 +1,14 @@
+<main class="category">
+  <div class="category__container container">
+    <header class="category__header">
+      <h1 class="category__heading heading">@@title</h1>
+      @@include('./src/html/category-subcategories.html', {
+      'json-path': '@@subcategories-json-path'
+      })
+      @@include('./src/html/category-popular.html', {
+      'json-path': '@@popular-json-path',
+      'hidden-json-path': '@@popular-json-path'
+      })
+    </header>
+  </div>
+</main>

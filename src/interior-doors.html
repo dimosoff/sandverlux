@@ -9,8 +9,12 @@
   <div class="wrapper">
     @@include('./src/html/header.html')
     @@include('./src/html/breadcrumbs.html', {
-      'link02': 'Межкомнатные двери',
-      'link03': '',
+      'json-path': 'json/interior-doors-breadcrumbs.json'
+    })
+    @@include('./src/html/category.html', {
+      'title': 'Межкомнатные двери',
+      'subcategories-json-path': 'json/interior-doors-subcategories.json',
+      'popular-json-path': 'json/interior-doors-popular.json'
     })
     @@include('./src/html/footer.html')
   </div>

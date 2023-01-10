@@ -9,74 +9,90 @@
     <div class="our-goods__slider-wrapper">
       <div class="our-goods__swiper swiper">
         <div class="our-goods__swiper-wrapper">
-          @@include('./src/html/our-goods-slide.html', {
+          <div class="our-goods__slide swiper-slide" data-slide-category="bestseller">
+            @@include('./src/html/our-goods-slide.html', {
             'id': '001',
             'image-src': 'images/products/our-goods-example.png',
             'title': 'F24 - Динмар',
             'bestseller': true,
             'novelty': false,
             'discount': false,
-          })
-          @@include('./src/html/our-goods-slide.html', {
+            })
+          </div>
+          <div class="our-goods__slide swiper-slide" data-slide-category="novelty,discount">
+            @@include('./src/html/our-goods-slide.html', {
             'id': '002',
             'image-src': 'images/products/our-goods-example.png',
             'title': 'F24 - Динмар',
             'bestseller': false,
             'novelty': true,
             'discount': true,
-          })
-          @@include('./src/html/our-goods-slide.html', {
+            })
+          </div>
+          <div class="our-goods__slide swiper-slide" data-slide-category="bestseller,discount">
+            @@include('./src/html/our-goods-slide.html', {
             'id': '003',
             'image-src': 'images/products/our-goods-example.png',
             'title': 'F24 - Динмар',
             'bestseller': true,
             'novelty': false,
             'discount': true,
-          })
-          @@include('./src/html/our-goods-slide.html', {
+            })
+          </div>
+          <div class="our-goods__slide swiper-slide" data-slide-category="bestseller,discount">
+            @@include('./src/html/our-goods-slide.html', {
             'id': '004',
             'image-src': 'images/products/our-goods-example.png',
             'title': 'F24 - Динмар',
             'bestseller': true,
             'novelty': false,
             'discount': true,
-          })
-          @@include('./src/html/our-goods-slide.html', {
+            })
+          </div>
+          <div class="our-goods__slide swiper-slide" data-slide-category="bestseller,novelty,discount">
+            @@include('./src/html/our-goods-slide.html', {
             'id': '005',
             'image-src': 'images/products/our-goods-example.png',
             'title': 'F24 - Динмар',
             'bestseller': true,
             'novelty': true,
             'discount': true,
-          })
-          @@include('./src/html/our-goods-slide.html', {
+            })
+          </div>
+          <div class="our-goods__slide swiper-slide" data-slide-category="novelty,discount">
+            @@include('./src/html/our-goods-slide.html', {
             'id': '006',
             'image-src': 'images/products/our-goods-example.png',
             'title': 'F24 - Динмар',
             'bestseller': false,
             'novelty': true,
             'discount': true,
-          })
-          @@include('./src/html/our-goods-slide.html', {
+            })
+          </div>
+          <div class="our-goods__slide swiper-slide" data-slide-category="novelty">
+            @@include('./src/html/our-goods-slide.html', {
             'id': '007',
             'image-src': 'images/products/our-goods-example.png',
             'title': 'F24 - Динмар',
             'bestseller': false,
             'novelty': true,
             'discount': false,
-          })
-          @@include('./src/html/our-goods-slide.html', {
+            })
+          </div>
+          <div class="our-goods__slide swiper-slide" data-slide-category="discount">
+            @@include('./src/html/our-goods-slide.html', {
             'id': '008',
             'image-src': 'images/products/our-goods-example.png',
             'title': 'F24 - Динмар',
             'bestseller': false,
             'novelty': false,
             'discount': true,
-          })
+            })
+          </div>
         </div>
 
         <!-- <div class="swiper-pagination"></div> -->
-      
+
         <div class="our-goods__nav-btn our-goods__nav-btn_prev">
           <svg class="our-goods__prev-icon" width="20" height="10">
             <use href="/images/icons.svg#chevron-down" />
@@ -87,7 +103,7 @@
             <use href="/images/icons.svg#chevron-down" />
           </svg>
         </div>
-      
+
         <!-- <div class="swiper-scrollbar"></div> -->
       </div>
     </div>
