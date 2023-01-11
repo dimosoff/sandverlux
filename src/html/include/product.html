@@ -1,0 +1,87 @@
+<article class="product">
+  <div class="product__inner">
+    <a href="#" class="product__image-wrapper _image-wrapper">
+      <img src="@@image-src" alt="@@title" class="product__image _bkgr-image _bkgr-image--contain" width="308"
+        height="308" loading="lazy">
+    </a>
+    <div class="product__content">
+      <div class="product__features">
+        <div class="product__features-inner">
+          <button class="product__features-button" type="button" name="product-product-compare">
+            <svg class="product__features-button-icon" width="20.15" height="15">
+              <use href="/images/icons.svg#scales" />
+            </svg>
+            <span class="sr-only">Добавить в список сравнения</span>
+          </button>
+          <button class="product__features-button" type="button" name="product-product-wish">
+            <svg class="product__features-button-icon" width="16.08" height="15">
+              <use href="/images/icons.svg#heart" />
+            </svg>
+            <span class="sr-only">Добавить в список желаемого</span>
+          </button>
+        </div>
+      </div>
+      <a href="#" class="product__heading">@@title</a>
+      <div class="product__price-wrapper">
+        @@if (discount == true) {
+        <span class="product__price_old">601.00 р.</span>
+        }
+        <span class="product__price">601.00 р.</span>
+      </div>
+      <div class="product__installment">Рассрочка от 150 руб/мес</div>
+    </div>
+    <form method="post" class="product__form">
+      <input type="hidden" name="id" value="@@id">
+      <input type="hidden" name="count" value="1">
+      <input type="hidden" name="options" value="[]">
+
+      <button class="product__btn _btn" onclick="alert('товар : @@id')" aria-label="В корзину" type="submit"
+        name="ms2_action" value="cart/add">В корзину</button>
+
+      <fieldset class="product__colors">
+        <legend class="sr-only">Цвета</legend>
+        <label class="product__color-label">
+          <span hidden>цвет номер 1</span>
+          <input type="radio" name="product-color@@id" value="color001" aria-hidden="true" checked hidden>
+          <span class="product__color" style="background-color:#D8B888"></span>
+        </label>
+        <label class="product__color-label">
+          <span hidden>цвет номер 2</span>
+          <input type="radio" name="product-color@@id" value="color002" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#737373"></span>
+        </label>
+        <label class="product__color-label">
+          <span hidden>цвет номер 3</span>
+          <input type="radio" name="product-color@@id" value="color003" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#8E7248"></span>
+        </label>
+        <label class="product__color-label">
+          <span hidden>цвет номер 4</span>
+          <input type="radio" name="product-color@@id" value="color004" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#FFFFFF"></span>
+        </label>
+        <label class="product__color-label active">
+          <span hidden>цвет номер 5</span>
+          <input type="radio" name="product-color@@id" value="color005" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#373737"></span>
+        </label>
+      </fieldset>
+    </form>
+    <div class="product__badges">
+      @@if (discount == true) {
+      <div class="product__badge product__badge_discount">Скидка</div>
+      }
+      @@if (novelty == true) {
+      <div class="product__badge product__badge_novelty">Новинка</div>
+      }
+      @@if (bestseller == true) {
+      <div class="product__badge product__badge_bestseller">
+        <svg class="product__badge-icon" width="10" height="11">
+          <use href="/images/icons.svg#hot-sale" />
+        </svg>
+        <span hidden>хит продаж</span>
+      </div>
+      }
+    </div>
+  </div>
+</article>

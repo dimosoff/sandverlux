@@ -1,0 +1,66 @@
+[
+  {
+    "id": "001",
+    "image-src": "images/products/our-goods-example.png",
+    "title": "F24 - Динмар",
+    "bestseller": true,
+    "novelty": false,
+    "discount": false
+  },
+  {
+    "id": "002",
+    "image-src": "images/products/our-goods-example.png",
+    "title": "F24 - Динмар",
+    "bestseller": false,
+    "novelty": true,
+    "discount": true
+  },
+  {
+    "id": "003",
+    "image-src": "images/products/our-goods-example.png",
+    "title": "F24 - Динмар",
+    "bestseller": true,
+    "novelty": false,
+    "discount": true
+  },
+  {
+    "id": "004",
+    "image-src": "images/products/our-goods-example.png",
+    "title": "F24 - Динмар",
+    "bestseller": true,
+    "novelty": false,
+    "discount": true
+  },
+  {
+    "id": "005",
+    "image-src": "images/products/our-goods-example.png",
+    "title": "F24 - Динмар",
+    "bestseller": true,
+    "novelty": true,
+    "discount": true
+  },
+  {
+    "id": "006",
+    "image-src": "images/products/our-goods-example.png",
+    "title": "F24 - Динмар",
+    "bestseller": false,
+    "novelty": true,
+    "discount": true
+  },
+  {
+    "id": "007",
+    "image-src": "images/products/our-goods-example.png",
+    "title": "F24 - Динмар",
+    "bestseller": false,
+    "novelty": true,
+    "discount": false
+  },
+  {
+    "id": "008",
+    "image-src": "images/products/our-goods-example.png",
+    "title": "F24 - Динмар",
+    "bestseller": false,
+    "novelty": false,
+    "discount": true
+  }
+]

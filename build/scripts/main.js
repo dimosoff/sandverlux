@@ -4,7 +4,10 @@
   var myGallery = new gallery();
   var mySetAnchorsEvents = new setAnchorsEvents();
   function addClassOnClick(itemClick, classToItem, nameOfClass) {
-    document.querySelector(itemClick).addEventListener("click", () => {
+    const button = document.querySelector(itemClick);
+    if (!button)
+      return;
+    button.addEventListener("click", () => {
       document.querySelectorAll(classToItem).forEach((item) => {
         item.classList.toggle(nameOfClass);
       });
@@ -6620,16 +6623,16 @@
           }
         }
       });
-      const ogColorLabels = document.querySelectorAll(".og-slide__color-label");
-      ogColorLabels.forEach(
-        (label) => label.addEventListener("click", (event2) => {
-          event2.currentTarget.parentElement.childNodes.forEach(
-            (label2) => label2.nodeType === 1 ? label2.classList.remove("active") : null
-          );
-          event2.currentTarget.classList.add("active");
-        })
-      );
     }
+    const productLabels = document.querySelectorAll(".product__color-label");
+    productLabels.forEach(
+      (label) => label.addEventListener("click", (event2) => {
+        event2.currentTarget.parentElement.childNodes.forEach(
+          (label2) => label2.nodeType === 1 ? label2.classList.remove("active") : null
+        );
+        event2.currentTarget.classList.add("active");
+      })
+    );
     const popularCategories = document.querySelectorAll(".popular-categories");
     if (popularCategories.length) {
       const pcSwiper = new core_default(".popular-categories__items-wrapper", {
@@ -6691,6 +6694,11 @@
     function updateSliderLockedState(slider) {
       slider.isLocked ? slider.el.classList.add("locked") : slider.el.classList.remove("locked");
     }
+    addClassOnClick(
+      "button[name=popular-collapse-button]",
+      ".popular",
+      "_expanded"
+    );
     const validateEmail = (email) => {
       return email.match(
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/

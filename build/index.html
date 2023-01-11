@@ -216,7 +216,7 @@
     <div class="catalog__list-inner">
       <li class="catalog__list-item _hover-to-open">
         <div class="catalog__buttons-wrapper">
-          <a href="#" class="catalog__link">
+          <a href="/interior-doors" class="catalog__link">
             <svg class="catalog__link-image" width="50" height="50">
               <use href="images/icons.svg#door-style-01" />
             </svg>
@@ -486,8 +486,8 @@
       <div class="main-filter__item">
         <div class="mft">
   <div class="mft__item">
-    <fieldset class="mft__item-wrapper">
-      <legend class="mft__heading">Я ищу двери</legend>
+    <fieldset class="mft__item-wrapper form__item-wrapper">
+      <legend class="mft__heading form__item-heading">Я ищу двери</legend>
       <div class="form__item">
         <label class="form__radio" tabindex="0">
           <input class="form__input" type="radio" name="door-type" value="interior" aria-hidden="true" checked hidden>
@@ -501,7 +501,7 @@
     </fieldset>
   </div>
   <div class="mft__item">
-    <span class="mft__heading">Производитель</span>
+    <span class="mft__heading form__item-heading">Производитель</span>
     <div class="form__item">
       <label>
         <span class="form__label" hidden>Производитель</span>
@@ -516,8 +516,8 @@
     </div>
   </div>
   <div class="mft__item mft__item_shrink">
-    <fieldset class="mft__item-wrapper">
-      <legend class="mft__heading">Цена</legend>
+    <fieldset class="mft__item-wrapper form__item-wrapper">
+      <legend class="mft__heading form__item-heading">Цена</legend>
       <div class="mft__items-row">
         <div class="form__item">
           <span class="form__input-placeholder">от</span>
@@ -548,12 +548,12 @@
       <div class="main-filter__item">
         <div class="mfb">
   <div class="mfb__item">
-    <fieldset class="mfb__item-wrapper mfb__item-wrapper_row">
-      <legend class="mfb__heading">Цвета</legend>
+    <fieldset class="mfb__item-wrapper mfb__item-wrapper_row form__item-wrapper">
+      <legend class="mfb__heading form__item-heading">Цвета</legend>
       <div class="form__item form__color-wrapper">
         <label class="form__color">
           <input class="form__input" type="checkbox" name="door-color" value="color001" aria-hidden="true" checked hidden>
-          <span class="form__label" style="background-color:chocolate;">Светлый коричневый</span>
+          <span class="form__label" style="background-color:rgb(210, 105, 30);">Светлый коричневый</span>
         </label>
         <label class="form__color">
           <input class="form__input" type="checkbox" name="door-color" value="color002" aria-hidden="true" hidden>
@@ -567,7 +567,7 @@
     </fieldset>
   </div>
   <div class="mfb__item mfb__item_half">
-    <span class="mfb__heading">Размер полотна</span>
+    <span class="mfb__heading form__item-heading">Размер полотна</span>
     <div class="form__item">
       <label>
         <span class="form__label" hidden>Размер полотна</span>
@@ -584,7 +584,7 @@
     </div>
   </div>
   <div class="mfb__item mfb__item_half">
-    <span class="mfb__heading">Материал</span>
+    <span class="mfb__heading form__item-heading">Материал</span>
     <div class="form__item">
       <label>
         <span class="form__label" hidden>Материал</span>
@@ -597,8 +597,8 @@
     </div>
   </div>
   <div class="mfb__item">
-    <div class="mfb__item-wrapper mfb__item-wrapper_row">
-      <div class="mfb__heading">Система открывания</div>
+    <fieldset class="mfb__item-wrapper mfb__item-wrapper_row form__item-wrapper">
+      <legend class="mfb__heading form__item-heading">Система открывания</legend>
       <div class="form__item">
         <label class="form__checkbox">
           <input class="form__input" type="checkbox" name="door-opening-system" hidden>
@@ -613,11 +613,11 @@
           <span class="form__label">Складная</span>
         </label>
       </div>
-    </div>
+    </fieldset>
   </div>
   <div class="mfb__item">
-    <div class="mfb__item-wrapper">
-      <div class="mfb__heading">Стиль двери</div>
+    <fieldset class="mfb__item-wrapper form__item-wrapper">
+      <legend class="mfb__heading form__item-heading">Стиль двери</legend>
       <div class="form__item form__checkbox-wrapper--img">
         <label class="form__checkbox form__checkbox--img">
           <input class="form__input" type="checkbox" name="door-style" hidden>
@@ -636,7 +636,7 @@
           <span class="form__label">Хай-тек</span>
         </label>
       </div>
-    </div>
+    </fieldset>
   </div>
   <div class="mfb__item">
     <button id="door-submit" class="mfb__button _btn" type="submit" name="door-submit">Подобрать дверь</button>
@@ -778,78 +778,79 @@
       <div class="our-goods__swiper swiper">
         <div class="our-goods__swiper-wrapper">
           <div class="our-goods__slide swiper-slide" data-slide-category="bestseller">
-            <article class="og-slide">
-  <div class="og-slide__inner">
-    <a href="#" class="og-slide__image-wrapper _image-wrapper">
-      <img src="images/products/our-goods-example.png" alt="F24 - Динмар" class="og-slide__image _bkgr-image _bkgr-image--contain" width="308"
+            <article class="product">
+  <div class="product__inner">
+    <a href="#" class="product__image-wrapper _image-wrapper">
+      <img src="images/products/our-goods-example.png" alt="F24 - Динмар" class="product__image _bkgr-image _bkgr-image--contain" width="308"
         height="308" loading="lazy">
     </a>
-    <div class="og-slide__content">
-      <div class="og-slide__features">
-        <div class="og-slide__features-inner">
-          <button class="og-slide__features-button" type="button" name="og-slide-product-compare">
-            <svg class="og-slide__features-button-icon" width="20.15" height="15">
-              <use href="/images/icons.svg#scales">
+    <div class="product__content">
+      <div class="product__features">
+        <div class="product__features-inner">
+          <button class="product__features-button" type="button" name="product-product-compare">
+            <svg class="product__features-button-icon" width="20.15" height="15">
+              <use href="/images/icons.svg#scales" />
             </svg>
             <span class="sr-only">Добавить в список сравнения</span>
           </button>
-          <button class="og-slide__features-button" type="button" name="og-slide-product-wish">
-            <svg class="og-slide__features-button-icon" width="16.08" height="15">
-              <use href="/images/icons.svg#heart">
+          <button class="product__features-button" type="button" name="product-product-wish">
+            <svg class="product__features-button-icon" width="16.08" height="15">
+              <use href="/images/icons.svg#heart" />
             </svg>
             <span class="sr-only">Добавить в список желаемого</span>
           </button>
         </div>
       </div>
-      <a href="#" class="og-slide__heading">F24 - Динмар</a>
-      <div class="og-slide__price-wrapper">
+      <a href="#" class="product__heading">F24 - Динмар</a>
+      <div class="product__price-wrapper">
         
-        <span class="og-slide__price">601.00 р.</span>
+        <span class="product__price">601.00 р.</span>
       </div>
-      <div class="og-slide__installment">Рассрочка от 150 руб/мес</div>
+      <div class="product__installment">Рассрочка от 150 руб/мес</div>
     </div>
-    <form method="post" class="og-slide__form">
+    <form method="post" class="product__form">
       <input type="hidden" name="id" value="001">
       <input type="hidden" name="count" value="1">
       <input type="hidden" name="options" value="[]">
 
-      <button class="og-slide__btn _btn" onclick="alert('товар : 001')" aria-label="В корзину" type="submit"
+      <button class="product__btn _btn" onclick="alert('товар : 001')" aria-label="В корзину" type="submit"
         name="ms2_action" value="cart/add">В корзину</button>
 
-      <div class="og-slide__colors">
-        <label class="og-slide__color-label">
+      <fieldset class="product__colors">
+        <legend class="sr-only">Цвета</legend>
+        <label class="product__color-label">
           <span hidden>цвет номер 1</span>
-          <input type="radio" name="og-slide-color001" value="color001" aria-hidden="true" checked hidden>
-          <span class="og-slide__color" style="background-color:#D8B888"></span>
+          <input type="radio" name="product-color001" value="color001" aria-hidden="true" checked hidden>
+          <span class="product__color" style="background-color:#D8B888"></span>
         </label>
-        <label class="og-slide__color-label">
+        <label class="product__color-label">
           <span hidden>цвет номер 2</span>
-          <input type="radio" name="og-slide-color001" value="color002" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#737373"></span>
+          <input type="radio" name="product-color001" value="color002" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#737373"></span>
         </label>
-        <label class="og-slide__color-label">
+        <label class="product__color-label">
           <span hidden>цвет номер 3</span>
-          <input type="radio" name="og-slide-color001" value="color003" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#8E7248"></span>
+          <input type="radio" name="product-color001" value="color003" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#8E7248"></span>
         </label>
-        <label class="og-slide__color-label">
+        <label class="product__color-label">
           <span hidden>цвет номер 4</span>
-          <input type="radio" name="og-slide-color001" value="color004" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#FFFFFF"></span>
+          <input type="radio" name="product-color001" value="color004" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#FFFFFF"></span>
         </label>
-        <label class="og-slide__color-label active">
+        <label class="product__color-label active">
           <span hidden>цвет номер 5</span>
-          <input type="radio" name="og-slide-color001" value="color005" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#373737"></span>
+          <input type="radio" name="product-color001" value="color005" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#373737"></span>
         </label>
-      </div>
+      </fieldset>
     </form>
-    <div class="og-slide__badges">
+    <div class="product__badges">
       
       
       
-      <div class="og-slide__badge og-slide__badge_bestseller">
-        <svg class="og-slide__badge-icon" width="10" height="11">
+      <div class="product__badge product__badge_bestseller">
+        <svg class="product__badge-icon" width="10" height="11">
           <use href="/images/icons.svg#hot-sale" />
         </svg>
         <span hidden>хит продаж</span>
@@ -860,80 +861,81 @@
 </article>
           </div>
           <div class="our-goods__slide swiper-slide" data-slide-category="novelty,discount">
-            <article class="og-slide">
-  <div class="og-slide__inner">
-    <a href="#" class="og-slide__image-wrapper _image-wrapper">
-      <img src="images/products/our-goods-example.png" alt="F24 - Динмар" class="og-slide__image _bkgr-image _bkgr-image--contain" width="308"
+            <article class="product">
+  <div class="product__inner">
+    <a href="#" class="product__image-wrapper _image-wrapper">
+      <img src="images/products/our-goods-example.png" alt="F24 - Динмар" class="product__image _bkgr-image _bkgr-image--contain" width="308"
         height="308" loading="lazy">
     </a>
-    <div class="og-slide__content">
-      <div class="og-slide__features">
-        <div class="og-slide__features-inner">
-          <button class="og-slide__features-button" type="button" name="og-slide-product-compare">
-            <svg class="og-slide__features-button-icon" width="20.15" height="15">
-              <use href="/images/icons.svg#scales">
+    <div class="product__content">
+      <div class="product__features">
+        <div class="product__features-inner">
+          <button class="product__features-button" type="button" name="product-product-compare">
+            <svg class="product__features-button-icon" width="20.15" height="15">
+              <use href="/images/icons.svg#scales" />
             </svg>
             <span class="sr-only">Добавить в список сравнения</span>
           </button>
-          <button class="og-slide__features-button" type="button" name="og-slide-product-wish">
-            <svg class="og-slide__features-button-icon" width="16.08" height="15">
-              <use href="/images/icons.svg#heart">
+          <button class="product__features-button" type="button" name="product-product-wish">
+            <svg class="product__features-button-icon" width="16.08" height="15">
+              <use href="/images/icons.svg#heart" />
             </svg>
             <span class="sr-only">Добавить в список желаемого</span>
           </button>
         </div>
       </div>
-      <a href="#" class="og-slide__heading">F24 - Динмар</a>
-      <div class="og-slide__price-wrapper">
+      <a href="#" class="product__heading">F24 - Динмар</a>
+      <div class="product__price-wrapper">
         
-        <span class="og-slide__price_old">601.00 р.</span>
+        <span class="product__price_old">601.00 р.</span>
         
-        <span class="og-slide__price">601.00 р.</span>
+        <span class="product__price">601.00 р.</span>
       </div>
-      <div class="og-slide__installment">Рассрочка от 150 руб/мес</div>
+      <div class="product__installment">Рассрочка от 150 руб/мес</div>
     </div>
-    <form method="post" class="og-slide__form">
+    <form method="post" class="product__form">
       <input type="hidden" name="id" value="002">
       <input type="hidden" name="count" value="1">
       <input type="hidden" name="options" value="[]">
 
-      <button class="og-slide__btn _btn" onclick="alert('товар : 002')" aria-label="В корзину" type="submit"
+      <button class="product__btn _btn" onclick="alert('товар : 002')" aria-label="В корзину" type="submit"
         name="ms2_action" value="cart/add">В корзину</button>
 
-      <div class="og-slide__colors">
-        <label class="og-slide__color-label">
+      <fieldset class="product__colors">
+        <legend class="sr-only">Цвета</legend>
+        <label class="product__color-label">
           <span hidden>цвет номер 1</span>
-          <input type="radio" name="og-slide-color002" value="color001" aria-hidden="true" checked hidden>
-          <span class="og-slide__color" style="background-color:#D8B888"></span>
+          <input type="radio" name="product-color002" value="color001" aria-hidden="true" checked hidden>
+          <span class="product__color" style="background-color:#D8B888"></span>
         </label>
-        <label class="og-slide__color-label">
+        <label class="product__color-label">
           <span hidden>цвет номер 2</span>
-          <input type="radio" name="og-slide-color002" value="color002" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#737373"></span>
+          <input type="radio" name="product-color002" value="color002" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#737373"></span>
         </label>
-        <label class="og-slide__color-label">
+        <label class="product__color-label">
           <span hidden>цвет номер 3</span>
-          <input type="radio" name="og-slide-color002" value="color003" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#8E7248"></span>
+          <input type="radio" name="product-color002" value="color003" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#8E7248"></span>
         </label>
-        <label class="og-slide__color-label">
+        <label class="product__color-label">
           <span hidden>цвет номер 4</span>
-          <input type="radio" name="og-slide-color002" value="color004" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#FFFFFF"></span>
+          <input type="radio" name="product-color002" value="color004" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#FFFFFF"></span>
         </label>
-        <label class="og-slide__color-label active">
+        <label class="product__color-label active">
           <span hidden>цвет номер 5</span>
-          <input type="radio" name="og-slide-color002" value="color005" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#373737"></span>
+          <input type="radio" name="product-color002" value="color005" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#373737"></span>
         </label>
-      </div>
+      </fieldset>
     </form>
-    <div class="og-slide__badges">
+    <div class="product__badges">
       
-      <div class="og-slide__badge og-slide__badge_discount">Скидка</div>
+      <div class="product__badge product__badge_discount">Скидка</div>
       
       
-      <div class="og-slide__badge og-slide__badge_novelty">Новинка</div>
+      <div class="product__badge product__badge_novelty">Новинка</div>
       
       
     </div>
@@ -941,82 +943,83 @@
 </article>
           </div>
           <div class="our-goods__slide swiper-slide" data-slide-category="bestseller,discount">
-            <article class="og-slide">
-  <div class="og-slide__inner">
-    <a href="#" class="og-slide__image-wrapper _image-wrapper">
-      <img src="images/products/our-goods-example.png" alt="F24 - Динмар" class="og-slide__image _bkgr-image _bkgr-image--contain" width="308"
+            <article class="product">
+  <div class="product__inner">
+    <a href="#" class="product__image-wrapper _image-wrapper">
+      <img src="images/products/our-goods-example.png" alt="F24 - Динмар" class="product__image _bkgr-image _bkgr-image--contain" width="308"
         height="308" loading="lazy">
     </a>
-    <div class="og-slide__content">
-      <div class="og-slide__features">
-        <div class="og-slide__features-inner">
-          <button class="og-slide__features-button" type="button" name="og-slide-product-compare">
-            <svg class="og-slide__features-button-icon" width="20.15" height="15">
-              <use href="/images/icons.svg#scales">
+    <div class="product__content">
+      <div class="product__features">
+        <div class="product__features-inner">
+          <button class="product__features-button" type="button" name="product-product-compare">
+            <svg class="product__features-button-icon" width="20.15" height="15">
+              <use href="/images/icons.svg#scales" />
             </svg>
             <span class="sr-only">Добавить в список сравнения</span>
           </button>
-          <button class="og-slide__features-button" type="button" name="og-slide-product-wish">
-            <svg class="og-slide__features-button-icon" width="16.08" height="15">
-              <use href="/images/icons.svg#heart">
+          <button class="product__features-button" type="button" name="product-product-wish">
+            <svg class="product__features-button-icon" width="16.08" height="15">
+              <use href="/images/icons.svg#heart" />
             </svg>
             <span class="sr-only">Добавить в список желаемого</span>
           </button>
         </div>
       </div>
-      <a href="#" class="og-slide__heading">F24 - Динмар</a>
-      <div class="og-slide__price-wrapper">
+      <a href="#" class="product__heading">F24 - Динмар</a>
+      <div class="product__price-wrapper">
         
-        <span class="og-slide__price_old">601.00 р.</span>
+        <span class="product__price_old">601.00 р.</span>
         
-        <span class="og-slide__price">601.00 р.</span>
+        <span class="product__price">601.00 р.</span>
       </div>
-      <div class="og-slide__installment">Рассрочка от 150 руб/мес</div>
+      <div class="product__installment">Рассрочка от 150 руб/мес</div>
     </div>
-    <form method="post" class="og-slide__form">
+    <form method="post" class="product__form">
       <input type="hidden" name="id" value="003">
       <input type="hidden" name="count" value="1">
       <input type="hidden" name="options" value="[]">
 
-      <button class="og-slide__btn _btn" onclick="alert('товар : 003')" aria-label="В корзину" type="submit"
+      <button class="product__btn _btn" onclick="alert('товар : 003')" aria-label="В корзину" type="submit"
         name="ms2_action" value="cart/add">В корзину</button>
 
-      <div class="og-slide__colors">
-        <label class="og-slide__color-label">
+      <fieldset class="product__colors">
+        <legend class="sr-only">Цвета</legend>
+        <label class="product__color-label">
           <span hidden>цвет номер 1</span>
-          <input type="radio" name="og-slide-color003" value="color001" aria-hidden="true" checked hidden>
-          <span class="og-slide__color" style="background-color:#D8B888"></span>
+          <input type="radio" name="product-color003" value="color001" aria-hidden="true" checked hidden>
+          <span class="product__color" style="background-color:#D8B888"></span>
         </label>
-        <label class="og-slide__color-label">
+        <label class="product__color-label">
           <span hidden>цвет номер 2</span>
-          <input type="radio" name="og-slide-color003" value="color002" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#737373"></span>
+          <input type="radio" name="product-color003" value="color002" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#737373"></span>
         </label>
-        <label class="og-slide__color-label">
+        <label class="product__color-label">
           <span hidden>цвет номер 3</span>
-          <input type="radio" name="og-slide-color003" value="color003" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#8E7248"></span>
+          <input type="radio" name="product-color003" value="color003" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#8E7248"></span>
         </label>
-        <label class="og-slide__color-label">
+        <label class="product__color-label">
           <span hidden>цвет номер 4</span>
-          <input type="radio" name="og-slide-color003" value="color004" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#FFFFFF"></span>
+          <input type="radio" name="product-color003" value="color004" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#FFFFFF"></span>
         </label>
-        <label class="og-slide__color-label active">
+        <label class="product__color-label active">
           <span hidden>цвет номер 5</span>
-          <input type="radio" name="og-slide-color003" value="color005" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#373737"></span>
+          <input type="radio" name="product-color003" value="color005" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#373737"></span>
         </label>
-      </div>
+      </fieldset>
     </form>
-    <div class="og-slide__badges">
+    <div class="product__badges">
       
-      <div class="og-slide__badge og-slide__badge_discount">Скидка</div>
+      <div class="product__badge product__badge_discount">Скидка</div>
       
       
       
-      <div class="og-slide__badge og-slide__badge_bestseller">
-        <svg class="og-slide__badge-icon" width="10" height="11">
+      <div class="product__badge product__badge_bestseller">
+        <svg class="product__badge-icon" width="10" height="11">
           <use href="/images/icons.svg#hot-sale" />
         </svg>
         <span hidden>хит продаж</span>
@@ -1027,82 +1030,83 @@
 </article>
           </div>
           <div class="our-goods__slide swiper-slide" data-slide-category="bestseller,discount">
-            <article class="og-slide">
-  <div class="og-slide__inner">
-    <a href="#" class="og-slide__image-wrapper _image-wrapper">
-      <img src="images/products/our-goods-example.png" alt="F24 - Динмар" class="og-slide__image _bkgr-image _bkgr-image--contain" width="308"
+            <article class="product">
+  <div class="product__inner">
+    <a href="#" class="product__image-wrapper _image-wrapper">
+      <img src="images/products/our-goods-example.png" alt="F24 - Динмар" class="product__image _bkgr-image _bkgr-image--contain" width="308"
         height="308" loading="lazy">
     </a>
-    <div class="og-slide__content">
-      <div class="og-slide__features">
-        <div class="og-slide__features-inner">
-          <button class="og-slide__features-button" type="button" name="og-slide-product-compare">
-            <svg class="og-slide__features-button-icon" width="20.15" height="15">
-              <use href="/images/icons.svg#scales">
+    <div class="product__content">
+      <div class="product__features">
+        <div class="product__features-inner">
+          <button class="product__features-button" type="button" name="product-product-compare">
+            <svg class="product__features-button-icon" width="20.15" height="15">
+              <use href="/images/icons.svg#scales" />
             </svg>
             <span class="sr-only">Добавить в список сравнения</span>
           </button>
-          <button class="og-slide__features-button" type="button" name="og-slide-product-wish">
-            <svg class="og-slide__features-button-icon" width="16.08" height="15">
-              <use href="/images/icons.svg#heart">
+          <button class="product__features-button" type="button" name="product-product-wish">
+            <svg class="product__features-button-icon" width="16.08" height="15">
+              <use href="/images/icons.svg#heart" />
             </svg>
             <span class="sr-only">Добавить в список желаемого</span>
           </button>
         </div>
       </div>
-      <a href="#" class="og-slide__heading">F24 - Динмар</a>
-      <div class="og-slide__price-wrapper">
+      <a href="#" class="product__heading">F24 - Динмар</a>
+      <div class="product__price-wrapper">
         
-        <span class="og-slide__price_old">601.00 р.</span>
+        <span class="product__price_old">601.00 р.</span>
         
-        <span class="og-slide__price">601.00 р.</span>
+        <span class="product__price">601.00 р.</span>
       </div>
-      <div class="og-slide__installment">Рассрочка от 150 руб/мес</div>
+      <div class="product__installment">Рассрочка от 150 руб/мес</div>
     </div>
-    <form method="post" class="og-slide__form">
+    <form method="post" class="product__form">
       <input type="hidden" name="id" value="004">
       <input type="hidden" name="count" value="1">
       <input type="hidden" name="options" value="[]">
 
-      <button class="og-slide__btn _btn" onclick="alert('товар : 004')" aria-label="В корзину" type="submit"
+      <button class="product__btn _btn" onclick="alert('товар : 004')" aria-label="В корзину" type="submit"
         name="ms2_action" value="cart/add">В корзину</button>
 
-      <div class="og-slide__colors">
-        <label class="og-slide__color-label">
+      <fieldset class="product__colors">
+        <legend class="sr-only">Цвета</legend>
+        <label class="product__color-label">
           <span hidden>цвет номер 1</span>
-          <input type="radio" name="og-slide-color004" value="color001" aria-hidden="true" checked hidden>
-          <span class="og-slide__color" style="background-color:#D8B888"></span>
+          <input type="radio" name="product-color004" value="color001" aria-hidden="true" checked hidden>
+          <span class="product__color" style="background-color:#D8B888"></span>
         </label>
-        <label class="og-slide__color-label">
+        <label class="product__color-label">
           <span hidden>цвет номер 2</span>
-          <input type="radio" name="og-slide-color004" value="color002" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#737373"></span>
+          <input type="radio" name="product-color004" value="color002" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#737373"></span>
         </label>
-        <label class="og-slide__color-label">
+        <label class="product__color-label">
           <span hidden>цвет номер 3</span>
-          <input type="radio" name="og-slide-color004" value="color003" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#8E7248"></span>
+          <input type="radio" name="product-color004" value="color003" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#8E7248"></span>
         </label>
-        <label class="og-slide__color-label">
+        <label class="product__color-label">
           <span hidden>цвет номер 4</span>
-          <input type="radio" name="og-slide-color004" value="color004" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#FFFFFF"></span>
+          <input type="radio" name="product-color004" value="color004" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#FFFFFF"></span>
         </label>
-        <label class="og-slide__color-label active">
+        <label class="product__color-label active">
           <span hidden>цвет номер 5</span>
-          <input type="radio" name="og-slide-color004" value="color005" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#373737"></span>
+          <input type="radio" name="product-color004" value="color005" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#373737"></span>
         </label>
-      </div>
+      </fieldset>
     </form>
-    <div class="og-slide__badges">
+    <div class="product__badges">
       
-      <div class="og-slide__badge og-slide__badge_discount">Скидка</div>
+      <div class="product__badge product__badge_discount">Скидка</div>
       
       
       
-      <div class="og-slide__badge og-slide__badge_bestseller">
-        <svg class="og-slide__badge-icon" width="10" height="11">
+      <div class="product__badge product__badge_bestseller">
+        <svg class="product__badge-icon" width="10" height="11">
           <use href="/images/icons.svg#hot-sale" />
         </svg>
         <span hidden>хит продаж</span>
@@ -1113,84 +1117,85 @@
 </article>
           </div>
           <div class="our-goods__slide swiper-slide" data-slide-category="bestseller,novelty,discount">
-            <article class="og-slide">
-  <div class="og-slide__inner">
-    <a href="#" class="og-slide__image-wrapper _image-wrapper">
-      <img src="images/products/our-goods-example.png" alt="F24 - Динмар" class="og-slide__image _bkgr-image _bkgr-image--contain" width="308"
+            <article class="product">
+  <div class="product__inner">
+    <a href="#" class="product__image-wrapper _image-wrapper">
+      <img src="images/products/our-goods-example.png" alt="F24 - Динмар" class="product__image _bkgr-image _bkgr-image--contain" width="308"
         height="308" loading="lazy">
     </a>
-    <div class="og-slide__content">
-      <div class="og-slide__features">
-        <div class="og-slide__features-inner">
-          <button class="og-slide__features-button" type="button" name="og-slide-product-compare">
-            <svg class="og-slide__features-button-icon" width="20.15" height="15">
-              <use href="/images/icons.svg#scales">
+    <div class="product__content">
+      <div class="product__features">
+        <div class="product__features-inner">
+          <button class="product__features-button" type="button" name="product-product-compare">
+            <svg class="product__features-button-icon" width="20.15" height="15">
+              <use href="/images/icons.svg#scales" />
             </svg>
             <span class="sr-only">Добавить в список сравнения</span>
           </button>
-          <button class="og-slide__features-button" type="button" name="og-slide-product-wish">
-            <svg class="og-slide__features-button-icon" width="16.08" height="15">
-              <use href="/images/icons.svg#heart">
+          <button class="product__features-button" type="button" name="product-product-wish">
+            <svg class="product__features-button-icon" width="16.08" height="15">
+              <use href="/images/icons.svg#heart" />
             </svg>
             <span class="sr-only">Добавить в список желаемого</span>
           </button>
         </div>
       </div>
-      <a href="#" class="og-slide__heading">F24 - Динмар</a>
-      <div class="og-slide__price-wrapper">
+      <a href="#" class="product__heading">F24 - Динмар</a>
+      <div class="product__price-wrapper">
         
-        <span class="og-slide__price_old">601.00 р.</span>
+        <span class="product__price_old">601.00 р.</span>
         
-        <span class="og-slide__price">601.00 р.</span>
+        <span class="product__price">601.00 р.</span>
       </div>
-      <div class="og-slide__installment">Рассрочка от 150 руб/мес</div>
+      <div class="product__installment">Рассрочка от 150 руб/мес</div>
     </div>
-    <form method="post" class="og-slide__form">
+    <form method="post" class="product__form">
       <input type="hidden" name="id" value="005">
       <input type="hidden" name="count" value="1">
       <input type="hidden" name="options" value="[]">
 
-      <button class="og-slide__btn _btn" onclick="alert('товар : 005')" aria-label="В корзину" type="submit"
+      <button class="product__btn _btn" onclick="alert('товар : 005')" aria-label="В корзину" type="submit"
         name="ms2_action" value="cart/add">В корзину</button>
 
-      <div class="og-slide__colors">
-        <label class="og-slide__color-label">
+      <fieldset class="product__colors">
+        <legend class="sr-only">Цвета</legend>
+        <label class="product__color-label">
           <span hidden>цвет номер 1</span>
-          <input type="radio" name="og-slide-color005" value="color001" aria-hidden="true" checked hidden>
-          <span class="og-slide__color" style="background-color:#D8B888"></span>
+          <input type="radio" name="product-color005" value="color001" aria-hidden="true" checked hidden>
+          <span class="product__color" style="background-color:#D8B888"></span>
         </label>
-        <label class="og-slide__color-label">
+        <label class="product__color-label">
           <span hidden>цвет номер 2</span>
-          <input type="radio" name="og-slide-color005" value="color002" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#737373"></span>
+          <input type="radio" name="product-color005" value="color002" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#737373"></span>
         </label>
-        <label class="og-slide__color-label">
+        <label class="product__color-label">
           <span hidden>цвет номер 3</span>
-          <input type="radio" name="og-slide-color005" value="color003" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#8E7248"></span>
+          <input type="radio" name="product-color005" value="color003" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#8E7248"></span>
         </label>
-        <label class="og-slide__color-label">
+        <label class="product__color-label">
           <span hidden>цвет номер 4</span>
-          <input type="radio" name="og-slide-color005" value="color004" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#FFFFFF"></span>
+          <input type="radio" name="product-color005" value="color004" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#FFFFFF"></span>
         </label>
-        <label class="og-slide__color-label active">
+        <label class="product__color-label active">
           <span hidden>цвет номер 5</span>
-          <input type="radio" name="og-slide-color005" value="color005" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#373737"></span>
+          <input type="radio" name="product-color005" value="color005" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#373737"></span>
         </label>
-      </div>
+      </fieldset>
     </form>
-    <div class="og-slide__badges">
+    <div class="product__badges">
       
-      <div class="og-slide__badge og-slide__badge_discount">Скидка</div>
-      
-      
-      <div class="og-slide__badge og-slide__badge_novelty">Новинка</div>
+      <div class="product__badge product__badge_discount">Скидка</div>
       
       
-      <div class="og-slide__badge og-slide__badge_bestseller">
-        <svg class="og-slide__badge-icon" width="10" height="11">
+      <div class="product__badge product__badge_novelty">Новинка</div>
+      
+      
+      <div class="product__badge product__badge_bestseller">
+        <svg class="product__badge-icon" width="10" height="11">
           <use href="/images/icons.svg#hot-sale" />
         </svg>
         <span hidden>хит продаж</span>
@@ -1201,80 +1206,81 @@
 </article>
           </div>
           <div class="our-goods__slide swiper-slide" data-slide-category="novelty,discount">
-            <article class="og-slide">
-  <div class="og-slide__inner">
-    <a href="#" class="og-slide__image-wrapper _image-wrapper">
-      <img src="images/products/our-goods-example.png" alt="F24 - Динмар" class="og-slide__image _bkgr-image _bkgr-image--contain" width="308"
+            <article class="product">
+  <div class="product__inner">
+    <a href="#" class="product__image-wrapper _image-wrapper">
+      <img src="images/products/our-goods-example.png" alt="F24 - Динмар" class="product__image _bkgr-image _bkgr-image--contain" width="308"
         height="308" loading="lazy">
     </a>
-    <div class="og-slide__content">
-      <div class="og-slide__features">
-        <div class="og-slide__features-inner">
-          <button class="og-slide__features-button" type="button" name="og-slide-product-compare">
-            <svg class="og-slide__features-button-icon" width="20.15" height="15">
-              <use href="/images/icons.svg#scales">
+    <div class="product__content">
+      <div class="product__features">
+        <div class="product__features-inner">
+          <button class="product__features-button" type="button" name="product-product-compare">
+            <svg class="product__features-button-icon" width="20.15" height="15">
+              <use href="/images/icons.svg#scales" />
             </svg>
             <span class="sr-only">Добавить в список сравнения</span>
           </button>
-          <button class="og-slide__features-button" type="button" name="og-slide-product-wish">
-            <svg class="og-slide__features-button-icon" width="16.08" height="15">
-              <use href="/images/icons.svg#heart">
+          <button class="product__features-button" type="button" name="product-product-wish">
+            <svg class="product__features-button-icon" width="16.08" height="15">
+              <use href="/images/icons.svg#heart" />
             </svg>
             <span class="sr-only">Добавить в список желаемого</span>
           </button>
         </div>
       </div>
-      <a href="#" class="og-slide__heading">F24 - Динмар</a>
-      <div class="og-slide__price-wrapper">
+      <a href="#" class="product__heading">F24 - Динмар</a>
+      <div class="product__price-wrapper">
         
-        <span class="og-slide__price_old">601.00 р.</span>
+        <span class="product__price_old">601.00 р.</span>
         
-        <span class="og-slide__price">601.00 р.</span>
+        <span class="product__price">601.00 р.</span>
       </div>
-      <div class="og-slide__installment">Рассрочка от 150 руб/мес</div>
+      <div class="product__installment">Рассрочка от 150 руб/мес</div>
     </div>
-    <form method="post" class="og-slide__form">
+    <form method="post" class="product__form">
       <input type="hidden" name="id" value="006">
       <input type="hidden" name="count" value="1">
       <input type="hidden" name="options" value="[]">
 
-      <button class="og-slide__btn _btn" onclick="alert('товар : 006')" aria-label="В корзину" type="submit"
+      <button class="product__btn _btn" onclick="alert('товар : 006')" aria-label="В корзину" type="submit"
         name="ms2_action" value="cart/add">В корзину</button>
 
-      <div class="og-slide__colors">
-        <label class="og-slide__color-label">
+      <fieldset class="product__colors">
+        <legend class="sr-only">Цвета</legend>
+        <label class="product__color-label">
           <span hidden>цвет номер 1</span>
-          <input type="radio" name="og-slide-color006" value="color001" aria-hidden="true" checked hidden>
-          <span class="og-slide__color" style="background-color:#D8B888"></span>
+          <input type="radio" name="product-color006" value="color001" aria-hidden="true" checked hidden>
+          <span class="product__color" style="background-color:#D8B888"></span>
         </label>
-        <label class="og-slide__color-label">
+        <label class="product__color-label">
           <span hidden>цвет номер 2</span>
-          <input type="radio" name="og-slide-color006" value="color002" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#737373"></span>
+          <input type="radio" name="product-color006" value="color002" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#737373"></span>
         </label>
-        <label class="og-slide__color-label">
+        <label class="product__color-label">
           <span hidden>цвет номер 3</span>
-          <input type="radio" name="og-slide-color006" value="color003" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#8E7248"></span>
+          <input type="radio" name="product-color006" value="color003" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#8E7248"></span>
         </label>
-        <label class="og-slide__color-label">
+        <label class="product__color-label">
           <span hidden>цвет номер 4</span>
-          <input type="radio" name="og-slide-color006" value="color004" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#FFFFFF"></span>
+          <input type="radio" name="product-color006" value="color004" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#FFFFFF"></span>
         </label>
-        <label class="og-slide__color-label active">
+        <label class="product__color-label active">
           <span hidden>цвет номер 5</span>
-          <input type="radio" name="og-slide-color006" value="color005" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#373737"></span>
+          <input type="radio" name="product-color006" value="color005" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#373737"></span>
         </label>
-      </div>
+      </fieldset>
     </form>
-    <div class="og-slide__badges">
+    <div class="product__badges">
       
-      <div class="og-slide__badge og-slide__badge_discount">Скидка</div>
+      <div class="product__badge product__badge_discount">Скидка</div>
       
       
-      <div class="og-slide__badge og-slide__badge_novelty">Новинка</div>
+      <div class="product__badge product__badge_novelty">Новинка</div>
       
       
     </div>
@@ -1282,76 +1288,77 @@
 </article>
           </div>
           <div class="our-goods__slide swiper-slide" data-slide-category="novelty">
-            <article class="og-slide">
-  <div class="og-slide__inner">
-    <a href="#" class="og-slide__image-wrapper _image-wrapper">
-      <img src="images/products/our-goods-example.png" alt="F24 - Динмар" class="og-slide__image _bkgr-image _bkgr-image--contain" width="308"
+            <article class="product">
+  <div class="product__inner">
+    <a href="#" class="product__image-wrapper _image-wrapper">
+      <img src="images/products/our-goods-example.png" alt="F24 - Динмар" class="product__image _bkgr-image _bkgr-image--contain" width="308"
         height="308" loading="lazy">
     </a>
-    <div class="og-slide__content">
-      <div class="og-slide__features">
-        <div class="og-slide__features-inner">
-          <button class="og-slide__features-button" type="button" name="og-slide-product-compare">
-            <svg class="og-slide__features-button-icon" width="20.15" height="15">
-              <use href="/images/icons.svg#scales">
+    <div class="product__content">
+      <div class="product__features">
+        <div class="product__features-inner">
+          <button class="product__features-button" type="button" name="product-product-compare">
+            <svg class="product__features-button-icon" width="20.15" height="15">
+              <use href="/images/icons.svg#scales" />
             </svg>
             <span class="sr-only">Добавить в список сравнения</span>
           </button>
-          <button class="og-slide__features-button" type="button" name="og-slide-product-wish">
-            <svg class="og-slide__features-button-icon" width="16.08" height="15">
-              <use href="/images/icons.svg#heart">
+          <button class="product__features-button" type="button" name="product-product-wish">
+            <svg class="product__features-button-icon" width="16.08" height="15">
+              <use href="/images/icons.svg#heart" />
             </svg>
             <span class="sr-only">Добавить в список желаемого</span>
           </button>
         </div>
       </div>
-      <a href="#" class="og-slide__heading">F24 - Динмар</a>
-      <div class="og-slide__price-wrapper">
+      <a href="#" class="product__heading">F24 - Динмар</a>
+      <div class="product__price-wrapper">
         
-        <span class="og-slide__price">601.00 р.</span>
+        <span class="product__price">601.00 р.</span>
       </div>
-      <div class="og-slide__installment">Рассрочка от 150 руб/мес</div>
+      <div class="product__installment">Рассрочка от 150 руб/мес</div>
     </div>
-    <form method="post" class="og-slide__form">
+    <form method="post" class="product__form">
       <input type="hidden" name="id" value="007">
       <input type="hidden" name="count" value="1">
       <input type="hidden" name="options" value="[]">
 
-      <button class="og-slide__btn _btn" onclick="alert('товар : 007')" aria-label="В корзину" type="submit"
+      <button class="product__btn _btn" onclick="alert('товар : 007')" aria-label="В корзину" type="submit"
         name="ms2_action" value="cart/add">В корзину</button>
 
-      <div class="og-slide__colors">
-        <label class="og-slide__color-label">
+      <fieldset class="product__colors">
+        <legend class="sr-only">Цвета</legend>
+        <label class="product__color-label">
           <span hidden>цвет номер 1</span>
-          <input type="radio" name="og-slide-color007" value="color001" aria-hidden="true" checked hidden>
-          <span class="og-slide__color" style="background-color:#D8B888"></span>
+          <input type="radio" name="product-color007" value="color001" aria-hidden="true" checked hidden>
+          <span class="product__color" style="background-color:#D8B888"></span>
         </label>
-        <label class="og-slide__color-label">
+        <label class="product__color-label">
           <span hidden>цвет номер 2</span>
-          <input type="radio" name="og-slide-color007" value="color002" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#737373"></span>
+          <input type="radio" name="product-color007" value="color002" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#737373"></span>
         </label>
-        <label class="og-slide__color-label">
+        <label class="product__color-label">
           <span hidden>цвет номер 3</span>
-          <input type="radio" name="og-slide-color007" value="color003" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#8E7248"></span>
+          <input type="radio" name="product-color007" value="color003" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#8E7248"></span>
         </label>
-        <label class="og-slide__color-label">
+        <label class="product__color-label">
           <span hidden>цвет номер 4</span>
-          <input type="radio" name="og-slide-color007" value="color004" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#FFFFFF"></span>
+          <input type="radio" name="product-color007" value="color004" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#FFFFFF"></span>
         </label>
-        <label class="og-slide__color-label active">
+        <label class="product__color-label active">
           <span hidden>цвет номер 5</span>
-          <input type="radio" name="og-slide-color007" value="color005" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#373737"></span>
+          <input type="radio" name="product-color007" value="color005" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#373737"></span>
         </label>
-      </div>
+      </fieldset>
     </form>
-    <div class="og-slide__badges">
+    <div class="product__badges">
       
       
-      <div class="og-slide__badge og-slide__badge_novelty">Новинка</div>
+      <div class="product__badge product__badge_novelty">Новинка</div>
       
       
     </div>
@@ -1359,77 +1366,78 @@
 </article>
           </div>
           <div class="our-goods__slide swiper-slide" data-slide-category="discount">
-            <article class="og-slide">
-  <div class="og-slide__inner">
-    <a href="#" class="og-slide__image-wrapper _image-wrapper">
-      <img src="images/products/our-goods-example.png" alt="F24 - Динмар" class="og-slide__image _bkgr-image _bkgr-image--contain" width="308"
+            <article class="product">
+  <div class="product__inner">
+    <a href="#" class="product__image-wrapper _image-wrapper">
+      <img src="images/products/our-goods-example.png" alt="F24 - Динмар" class="product__image _bkgr-image _bkgr-image--contain" width="308"
         height="308" loading="lazy">
     </a>
-    <div class="og-slide__content">
-      <div class="og-slide__features">
-        <div class="og-slide__features-inner">
-          <button class="og-slide__features-button" type="button" name="og-slide-product-compare">
-            <svg class="og-slide__features-button-icon" width="20.15" height="15">
-              <use href="/images/icons.svg#scales">
+    <div class="product__content">
+      <div class="product__features">
+        <div class="product__features-inner">
+          <button class="product__features-button" type="button" name="product-product-compare">
+            <svg class="product__features-button-icon" width="20.15" height="15">
+              <use href="/images/icons.svg#scales" />
             </svg>
             <span class="sr-only">Добавить в список сравнения</span>
           </button>
-          <button class="og-slide__features-button" type="button" name="og-slide-product-wish">
-            <svg class="og-slide__features-button-icon" width="16.08" height="15">
-              <use href="/images/icons.svg#heart">
+          <button class="product__features-button" type="button" name="product-product-wish">
+            <svg class="product__features-button-icon" width="16.08" height="15">
+              <use href="/images/icons.svg#heart" />
             </svg>
             <span class="sr-only">Добавить в список желаемого</span>
           </button>
         </div>
       </div>
-      <a href="#" class="og-slide__heading">F24 - Динмар</a>
-      <div class="og-slide__price-wrapper">
+      <a href="#" class="product__heading">F24 - Динмар</a>
+      <div class="product__price-wrapper">
         
-        <span class="og-slide__price_old">601.00 р.</span>
+        <span class="product__price_old">601.00 р.</span>
         
-        <span class="og-slide__price">601.00 р.</span>
+        <span class="product__price">601.00 р.</span>
       </div>
-      <div class="og-slide__installment">Рассрочка от 150 руб/мес</div>
+      <div class="product__installment">Рассрочка от 150 руб/мес</div>
     </div>
-    <form method="post" class="og-slide__form">
+    <form method="post" class="product__form">
       <input type="hidden" name="id" value="008">
       <input type="hidden" name="count" value="1">
       <input type="hidden" name="options" value="[]">
 
-      <button class="og-slide__btn _btn" onclick="alert('товар : 008')" aria-label="В корзину" type="submit"
+      <button class="product__btn _btn" onclick="alert('товар : 008')" aria-label="В корзину" type="submit"
         name="ms2_action" value="cart/add">В корзину</button>
 
-      <div class="og-slide__colors">
-        <label class="og-slide__color-label">
+      <fieldset class="product__colors">
+        <legend class="sr-only">Цвета</legend>
+        <label class="product__color-label">
           <span hidden>цвет номер 1</span>
-          <input type="radio" name="og-slide-color008" value="color001" aria-hidden="true" checked hidden>
-          <span class="og-slide__color" style="background-color:#D8B888"></span>
+          <input type="radio" name="product-color008" value="color001" aria-hidden="true" checked hidden>
+          <span class="product__color" style="background-color:#D8B888"></span>
         </label>
-        <label class="og-slide__color-label">
+        <label class="product__color-label">
           <span hidden>цвет номер 2</span>
-          <input type="radio" name="og-slide-color008" value="color002" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#737373"></span>
+          <input type="radio" name="product-color008" value="color002" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#737373"></span>
         </label>
-        <label class="og-slide__color-label">
+        <label class="product__color-label">
           <span hidden>цвет номер 3</span>
-          <input type="radio" name="og-slide-color008" value="color003" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#8E7248"></span>
+          <input type="radio" name="product-color008" value="color003" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#8E7248"></span>
         </label>
-        <label class="og-slide__color-label">
+        <label class="product__color-label">
           <span hidden>цвет номер 4</span>
-          <input type="radio" name="og-slide-color008" value="color004" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#FFFFFF"></span>
+          <input type="radio" name="product-color008" value="color004" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#FFFFFF"></span>
         </label>
-        <label class="og-slide__color-label active">
+        <label class="product__color-label active">
           <span hidden>цвет номер 5</span>
-          <input type="radio" name="og-slide-color008" value="color005" aria-hidden="true" hidden>
-          <span class="og-slide__color" style="background-color:#373737"></span>
+          <input type="radio" name="product-color008" value="color005" aria-hidden="true" hidden>
+          <span class="product__color" style="background-color:#373737"></span>
         </label>
-      </div>
+      </fieldset>
     </form>
-    <div class="og-slide__badges">
+    <div class="product__badges">
       
-      <div class="og-slide__badge og-slide__badge_discount">Скидка</div>
+      <div class="product__badge product__badge_discount">Скидка</div>
       
       
       

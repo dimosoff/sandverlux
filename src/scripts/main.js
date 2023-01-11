@@ -247,18 +247,19 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       },
     });
-
-    // color switcher
-    const ogColorLabels = document.querySelectorAll(".og-slide__color-label");
-    ogColorLabels.forEach((label) =>
-      label.addEventListener("click", (event) => {
-        event.currentTarget.parentElement.childNodes.forEach((label) =>
-          label.nodeType === 1 ? label.classList.remove("active") : null
-        );
-        event.currentTarget.classList.add("active");
-      })
-    );
   }
+
+  // product color switcher
+
+  const productLabels = document.querySelectorAll(".product__color-label");
+  productLabels.forEach((label) =>
+    label.addEventListener("click", (event) => {
+      event.currentTarget.parentElement.childNodes.forEach((label) =>
+        label.nodeType === 1 ? label.classList.remove("active") : null
+      );
+      event.currentTarget.classList.add("active");
+    })
+  );
 
   // popular categories
 
@@ -342,6 +343,14 @@ document.addEventListener("DOMContentLoaded", function () {
   //     })
   //   );
   // }
+
+  // popular tags for catalog page
+
+  myFunctions.addClassOnClick(
+    "button[name=popular-collapse-button]",
+    ".popular",
+    "_expanded"
+  );
 
   // form validation //
 

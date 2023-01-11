@@ -3,7 +3,9 @@ export const myGallery = new gallery();
 export const mySetAnchorsEvents = new setAnchorsEvents();
 
 export function addClassOnClick(itemClick, classToItem, nameOfClass) {
-  document.querySelector(itemClick).addEventListener("click", () => {
+  const button = document.querySelector(itemClick);
+  if (!button) return;
+  button.addEventListener("click", () => {
     document.querySelectorAll(classToItem).forEach((item) => {
       item.classList.toggle(nameOfClass);
     });

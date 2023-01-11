@@ -1,0 +1,55 @@
+<section class="filter">
+  <h3 class="filter__heading heading">Фильтр</h3>
+  <form action="" method="post" id="mse2_filter" class="filter-wrap">
+    <div class="filter__top">
+      <button type="button" class="" aria-expanded="false">
+        <svg class="" width="14" height="14">
+          <use href="images/icons.svg#close" />
+        </svg>
+      </button>
+    </div>
+    <div class="filter__body">
+      <fieldset class="form__item-wrapper">
+        <legend class="form__item-heading">Цена</legend>
+        <div class="mft__items-row">
+          <div class="form__item">
+            <span class="form__input-placeholder">от</span>
+            <label>
+              <span class="form__label" aria-hidden="true" hidden>минимальная цена</span>
+              <input class="form__input" type="number" name="door-price-min" data-min="0" value="0">
+            </label>
+          </div>
+          <div class="form__item">
+            <span class="form__input-placeholder">до</span>
+            <label>
+              <span class="form__label sr-only" aria-hidden="true" hidden>максимальная цена</span>
+              <input class="form__input" type="number" name="door-price-max" data-max="5000" value="5000">
+            </label>
+          </div>
+        </div>
+        <div id="door-price-slider" class="form__slider"></div>
+      </fieldset>
+      <fieldset class="form__item-wrapper">
+        <legend class="form__item-heading">Система открывания</legend>
+        <div class="form__item">
+          <label class="form__checkbox">
+            <input class="form__input" type="checkbox" name="door-opening-system" hidden>
+            <span class="form__label">Классическая</span>
+          </label>
+          <label class="form__checkbox">
+            <input class="form__input" type="checkbox" name="door-opening-system" hidden>
+            <span class="form__label">Раздвижная</span>
+          </label>
+          <label class="form__checkbox">
+            <input class="form__input" type="checkbox" name="door-opening-system" hidden>
+            <span class="form__label">Складная</span>
+          </label>
+        </div>
+      </fieldset>
+    </div>
+    <div class="filter__buttons">
+      <button class="filter__submit _btn _btn--green" type="submit">Применить</button>
+      <button class="filter__reset" type="reset">Сбросить фильтр</button>
+    </div>
+  </form>
+</section>

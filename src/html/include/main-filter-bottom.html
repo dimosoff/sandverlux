@@ -1,11 +1,11 @@
 <div class="mfb">
   <div class="mfb__item">
-    <fieldset class="mfb__item-wrapper mfb__item-wrapper_row">
-      <legend class="mfb__heading">Цвета</legend>
+    <fieldset class="mfb__item-wrapper mfb__item-wrapper_row form__item-wrapper">
+      <legend class="mfb__heading form__item-heading">Цвета</legend>
       <div class="form__item form__color-wrapper">
         <label class="form__color">
           <input class="form__input" type="checkbox" name="door-color" value="color001" aria-hidden="true" checked hidden>
-          <span class="form__label" style="background-color:chocolate;">Светлый коричневый</span>
+          <span class="form__label" style="background-color:rgb(210, 105, 30);">Светлый коричневый</span>
         </label>
         <label class="form__color">
           <input class="form__input" type="checkbox" name="door-color" value="color002" aria-hidden="true" hidden>
@@ -19,7 +19,7 @@
     </fieldset>
   </div>
   <div class="mfb__item mfb__item_half">
-    <span class="mfb__heading">Размер полотна</span>
+    <span class="mfb__heading form__item-heading">Размер полотна</span>
     <div class="form__item">
       <label>
         <span class="form__label" hidden>Размер полотна</span>
@@ -36,7 +36,7 @@
     </div>
   </div>
   <div class="mfb__item mfb__item_half">
-    <span class="mfb__heading">Материал</span>
+    <span class="mfb__heading form__item-heading">Материал</span>
     <div class="form__item">
       <label>
         <span class="form__label" hidden>Материал</span>
@@ -49,8 +49,8 @@
     </div>
   </div>
   <div class="mfb__item">
-    <div class="mfb__item-wrapper mfb__item-wrapper_row">
-      <div class="mfb__heading">Система открывания</div>
+    <fieldset class="mfb__item-wrapper mfb__item-wrapper_row form__item-wrapper">
+      <legend class="mfb__heading form__item-heading">Система открывания</legend>
       <div class="form__item">
         <label class="form__checkbox">
           <input class="form__input" type="checkbox" name="door-opening-system" hidden>
@@ -65,11 +65,11 @@
           <span class="form__label">Складная</span>
         </label>
       </div>
-    </div>
+    </fieldset>
   </div>
   <div class="mfb__item">
-    <div class="mfb__item-wrapper">
-      <div class="mfb__heading">Стиль двери</div>
+    <fieldset class="mfb__item-wrapper form__item-wrapper">
+      <legend class="mfb__heading form__item-heading">Стиль двери</legend>
       <div class="form__item form__checkbox-wrapper--img">
         <label class="form__checkbox form__checkbox--img">
           <input class="form__input" type="checkbox" name="door-style" hidden>
@@ -88,7 +88,7 @@
           <span class="form__label">Хай-тек</span>
         </label>
       </div>
-    </div>
+    </fieldset>
   </div>
   <div class="mfb__item">
     <button id="door-submit" class="mfb__button _btn" type="submit" name="door-submit">Подобрать дверь</button>

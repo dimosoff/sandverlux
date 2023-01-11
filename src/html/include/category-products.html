@@ -1,0 +1,26 @@
+<div class="products _filter-top">
+  <div class="products__filter">
+    @@include('./src/html/include/products-filter.html')
+    <aside class="products__promotion">
+      <h3 class="sr-only">Акции</h3>
+      @@include('./src/html/include/promotion-banner.html', {
+        'title': 'Акция 😍',
+        'date': '22.01.23',
+        'door-image-src': 'images/homepage-door-01.jpg'
+      })
+    </aside>
+  </div>
+  <div class="products__wrapper">
+    <section class="products__description">
+      <h3 class="products__description-heading heading">SEO-текст</h3>
+      <p>Дверь — элемент стеновой конструкции, предназначенный для заполнения дверных проемов и состоящий из дверного
+        блока, крепления дверного блока к проему, монтажных швов, системы уплотнений и облицовки и обеспечивающий при
+        закрытом положении дверного полотна защиту от климатических, шумовых и других воздействий, а также от
+        несанкционированного прохода.</p>
+    </section>
+    <div class="products__items row">
+      @@loop('./src/html/include/product.html', 'json/products.json')
+    </div>
+    @@include('./src/html/include/products-navigation.html')
+  </div>
+</div>

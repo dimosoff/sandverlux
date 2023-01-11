@@ -16,6 +16,7 @@ $bestseller-color: #e85020;
 $novelty-color: #4bb748;
 $items-border: #d1d1d1;
 $catalog-background: #e6ede4;
+$promotion-background: #d8b888;
 
 // $main-gradient: linear-gradient(89.97deg, #9056ec 0.58%, #bb8fff 79.26%);
 // $faq-gradient: linear-gradient(89.97deg, #fdd65b 0.58%, #f28a0c 99.97%);
@@ -47,6 +48,7 @@ $container-padding-mobile: 20px;
 @import "_nullstyle.scss";
 @import "_fonts.scss";
 @import "_templates.scss";
+@import "nouislider";
 
 %row-wrapper {
   display: flex;
@@ -1546,10 +1548,6 @@ label {
   }
 
   &__item-wrapper {
-    margin: 0;
-    border: none;
-    padding: 0;
-
     & %form-input {
       font-size: 14px;
       padding-left: 42px;
@@ -1641,73 +1639,14 @@ label {
     }
     .form__slider {
       margin-top: 1rem;
-      padding-left: 7px;
-      padding-right: 7px;
 
       @media ($mobile-max) {
         margin-top: 2.8rem;
-        padding-left: 9px;
-        padding-right: 9px;
       }
     }
   }
   &__heading {
     color: $white;
-    padding: 0;
-    display: block;
-    font-weight: 500;
-    line-height: 1.25;
-    margin-bottom: 13px;
-
-    @media ($desktop-max) and ($tablet-min) {
-      font-size: 1.2rem;
-    }
-    @media ($mobile-max) {
-      font-size: 1.3rem;
-      margin-bottom: 15px;
-    }
-  }
-  .noUi {
-    &-connects {
-      border-radius: 0;
-    }
-    &-target {
-      border-radius: 0;
-      border: none;
-    }
-    &-horizontal {
-      height: 2px;
-
-      %noui-handle {
-        width: 15px;
-        height: 15px;
-        right: -7px;
-        top: -7px;
-
-        @media ($mobile-max) {
-          width: 19px;
-          height: 19px;
-          right: -9px;
-          top: -9px;
-        }
-      }
-    }
-    &-connect {
-      background: $yellow;
-    }
-    &-handle {
-      border: none;
-      cursor: pointer;
-      box-shadow: none;
-      background: #ecb800;
-      border-radius: 50%;
-      @extend %noui-handle;
-
-      &:before,
-      &:after {
-        content: normal;
-      }
-    }
   }
 }
 .mfb {
@@ -1818,10 +1757,6 @@ label {
     }
   }
   &__item-wrapper {
-    margin: 0;
-    border: none;
-    padding: 0;
-
     &_row {
       @extend %row-wrapper;
       align-items: center;
@@ -1830,17 +1765,9 @@ label {
     }
   }
   &__heading {
-    padding: 0;
-    display: block;
-    font-weight: 500;
-    line-height: 1.25;
     margin-bottom: $mfb-bottom-gap;
 
-    @media ($desktop-max) {
-      font-size: 1.2rem;
-    }
     @media ($mobile-max) {
-      font-size: 1.3rem;
       margin-bottom: 1.2rem;
     }
 
@@ -2102,6 +2029,12 @@ label {
     &:not(%our-goods-slide-show) {
       display: none;
     }
+
+    @media ($desktop-min) {
+      %product {
+        @include margin-x(-15px);
+      }
+    }
   }
   &__slide-show {
     @extend %our-goods-slide-show;
@@ -2176,19 +2109,18 @@ label {
     @extend %swiper-not-initialized;
   }
 }
-.og-slide {
+.product {
   width: 310px;
   max-width: 100%;
 
-  @media ($desktop-min) {
-    @include margin-x(-15px);
-  }
   @media ($tablet-max) and ($tablet-min) {
     width: 240px;
   }
 
+  @extend %product !optional;
+
   &:hover {
-    @extend %og-slide-hover !optional;
+    @extend %product-hover !optional;
   }
 
   &__inner {
@@ -2198,7 +2130,7 @@ label {
     transition: transform 0.3s, box-shadow 0.3s;
 
     @media ($desktop-min) {
-      %og-slide-hover & {
+      %product-hover & {
         transform: translateY(-5px);
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
       }
@@ -2251,7 +2183,7 @@ label {
       transition: transform $transition3;
       background-color: $primary-color;
 
-      %og-slide-hover & {
+      %product-hover & {
         transform: translateY(0);
       }
     }
@@ -2272,7 +2204,7 @@ label {
       &:hover {
         background-color: $yellow;
 
-        @extend %og-slide-feature-button-hover !optional;
+        @extend %product-feature-button-hover !optional;
       }
     }
 
@@ -2286,7 +2218,7 @@ label {
     @media ($desktop-min) {
       transition: color 0.2s;
 
-      %og-slide-feature-button-hover & {
+      %product-feature-button-hover & {
         color: $white;
       }
     }
@@ -2337,6 +2269,8 @@ label {
     }
   }
   &__colors {
+    border: none;
+    padding: 0;
     flex-wrap: nowrap;
     margin-top: 15px;
     @extend %row-wrapper;
@@ -2367,7 +2301,7 @@ label {
     }
 
     &.active {
-      @extend %og-slide-active-label;
+      @extend %product-active-label;
     }
   }
   &__color {
@@ -2382,7 +2316,7 @@ label {
     transform: scale(1);
     transition: transform 0.3s;
 
-    %og-slide-active-label & {
+    %product-active-label & {
       transform: scale(0.85);
     }
   }
@@ -2398,7 +2332,7 @@ label {
     @media ($desktop-min) {
       transform: translateX(15px);
 
-      %og-slide-hover & {
+      %product-hover & {
         transform: translateX(0);
       }
     }
@@ -2817,6 +2751,7 @@ label {
     left: 0;
     right: 0;
     bottom: 0;
+    cursor: pointer;
     opacity: 0;
     transition: opacity 0.3s;
     background-color: rgba(255, 255, 255, 0.5);
@@ -3219,6 +3154,7 @@ label {
   $items-gap: 14px;
 
   &__list-wrapper {
+    margin-top: -$items-gap;
     margin-left: -$items-gap;
   }
   &__list {
@@ -3231,6 +3167,7 @@ label {
     color: $heading-color;
     border: 1px solid $primary-color;
     padding: 10px 15px;
+    margin-top: $items-gap;
     font-weight: 500;
     margin-left: $items-gap;
     text-transform: uppercase;
@@ -3261,9 +3198,13 @@ label {
   $items-gap-left: 38px;
   $items-gap-top: 34px;
 
-  padding: 26px 34px;
+  padding: 25px 34px;
   margin-top: 2.5rem;
   background-color: $form-grey-color;
+
+  &._expanded {
+    @extend %popular-expanded !optional;
+  }
 
   &__heading {
     color: $heading-color;
@@ -3279,6 +3220,7 @@ label {
   }
   &__list {
     display: inline;
+    vertical-align: middle;
   }
   &__list-item {
     display: inline-block;
@@ -3286,7 +3228,11 @@ label {
     margin-left: $items-gap-left;
   }
   &__hidden-items {
-    display: inline;
+    display: none;
+
+    %popular-expanded & {
+      display: inline;
+    }
   }
   &__link {
     color: $text-color;
@@ -3303,14 +3249,30 @@ label {
   &__button {
     color: $primary-color;
     border: none;
+    padding: 0;
     font-size: 18px;
     margin-top: $items-gap-top;
     font-weight: 700;
     margin-left: $items-gap-left;
     background-color: transparent;
 
+    @media ($desktop-min) {
+      transition: color 0.3s;
+
+      &:hover {
+        @extend %popular-button-hover !optional;
+
+        color: $secondary-color;
+      }
+    }
+
     &::before {
       content: attr(data-title);
+      vertical-align: middle;
+
+      %popular-expanded & {
+        content: attr(data-second-title);
+      }
     }
   }
   // &__button-title {
@@ -3327,9 +3289,99 @@ label {
     vertical-align: middle;
     background-color: $primary-color;
 
+    @media ($desktop-min) {
+      transform: scale(1);
+      transition: transform 0.3s, background-color 0.3s;
+
+      %popular-button-hover & {
+        transform: scale(1.15);
+        background-color: $secondary-color;
+      }
+    }
+
     &::before {
       content: "+";
+
+      %popular-expanded & {
+        content: "-";
+      }
     }
+  }
+}
+.products {
+  $items-gap: 3.5rem;
+
+  display: flex;
+
+  &._filter-top {
+    margin-top: 5rem;
+  }
+  &__filter {
+    flex: 1 0 27.125rem;
+    max-width: 27.125rem;
+  }
+  &__promotion {
+    margin-top: 30px;
+  }
+  &__wrapper {
+    display: flex;
+    margin-left: $items-gap;
+    flex-direction: column;
+  }
+  &__description {
+    order: 1;
+    font-size: 14px;
+    line-height: 2.143;
+  }
+  &__description-heading {
+    font-size: 20px;
+    text-transform: none;
+  }
+  &__items {
+    %product {
+      flex: 1 1 25%;
+      max-width: 25%;
+    }
+  }
+}
+.filter {
+  border: 1px solid $items-border;
+  padding: 40px;
+  background-color: $white;
+
+  &__reset {
+    color: $primary-color;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: transparent;
+    @include link-hover-underline($primary-color);
+  }
+}
+.promotion {
+  background: url("../images/icons.svg#wave-02") 50% / contain no-repeat
+    $promotion-background;
+
+  &__inner {
+    position: absolute;
+    
+  }
+  &__heading {
+    color: $white;
+    font-size: 40px;
+    font-weight: 700;
+  }
+  &__image-wrapper {
+  }
+  &__image {
+  }
+  &__date {
+    background-color: $white;
+  }
+  &__value {
+    color: $yellow;
+    font-size: 20px;
+    font-weight: 700;
   }
 }
 
@@ -3351,7 +3403,26 @@ label {
   &__row {
     @include margin-x(-7.5px);
   }
+  &__item-wrapper {
+    margin: 0;
+    border: none;
+    padding: 0;
+  }
+  &__item-heading {
+    padding: 0;
+    display: block;
+    font-weight: 500;
+    line-height: 1.25;
+    margin-bottom: 13px;
 
+    @media ($desktop-max) and ($tablet-min) {
+      font-size: 1.2rem;
+    }
+    @media ($mobile-max) {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+  }
   &__item {
     position: relative;
     @extend %form-item;
@@ -3420,6 +3491,7 @@ label {
     }
     &[type="number"] {
       -moz-appearance: textfield;
+      appearance: none
     }
     &[type="file"] {
       & ~ label {
@@ -3715,6 +3787,58 @@ label {
     }
   }
 }
+.noUi {
+  $handler-size: 15px;
+  $handler-size-mobile: 19px;
+
+  &-connects {
+    border-radius: 0;
+  }
+  &-target {
+    border: none;
+    padding-left: calc($handler-size / 2);
+    border-radius: 0;
+    padding-right: calc($handler-size / 2);
+
+    @media ($mobile-max) {
+      padding-left: calc($handler-size-mobile / 2);
+      padding-right: calc($handler-size-mobile / 2);
+    }
+  }
+  &-horizontal {
+    height: 2px;
+
+    %noui-handle {
+      width: $handler-size;
+      height: $handler-size;
+      right: calc($handler-size / -2);
+      top: calc($handler-size / -2);
+
+      @media ($mobile-max) {
+        width: $handler-size-mobile;
+        height: $handler-size-mobile;
+        right: calc($handler-size-mobile / -2);
+        top: calc($handler-size-mobile / -2);
+      }
+    }
+  }
+  &-connect {
+    background: $yellow;
+  }
+  &-handle {
+    border: none;
+    cursor: pointer;
+    box-shadow: none;
+    background: #ecb800;
+    border-radius: 50%;
+    @extend %noui-handle;
+
+    &:before,
+    &:after {
+      content: normal;
+    }
+  }
+}
 
 .popup-overlay {
   position: fixed;
@@ -3858,4 +3982,3 @@ label {
   }
 }
 @import "_mygallery.scss";
-@import "nouislider";
